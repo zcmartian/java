@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"   
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Test">
+  <typeAlias alias="Test" type="domain.Test"/>
+	<resultMap id="TestResult" class="Test">
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+	</resultMap>
+	<select id="getAllTest" resultClass="Test" parameterClass="string">
+		SELECT * FROM test    
+    </select>
+   <select id="selectTestByUsername" parameterClass="string" resultClass="Test">
+    select
+      username,
+      password
+    from test
+    where username = #username#
+  </select>
+	<insert id="insertTest" parameterClass="Test">
+		insert into test (
+		username,
+		password)
+		values (
+		#username#, #password#
+		)
+  </insert>
+	<update id="updateTest" parameterClass="Test">
+		update test set
+		password = #password#
+		where
+		username = #username#
+  </update>
+
+	<delete id="deleteTestById" parameterClass="string">
+		delete from test where username = #username#
+  </delete>
+
+</sqlMap>
+

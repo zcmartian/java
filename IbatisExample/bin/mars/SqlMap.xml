@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<select id="getAllUsers" parameterClass="string" resultClass="user">
+		SELECT USERID,USERNAME,PASSWORD,GROUPNAME
+		FROM USER_ACCOUNT
+		WHERE GROUPNAME = #groupName#
+	</select>
+
+	<select id="getUserById" parameterClass="integer" resultClass="user">
+		SELECT USERID,USERNAME,PASSWORD,GROUPNAME
+		FROM USER_ACCOUNT
+		WHERE USERID = #id#
+	</select>
+
+</sqlMap>
