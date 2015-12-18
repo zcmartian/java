@@ -3,12 +3,13 @@
 *.class
 *.iml
 *.project
-.metadata
+.metadata/
 .recommenders
 .idea/
 .settings/
 bin/
 target/
+Server/
 *.jar
 *.war
 *.ear
