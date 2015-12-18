@@ -9,10 +9,37 @@
 		WHERE GROUPNAME = #groupName#
 	</select>
 
+    <select id="getAll" resultClass="user">
+        SELECT * 
+        FROM USER_ACCOUNT
+    </select>
+
 	<select id="getUserById" parameterClass="integer" resultClass="user">
 		SELECT USERID,USERNAME,PASSWORD,GROUPNAME
 		FROM USER_ACCOUNT
 		WHERE USERID = #id#
 	</select>
+    
+    <select id="getUserIdValues" resultClass="int">
+        SELECT USERID as value
+        FROM USER_ACCOUNT
+    </select>
 
+    <update id="updateGroupName" parameterClass="string">
+        UPDATE USER_ACCOUNT 
+        SET GROUPNAME = #groupName# 
+        WHERE GROUPNAME = 'dianing'
+    </update>
+    
+    
+    <insert id="insertIntoUsers">
+        insert into USER_ACCOUNT (USERID, USERNAME, PASSWORD, GROUPNAME)
+        VALUES (
+        #userid#,
+        #username#,
+        #password#,
+        #groupname#
+        )
+    </insert>
+    
 </sqlMap>

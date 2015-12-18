@@ -1,8 +1,11 @@
 *.class
+*.iml
+*.project
 .metadata
 .recommenders
 .idea/
 bin/
+target/
 *.jar
 *.war
 *.ear
