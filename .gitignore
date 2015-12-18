@@ -1,9 +1,12 @@
+*.classpath
+*.DS_Store
 *.class
 *.iml
 *.project
 .metadata
 .recommenders
 .idea/
+.settings/
 bin/
 target/
 *.jar
