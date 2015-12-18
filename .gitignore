@@ -2,7 +2,8 @@
 
 .metadata
 .recommenders
-
+.idea/*
+bin/*
 # Package Files #
 *.jar
 *.war
