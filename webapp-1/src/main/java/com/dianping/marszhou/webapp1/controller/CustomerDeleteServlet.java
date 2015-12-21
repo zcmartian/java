@@ -26,11 +26,13 @@ public class CustomerDeleteServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         long id = Long.parseLong(request.getParameter("id"));
+        Customer customer = customerService.getCustomer(id);
         boolean ret = customerService.deleteCustomer(id);
         if (ret) {
             List<Customer> customerList = customerService.getCustomerList();
             request.setAttribute("customerList", customerList);
-            request.getRequestDispatcher("/WEB-INF/view/customer.jsp").forward(request, response);
+            request.setAttribute("customer", customer);
+            request.getRequestDispatcher("/WEB-INF/view/customer_delete.jsp").forward(request, response);
         }
     }
 }
