@@ -6,6 +6,9 @@ public class BankInfo {
     private long poi_id;
     private String accountName;
     private long outerId;
+    private String bankName;
+    private String bankAccountName;
+    private String bankBranch;
 
     public String getCardNumber() {
         return cardNumber;
@@ -40,16 +43,43 @@ public class BankInfo {
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
         boolean ret = false;
 
         if (!(obj instanceof BankInfo))
             return ret;
 
-        if (this.getCardNumber().equals(((BankInfo) obj).getCardNumber())) {
+        if (this.getCardNumber().equals(((BankInfo) obj).getCardNumber())
+                || this.getBankAccountName().equals(
+                        ((BankInfo) obj).getBankAccountName())) {
             ret = true;
         }
 
         return ret;
+    }
+
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
+
+    public String getBankAccountName() {
+        return bankAccountName;
+    }
+
+    public void setBankAccountName(String bankAccountName) {
+        this.bankAccountName = bankAccountName == null ? "null"
+                : bankAccountName;
+    }
+
+    public String getBankBranch() {
+        return bankBranch;
+    }
+
+    public void setBankBranch(String bankBranch) {
+        this.bankBranch = bankBranch;
     }
 }
