@@ -16,6 +16,18 @@
         <servlet-name>CheckBox</servlet-name>
         <servlet-class>CheckBox</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReadParams</servlet-name>
+        <servlet-class>ReadParams</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayHeader</servlet-name>
+        <servlet-class>DisplayHeader</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Refresh</servlet-name>
+        <servlet-class>Refresh</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>HelloWorld</servlet-name>
@@ -30,6 +42,21 @@
     <servlet-mapping>
         <servlet-name>CheckBox</servlet-name>
         <url-pattern>/CheckBox</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ReadParams</servlet-name>
+        <url-pattern>/ReadParams</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DisplayHeader</servlet-name>
+        <url-pattern>/DisplayHeader</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Refresh</servlet-name>
+        <url-pattern>/Refresh</url-pattern>
     </servlet-mapping>
 </web-app>
 
