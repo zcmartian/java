@@ -64,6 +64,10 @@
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>UploadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PageRedirect</servlet-name>
+        <servlet-class>PageRedirect</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>HelloWorld</servlet-name>
@@ -113,6 +117,11 @@
     <servlet-mapping>
         <servlet-name>UploadServlet</servlet-name>
         <url-pattern>/UploadServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>PageRedirect</servlet-name>
+        <url-pattern>/PageRedirect</url-pattern>
     </servlet-mapping>
 
     <error-page>
