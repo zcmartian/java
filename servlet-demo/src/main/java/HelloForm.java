@@ -1,4 +1,5 @@
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +16,7 @@ public class HelloForm extends HttpServlet {
 //        response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        String title = "使用GET方法获取表单数据";
+        String title = "设置 Cookies 实例";
         String docType =
                 "<!doctype html public \"-//w3c//dtd html 4.0 " +
                         "transitional//en\">\n";
@@ -38,6 +39,14 @@ public class HelloForm extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
+        Cookie firstName = new Cookie("first_name",
+                request.getParameter("first_name"));
+        Cookie lastName = new Cookie("last_name",
+                request.getParameter("last_name"));
+        firstName.setMaxAge(60*60*24);
+        lastName.setMaxAge(60*60*24);
+        response.addCookie( firstName );
+        response.addCookie( lastName );
         PrintWriter out = response.getWriter();
         String title = "使用POST方法获取表单数据";
         String docType =
