@@ -1,7 +1,12 @@
 /**
  * Created by marszhou on 16/1/24.
  */
-public class ShapeFactory {
+public class ShapeFactory extends AbstractFactory{
+    @Override Color getColor(String color) {
+        return null;
+    }
+
+    @Override
     public Shape getShape(String shapeType) {
         if (shapeType == null) {
             return null;

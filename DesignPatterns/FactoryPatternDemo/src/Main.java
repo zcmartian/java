@@ -21,14 +21,25 @@ public class Main {
             }
         }
 
-        ShapeFactory shapeFactory = new ShapeFactory();
+//        ShapeFactory shapeFactory = new ShapeFactory();
+        AbstractFactory shapeFactory = FactoryProducer.getFactory("SHAPE");
+        AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
 
-        System.out.println("From factory patterns:");
         Enumeration enumeration = properties.propertyNames();
         while (enumeration.hasMoreElements()) {
             String name = (String) enumeration.nextElement();
             Shape shape = shapeFactory.getShape(properties.getProperty(name));
-            shape.draw();
+            if (shape != null) {
+                shape.draw();
+            }
+        }
+        enumeration = properties.propertyNames();
+        while (enumeration.hasMoreElements()) {
+            String name = (String) enumeration.nextElement();
+            Color color = colorFactory.getColor(properties.getProperty(name));
+            if (color != null) {
+                color.fill();
+            }
         }
     }
 }
