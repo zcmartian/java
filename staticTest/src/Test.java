@@ -1,8 +1,9 @@
 public class Test {
-    Person person = new Person("Test");
-    static{
+    static {
         System.out.println("test static");
     }
+
+    Person person = new Person("Test");
 
     public Test() {
         System.out.println("test constructor");
@@ -10,5 +11,6 @@ public class Test {
 
     public static void main(String[] args) {
         new MyClass();
+//        new StaticTest();
     }
 }
