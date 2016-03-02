@@ -7,6 +7,14 @@ public class OneManBand implements Performer {
 	public OneManBand() {
 	}
 
+	public void initialize() {
+		System.out.println("bean initialize.");
+	}
+
+	public void close() {
+		System.out.println("bean destroy.");
+	}
+
 //	private Collection<Instrument> instruments;
 	private Map<String, Instrument> instruments;
 

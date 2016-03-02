@@ -1,0 +1,16 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <bean id="greetingService1" class="com.dianping.marszhou.springDemo.beans.GreetingServiceImpl">
+        <property name="greeting">
+            <value>Hello world 1!</value>
+        </property>
+    </bean>
+
+    <bean id="greetingService2" class="com.dianping.marszhou.springDemo.beans.GreetingServiceImpl">
+        <constructor-arg>
+            <value>Hello world 2!</value>
+        </constructor-arg>
+    </bean>
+</beans>

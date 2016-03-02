@@ -45,7 +45,7 @@
 	<bean id="symbal" class="mars.zhou.Symbal" />
 	<bean id="harmonica" class="mars.zhou.Harmonica" />
 
-	<bean id="hank" class="mars.zhou.OneManBand">
+	<bean id="hank" class="mars.zhou.OneManBand" init-method="initialize" destroy-method="close">
 		<property name="instruments">
 			<!-- <list> <ref bean="guitar" /> <ref bean="symbal" /> <ref bean="harmonica" 
 				/> </list> -->
