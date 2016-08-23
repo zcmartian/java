@@ -60,6 +60,7 @@ public class NIOServer {
         // 轮询访问selector
         while (true) {
             // 当注册的事件到达时，方法返回；否则,该方法会一直阻塞
+            System.out.println("selector.select() ...");
             selector.select();
             // 获得selector中选中的项的迭代器，选中的项为注册的事件
             Iterator ite = this.selector.selectedKeys().iterator();

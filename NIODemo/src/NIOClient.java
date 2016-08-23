@@ -95,6 +95,7 @@ public class NIOClient {
         System.out.println(" 客户端收到信息：" + msg);
         ByteBuffer outBuffer = ByteBuffer.wrap(msg.getBytes());
         channel.write(outBuffer);// 将消息回送给客户端
+        channel.close();
     }
 
 
