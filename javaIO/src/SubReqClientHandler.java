@@ -1,7 +1,9 @@
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import netty.SubscribeReqProto;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by marszhou on 16/8/24.
@@ -16,17 +18,22 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
         for (int i = 0; i < 10; ++i) {
             ctx.write(subReq(i));
         }
-         ctx.flush();
+        ctx.flush();
     }
 
-    private SubscribeReq subReq(int i) {
-        SubscribeReq req = new SubscribeReq();
-        req.setAddress("安化路492号");
-        req.setPhoneName("13333333333");
+    // private SubscribeReq subReq(int i) {
+    private SubscribeReqProto.SubscribeReq subReq(int i) {
+        // SubscribeReq req = new SubscribeReq();
+        SubscribeReqProto.SubscribeReq.Builder req = SubscribeReqProto.SubscribeReq.newBuilder();
+        List<String> address = new ArrayList<String>();
+        address.add("Shanghai 安化路");
+        address.add("Shanghai 长岛路");
+        address.add("Shanghai 纳贤路");
+        req.addAllAddress(address);
         req.setProductName("Netty 权威指南");
         req.setSubReqID(i);
         req.setUserName("marszhou");
-        return req;
+        return req.build();
     }
 
     @Override
