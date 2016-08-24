@@ -1,3 +1,5 @@
+package com.mars;
+
 /**
  * Created by marszhou on 16/8/19.
  */

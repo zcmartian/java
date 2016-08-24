@@ -1,3 +1,5 @@
+package com.mars;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class Main {
         }
 
         MultiplexerServer server = new MultiplexerServer(port);
-        new Thread(server, "NIO-MultiplexerServer-001").start();
+        new Thread(server, "NIO-com.mars.MultiplexerServer-001").start();
 
         // ServerSocket serverSocket = null;
         //
@@ -20,11 +22,11 @@ public class Main {
         // serverSocket = new ServerSocket(port);
         // System.out.println("The server is start in port : " + port);
         // Socket socket = null;
-        // TimeServerHandlerExecutePool singleExecutor = new TimeServerHandlerExecutePool(50, 10000);
+        // com.mars.TimeServerHandlerExecutePool singleExecutor = new com.mars.TimeServerHandlerExecutePool(50, 10000);
         // while (true) {
         // socket = serverSocket.accept();
-        // // new Thread(new ServerHandler(socket)).start();//同步处理,一个请求一个线程
-        // singleExecutor.execute(new ServerHandler(socket));
+        // // new Thread(new com.mars.ServerHandler(socket)).start();//同步处理,一个请求一个线程
+        // singleExecutor.execute(new com.mars.ServerHandler(socket));
         // }
         // } catch (IOException e) {
         // e.printStackTrace();

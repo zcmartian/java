@@ -1,3 +1,5 @@
+package com.mars;
+
 import com.google.protobuf.InvalidProtocolBufferException;
 import netty.SubscribeReqProto;
 

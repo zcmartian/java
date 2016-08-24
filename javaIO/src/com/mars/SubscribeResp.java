@@ -1,3 +1,5 @@
+package com.mars;
+
 import java.io.Serializable;
 
 /**
@@ -11,7 +13,7 @@ public class SubscribeResp implements Serializable {
 
     @Override
     public String toString() {
-        return "SubscribeResp{" + "subReqID=" + subReqID + ", respCode=" + respCode + ", desc='" + desc + '\'' + '}';
+        return "com.mars.SubscribeResp{" + "subReqID=" + subReqID + ", respCode=" + respCode + ", desc='" + desc + '\'' + '}';
     }
 
     public int getSubReqID() {

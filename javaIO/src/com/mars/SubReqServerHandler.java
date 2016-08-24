@@ -1,3 +1,5 @@
+package com.mars;
+
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import netty.SubscribeReqProto;
@@ -9,7 +11,7 @@ import netty.SubscribeRespProto;
 public class SubReqServerHandler extends ChannelHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-//        SubscribeReq req = (SubscribeReq) msg;
+//        com.mars.SubscribeReq req = (com.mars.SubscribeReq) msg;
         SubscribeReqProto.SubscribeReq req = (SubscribeReqProto.SubscribeReq) msg;
         if ("marszhou".equalsIgnoreCase(req.getUserName())) {
             System.out.println("Service accept client subscribe req : [" + req.toString() + "]");
@@ -17,9 +19,9 @@ public class SubReqServerHandler extends ChannelHandlerAdapter {
         }
     }
 
-//    private SubscribeResp resp(int subReqID) {
+//    private com.mars.SubscribeResp resp(int subReqID) {
     private SubscribeRespProto.SubscribeResp resp(int subReqID) {
-//        SubscribeResp subscribeResp = new SubscribeResp();
+//        com.mars.SubscribeResp subscribeResp = new com.mars.SubscribeResp();
         SubscribeRespProto.SubscribeResp.Builder subscribeResp = SubscribeRespProto.SubscribeResp.newBuilder();
         subscribeResp.setSubReqID(subReqID);
         subscribeResp.setRespCode(0);

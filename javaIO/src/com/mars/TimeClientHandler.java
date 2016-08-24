@@ -1,3 +1,5 @@
+package com.mars;
+
 import java.util.logging.Logger;
 
 import io.netty.buffer.ByteBuf;

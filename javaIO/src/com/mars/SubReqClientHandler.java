@@ -1,3 +1,5 @@
+package com.mars;
+
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import netty.SubscribeReqProto;
@@ -21,9 +23,9 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
         ctx.flush();
     }
 
-    // private SubscribeReq subReq(int i) {
+    // private com.mars.SubscribeReq subReq(int i) {
     private SubscribeReqProto.SubscribeReq subReq(int i) {
-        // SubscribeReq req = new SubscribeReq();
+        // com.mars.SubscribeReq req = new com.mars.SubscribeReq();
         SubscribeReqProto.SubscribeReq.Builder req = SubscribeReqProto.SubscribeReq.newBuilder();
         List<String> address = new ArrayList<String>();
         address.add("Shanghai 安化路");
