@@ -11,5 +11,9 @@ public class Client {
         if (api != null) {
             api.operation("args is 2.");
         }
+        api = Factory.createApi(3);
+        if (api != null) {
+            api.operation("args is 3.");
+        }
     }
 }
