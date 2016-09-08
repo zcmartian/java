@@ -9,7 +9,7 @@ public class ConcreteAggregate implements Aggregate{
     }
 
     @Override
-    public Iterator createItertor() {
+    public Iterator createIterator() {
         return new ConcreteIterator(this);
     }
 
