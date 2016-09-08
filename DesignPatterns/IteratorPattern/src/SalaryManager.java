@@ -11,7 +11,7 @@ public class SalaryManager implements Aggregate{
     public void calcSalary() {
         PayModel pm1 = new PayModel();
         pm1.setName("wangwu");
-        pm1.setPay(1800);
+        pm1.setPay(9800);
         PayModel pm2 = new PayModel();
         pm2.setName("zhaoliu");
         pm2.setPay(8800);
