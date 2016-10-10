@@ -1,3 +1,4 @@
+package colors;
 /**
  * Created by marszhou on 16/1/24.
  */

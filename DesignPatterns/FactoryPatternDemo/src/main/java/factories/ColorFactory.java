@@ -1,8 +1,17 @@
+package factories;
+
+import colors.Blue;
+import colors.Color;
+import colors.Green;
+import colors.Red;
+import shapes.Shape;
+
 /**
  * Created by marszhou on 16/1/24.
  */
 public class ColorFactory extends AbstractFactory {
-    @Override Color getColor(String color) {
+    @Override
+    Color getColor(String color) {
         if(color == null){
             return null;
         }
@@ -16,7 +25,8 @@ public class ColorFactory extends AbstractFactory {
         return null;
     }
 
-    @Override Shape getShape(String shape) {
+    @Override
+    Shape getShape(String shape) {
         return null;
     }
 }

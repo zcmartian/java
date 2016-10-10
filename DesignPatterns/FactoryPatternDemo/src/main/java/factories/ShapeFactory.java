@@ -1,8 +1,17 @@
+package factories;
+
+import colors.Color;
+import shapes.Circle;
+import shapes.Rectangle;
+import shapes.Shape;
+import shapes.Square;
+
 /**
  * Created by marszhou on 16/1/24.
  */
 public class ShapeFactory extends AbstractFactory{
-    @Override Color getColor(String color) {
+    @Override
+    Color getColor(String color) {
         return null;
     }
 
