@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>AdvanceMediaPlayer</OriginalElement>
+  <nodes>
+    <node x="108.00000000000001" y="79.0">Mp4Player</node>
+    <node x="0.0" y="79.0">VlcPlayer</node>
+    <node x="161.75" y="237.0">AudioPlayer</node>
+    <node x="122.12037037037038" y="158.0">MediaAdapter</node>
+    <node x="183.75" y="316.0">Main</node>
+    <node x="66.70370370370371" y="0.0">AdvanceMediaPlayer</node>
+    <node x="225.0" y="79.0">MediaPlayer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="AudioPlayer" target="MediaAdapter">
+      <point x="0.0" y="-14.5" />
+      <point x="214.75" y="212.0" />
+      <point x="210.62037037037038" y="212.0" />
+      <point x="29.5" y="14.5" />
+    </edge>
+    <edge source="MediaAdapter" target="Mp4Player">
+      <point x="-14.75" y="-14.5" />
+      <point x="166.37037037037038" y="133.0" />
+      <point x="156.0" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="AudioPlayer" target="MediaPlayer">
+      <point x="35.33333333333334" y="-14.5" />
+      <point x="250.08333333333337" y="212.0" />
+      <point x="304.5" y="212.0" />
+      <point x="26.5" y="14.5" />
+    </edge>
+    <edge source="MediaAdapter" target="MediaPlayer">
+      <point x="44.25" y="-14.5" />
+      <point x="225.37037037037038" y="133.0" />
+      <point x="251.5" y="133.0" />
+      <point x="-26.5" y="14.5" />
+    </edge>
+    <edge source="Main" target="AudioPlayer">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="MediaAdapter" target="AdvanceMediaPlayer">
+      <point x="14.75" y="-14.5" />
+      <point x="195.87037037037038" y="133.0" />
+      <point x="214.5" y="133.0" />
+      <point x="214.5" y="54.0" />
+      <point x="199.2037037037037" y="54.0" />
+      <point x="53.0" y="14.5" />
+    </edge>
+    <edge source="VlcPlayer" target="AdvanceMediaPlayer">
+      <point x="0.0" y="-14.5" />
+      <point x="44.0" y="54.0" />
+      <point x="93.20370370370371" y="54.0" />
+      <point x="-53.0" y="14.5" />
+    </edge>
+    <edge source="MediaAdapter" target="VlcPlayer">
+      <point x="-44.25" y="-14.5" />
+      <point x="136.87037037037038" y="133.0" />
+      <point x="44.0" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Mp4Player" target="AdvanceMediaPlayer">
+      <point x="0.0" y="-14.5" />
+      <point x="156.0" y="54.0" />
+      <point x="146.2037037037037" y="54.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.3000000000000003" x="165.50000000000006" y="172.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
