@@ -1,7 +1,7 @@
 /**
  * Created by marszhou on 16/9/8.
  */
-public class ArrayIteratorImpl implements Iterator{
+public class ArrayIteratorImpl implements Iterator {
     private SalaryManager aggregate;
 
     private int index = -1;

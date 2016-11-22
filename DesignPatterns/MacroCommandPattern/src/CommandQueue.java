@@ -15,7 +15,7 @@ public class CommandQueue {
 
     public synchronized static ICommand getFirstCommand() {
         ICommand cmd = null;
-        if (cmds.size() >0) {
+        if (cmds.size() > 0) {
             cmd = cmds.get(0);
             cmds.remove(0);
         }

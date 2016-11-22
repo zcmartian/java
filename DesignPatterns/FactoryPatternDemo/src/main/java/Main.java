@@ -1,12 +1,12 @@
-import colors.Color;
-import factories.AbstractFactory;
-import factories.FactoryProducer;
-import shapes.Shape;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.Properties;
+
+import colors.Color;
+import factories.AbstractFactory;
+import factories.FactoryProducer;
+import shapes.Shape;
 
 public class Main {
 
@@ -26,7 +26,7 @@ public class Main {
             }
         }
 
-//        ShapeFactory shapeFactory = new ShapeFactory();
+        // ShapeFactory shapeFactory = new ShapeFactory();
         AbstractFactory shapeFactory = FactoryProducer.getFactory("SHAPE");
         AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
 

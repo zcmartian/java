@@ -1,7 +1,7 @@
 /**
  * Created by marszhou on 16/9/8.
  */
-public class ConcreteAggregate implements Aggregate{
+public class ConcreteAggregate implements Aggregate {
     private String[] ss = null;
 
     public ConcreteAggregate(String[] ss) {

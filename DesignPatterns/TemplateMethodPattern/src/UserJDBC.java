@@ -37,11 +37,13 @@ public class UserJDBC extends JDBCTemplate {
         preparedStatement.setString(2, um.getName());
         preparedStatement.setString(3, um.getSex());
     }
+
     private void setUpdateValue(PreparedStatement preparedStatement, UserModel um) throws Exception {
         preparedStatement.setString(1, um.getUid());
         preparedStatement.setString(2, um.getName());
         preparedStatement.setString(3, um.getSex());
     }
+
     private void setDeleteValue(PreparedStatement preparedStatement, UserModel um) throws Exception {
         preparedStatement.setString(1, um.getUid());
     }

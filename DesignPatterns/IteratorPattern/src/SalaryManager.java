@@ -1,7 +1,7 @@
 /**
  * Created by marszhou on 16/9/8.
  */
-public class SalaryManager implements Aggregate{
+public class SalaryManager implements Aggregate {
     private PayModel[] pms = new PayModel[10];
 
     public PayModel[] getPays() {

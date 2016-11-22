@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Created by marszhou on 16/9/8.
  */
-public class PayManager implements Aggregate{
+public class PayManager implements Aggregate {
     private List list = new ArrayList();
 
     public List getList() {

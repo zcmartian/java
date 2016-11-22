@@ -1,11 +1,13 @@
 /**
  * Created by marszhou on 16/2/1.
  */
-public abstract class Burger implements Item{
+public abstract class Burger implements Item {
 
-    @Override public Packing packing() {
+    @Override
+    public Packing packing() {
         return new Wrapper();
     }
 
-    @Override abstract public float price();
+    @Override
+    abstract public float price();
 }

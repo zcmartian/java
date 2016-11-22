@@ -3,5 +3,6 @@
  */
 public interface CalculateCommand {
     void execute();
+
     void undo();
 }

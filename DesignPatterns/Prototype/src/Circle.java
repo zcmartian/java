@@ -2,7 +2,7 @@
  * Created by marszhou on 16/2/1.
  */
 public class Circle extends Shape {
-    public Circle(){
+    public Circle() {
         type = "Circle";
     }
 

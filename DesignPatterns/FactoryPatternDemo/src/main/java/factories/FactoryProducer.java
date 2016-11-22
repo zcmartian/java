@@ -1,4 +1,5 @@
 package factories;
+
 /**
  * Created by marszhou on 16/1/24.
  */

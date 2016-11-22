@@ -1,9 +1,10 @@
 /**
  * Created by marszhou on 16/2/1.
  */
-public abstract class Shape implements Cloneable{
-    private String id;
+public abstract class Shape implements Cloneable {
     protected String type;
+    private String id;
+
     abstract void draw();
 
     public String getId() {

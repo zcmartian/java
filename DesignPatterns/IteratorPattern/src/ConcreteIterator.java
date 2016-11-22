@@ -1,7 +1,7 @@
 /**
  * Created by marszhou on 16/9/8.
  */
-public class ConcreteIterator implements Iterator{
+public class ConcreteIterator implements Iterator {
     private ConcreteAggregate aggregate;
 
     private int index = -1;

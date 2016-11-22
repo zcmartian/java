@@ -2,7 +2,7 @@
  * Created by marszhou on 16/2/1.
  */
 public class Square extends Shape {
-    public Square(){
+    public Square() {
         type = "Square";
     }
 

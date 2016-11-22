@@ -1,8 +1,9 @@
 /**
  * Created by marszhou on 16/9/7.
  */
-public class ConcreteCalculateApi implements CalculateApi{
+public class ConcreteCalculateApi implements CalculateApi {
     private int result;
+
     @Override
     public int getResult() {
         return result;

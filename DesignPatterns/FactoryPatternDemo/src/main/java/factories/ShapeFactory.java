@@ -9,7 +9,7 @@ import shapes.Square;
 /**
  * Created by marszhou on 16/1/24.
  */
-public class ShapeFactory extends AbstractFactory{
+public class ShapeFactory extends AbstractFactory {
     @Override
     public Color getColor(String color) {
         return null;

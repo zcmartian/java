@@ -1,7 +1,7 @@
 /**
  * Created by marszhou on 16/9/7.
  */
-public class SubtractCommand implements CalculateCommand{
+public class SubtractCommand implements CalculateCommand {
     private CalculateApi calculateApi = null;
     private int opeNum;
 

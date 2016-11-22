@@ -3,5 +3,6 @@
  */
 public interface ICommand {
     void execute();
+
     void setICook(ICook iCook);
 }

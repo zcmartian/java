@@ -1,7 +1,7 @@
 /**
  * Created by marszhou on 16/9/8.
  */
-public class CollectionIteratorImpl implements Iterator{
+public class CollectionIteratorImpl implements Iterator {
     private PayManager aggregate;
 
     private int index = -1;
