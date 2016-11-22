@@ -6,5 +6,11 @@ public class Main {
 
         redCircle.draw();
         greenCircle.draw();
+
+        Shape redRect = new Rect(new RedRect(), 20, 40, 30, 10);
+        Shape greenRect = new Rect(new GreenRect(), 20, 40, 30, 10);
+
+        redRect.draw();
+        greenRect.draw();
     }
 }

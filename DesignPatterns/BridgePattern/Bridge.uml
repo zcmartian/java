@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Circle</OriginalElement>
+  <nodes>
+    <node x="273.625" y="158.0">Circle</node>
+    <node x="194.625" y="158.0">Rect</node>
+    <node x="325.75" y="79.0">RedCircle</node>
+    <node x="436.75" y="79.0">GreenRect</node>
+    <node x="231.375" y="79.0">Shape</node>
+    <node x="0.0" y="79.0">GreenCircle</node>
+    <node x="124.0" y="79.0">RedRect</node>
+    <node x="223.875" y="0.0">DrawAPI</node>
+    <node x="234.875" y="247.0">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Main" target="GreenRect">
+      <point x="25.833333333333314" y="-14.5" />
+      <point x="291.7083333333333" y="227.0" />
+      <point x="484.25" y="227.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="GreenRect" target="DrawAPI">
+      <point x="0.0" y="-14.5" />
+      <point x="484.25" y="49.0" />
+      <point x="299.475" y="49.0" />
+      <point x="33.60000000000002" y="14.5" />
+    </edge>
+    <edge source="Main" target="RedCircle">
+      <point x="15.5" y="-14.5" />
+      <point x="281.375" y="217.0" />
+      <point x="371.25" y="217.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="RedCircle" target="DrawAPI">
+      <point x="0.0" y="-14.5" />
+      <point x="371.25" y="59.0" />
+      <point x="282.675" y="59.0" />
+      <point x="16.80000000000001" y="14.5" />
+    </edge>
+    <edge source="Rect" target="Shape">
+      <point x="0.0" y="-14.5" />
+      <point x="224.125" y="133.0" />
+      <point x="248.625" y="133.0" />
+      <point x="-17.25" y="14.5" />
+    </edge>
+    <edge source="RedRect" target="DrawAPI">
+      <point x="0.0" y="-14.5" />
+      <point x="165.0" y="59.0" />
+      <point x="249.075" y="59.0" />
+      <point x="-16.80000000000001" y="14.5" />
+    </edge>
+    <edge source="Main" target="Circle">
+      <point x="5.166666666666686" y="-14.5" />
+      <point x="271.0416666666667" y="207.0" />
+      <point x="307.625" y="207.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Shape" target="DrawAPI">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Circle" target="Shape">
+      <point x="0.0" y="-14.5" />
+      <point x="307.625" y="133.0" />
+      <point x="283.125" y="133.0" />
+      <point x="17.25" y="14.5" />
+    </edge>
+    <edge source="Main" target="RedRect">
+      <point x="-15.5" y="-14.5" />
+      <point x="250.375" y="217.0" />
+      <point x="165.0" y="217.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Main" target="GreenCircle">
+      <point x="-25.833333333333343" y="-14.5" />
+      <point x="240.04166666666663" y="227.0" />
+      <point x="52.0" y="227.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Main" target="Rect">
+      <point x="-5.166666666666686" y="-14.5" />
+      <point x="260.7083333333333" y="207.0" />
+      <point x="224.125" y="207.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="GreenCircle" target="DrawAPI">
+      <point x="0.0" y="-14.5" />
+      <point x="52.0" y="49.0" />
+      <point x="232.275" y="49.0" />
+      <point x="-33.599999999999994" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="266.0" y="138.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
