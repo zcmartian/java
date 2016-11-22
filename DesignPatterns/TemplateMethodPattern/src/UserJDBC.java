@@ -10,7 +10,7 @@ public class UserJDBC extends JDBCTemplate {
     protected String getMainSql(int type) {
         String sql = "";
         if (type == CREATE) {
-            sql = "insert into student values(?,?,?,?)";
+            sql = "insert into student(name, sex, uid, birthday) values(?,?,?,?)";
         } else if (type == DELETE) {
             sql = "delete from student where uid=?";
         } else if (type == UPDATE) {
@@ -33,15 +33,16 @@ public class UserJDBC extends JDBCTemplate {
     }
 
     private void setCreateValue(PreparedStatement preparedStatement, UserModel um) throws Exception {
-        preparedStatement.setString(1, um.getUid());
-        preparedStatement.setString(2, um.getName());
-        preparedStatement.setString(3, um.getSex());
+        preparedStatement.setString(3, um.getUid());
+        preparedStatement.setString(1, um.getName());
+        preparedStatement.setString(2, um.getSex());
+        preparedStatement.setDate(4, new Date(um.getBirthday().getTime()));
     }
 
     private void setUpdateValue(PreparedStatement preparedStatement, UserModel um) throws Exception {
-        preparedStatement.setString(1, um.getUid());
-        preparedStatement.setString(2, um.getName());
-        preparedStatement.setString(3, um.getSex());
+        preparedStatement.setString(3, um.getUid());
+        preparedStatement.setString(1, um.getName());
+        preparedStatement.setString(2, um.getSex());
     }
 
     private void setDeleteValue(PreparedStatement preparedStatement, UserModel um) throws Exception {
