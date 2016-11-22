@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>factories.FactoryProducer</OriginalElement>
+  <nodes>
+    <node x="135.0" y="158.0">factories.ShapeFactory</node>
+    <node x="0.0" y="79.0">shapes.Rectangle</node>
+    <node x="286.1875" y="237.0">factories.FactoryProducer</node>
+    <node x="460.5" y="158.0">factories.ColorFactory</node>
+    <node x="524.0" y="79.0">colors.Green</node>
+    <node x="295.0" y="79.0">factories.AbstractFactory</node>
+    <node x="113.26041666666669" y="0.0">shapes.Shape</node>
+    <node x="113.0" y="79.0">shapes.Circle</node>
+    <node x="612.0" y="79.0">colors.Red</node>
+    <node x="446.0" y="79.0">colors.Blue</node>
+    <node x="201.0" y="79.0">shapes.Square</node>
+    <node x="524.25" y="0.0">colors.Color</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="factories.ColorFactory" target="factories.AbstractFactory">
+      <point x="-42.0" y="-14.5" />
+      <point x="474.5" y="138.0" />
+      <point x="393.25" y="138.0" />
+      <point x="32.75" y="14.5" />
+    </edge>
+    <edge source="factories.ColorFactory" target="colors.Blue">
+      <point x="-14.0" y="-14.5" />
+      <point x="502.5" y="128.0" />
+      <point x="475.0" y="128.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="colors.Red" target="colors.Color">
+      <point x="0.0" y="-14.5" />
+      <point x="639.5" y="54.0" />
+      <point x="579.25" y="54.0" />
+      <point x="22.0" y="14.5" />
+    </edge>
+    <edge source="factories.FactoryProducer" target="factories.ColorFactory">
+      <point x="33.25" y="-14.5" />
+      <point x="385.9375" y="212.0" />
+      <point x="516.5" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="colors.Blue" target="colors.Color">
+      <point x="0.0" y="-14.5" />
+      <point x="475.0" y="54.0" />
+      <point x="535.25" y="54.0" />
+      <point x="-22.0" y="14.5" />
+    </edge>
+    <edge source="factories.ShapeFactory" target="shapes.Circle">
+      <point x="-14.375" y="-14.5" />
+      <point x="178.125" y="128.0" />
+      <point x="147.0" y="128.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="factories.FactoryProducer" target="factories.ShapeFactory">
+      <point x="-33.25" y="-14.5" />
+      <point x="319.4375" y="212.0" />
+      <point x="192.5" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="shapes.Square" target="shapes.Shape">
+      <point x="0.0" y="-14.5" />
+      <point x="238.0" y="54.0" />
+      <point x="170.76041666666669" y="54.0" />
+      <point x="23.0" y="14.5" />
+    </edge>
+    <edge source="shapes.Circle" target="shapes.Shape">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="factories.ColorFactory" target="colors.Green">
+      <point x="14.0" y="-14.5" />
+      <point x="530.5" y="128.0" />
+      <point x="558.0" y="128.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="factories.ShapeFactory" target="factories.AbstractFactory">
+      <point x="43.125" y="-14.5" />
+      <point x="235.625" y="138.0" />
+      <point x="327.75" y="138.0" />
+      <point x="-32.75" y="14.5" />
+    </edge>
+    <edge source="shapes.Rectangle" target="shapes.Shape">
+      <point x="0.0" y="-14.5" />
+      <point x="46.5" y="54.0" />
+      <point x="124.76041666666669" y="54.0" />
+      <point x="-23.0" y="14.5" />
+    </edge>
+    <edge source="factories.ColorFactory" target="colors.Red">
+      <point x="42.0" y="-14.5" />
+      <point x="558.5" y="138.0" />
+      <point x="639.5" y="138.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="factories.ShapeFactory" target="shapes.Rectangle">
+      <point x="-43.125" y="-14.5" />
+      <point x="149.375" y="138.0" />
+      <point x="46.5" y="138.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="factories.ShapeFactory" target="shapes.Square">
+      <point x="14.375" y="-14.5" />
+      <point x="206.875" y="128.0" />
+      <point x="238.0" y="128.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="colors.Green" target="colors.Color">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="333.5" y="133.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
