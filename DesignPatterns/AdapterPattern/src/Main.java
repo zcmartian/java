@@ -7,5 +7,11 @@ public class Main {
         audioPlayer.play("mp4", "alone.mp4");
         audioPlayer.play("vlc", "far far away.vlc");
         audioPlayer.play("avi", "mind me.avi");
+
+        Adaptee adaptee = new Adaptee();
+        IExecutable iExecutable = new AExecute();
+        Adapter adapter = new Adapter(iExecutable);
+        adaptee.execute();
+        adapter.execute();
     }
 }
