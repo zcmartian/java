@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>CareTaker</OriginalElement>
+  <nodes>
+    <node x="30.25" y="0.0">Memento</node>
+    <node x="0.0" y="79.0">CareTaker</node>
+    <node x="115.0" y="79.0">Originator</node>
+    <node x="68.71875" y="158.0">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Main" target="CareTaker">
+      <point x="-15.5" y="-14.5" />
+      <point x="84.21875" y="133.0" />
+      <point x="47.5" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="CareTaker" target="Memento">
+      <point x="-23.75" y="-14.5" />
+      <point x="23.75" y="54.0" />
+      <point x="45.25" y="54.0" />
+      <point x="-30.0" y="14.5" />
+    </edge>
+    <edge source="Originator" target="Memento">
+      <point x="0.0" y="-14.5" />
+      <point x="163.0" y="54.0" />
+      <point x="105.25" y="54.0" />
+      <point x="30.0" y="14.5" />
+    </edge>
+    <edge source="Main" target="Originator">
+      <point x="15.5" y="-14.5" />
+      <point x="115.21875" y="133.0" />
+      <point x="163.0" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="105.5" y="93.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
