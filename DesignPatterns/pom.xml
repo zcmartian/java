@@ -47,5 +47,6 @@
         <module>Prototype</module>
         <module>SimpleFactory</module>
         <module>TemplateMethodPattern</module>
+        <module>ComposerPattern</module>
     </modules>
 </project>
