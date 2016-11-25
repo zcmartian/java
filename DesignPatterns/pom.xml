@@ -49,6 +49,13 @@
         <module>TemplateMethodPattern</module>
         <module>ComposerPattern</module>
         <module>SingletonPattern</module>
-        <module>SingletonPattern</module>
+        <module>ObserverPattern</module>
+        <module>StatePattern</module>
+        <module>ProxyPattern</module>
+        <module>FacadePattern</module>
+        <module>VisitorPattern</module>
+        <module>MediatorPattern</module>
+        <module>InterpreterPattern</module>
+        <module>StrategyPattern</module>
     </modules>
 </project>
