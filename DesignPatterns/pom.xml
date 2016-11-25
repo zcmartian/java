@@ -48,5 +48,7 @@
         <module>SimpleFactory</module>
         <module>TemplateMethodPattern</module>
         <module>ComposerPattern</module>
+        <module>SingletonPattern</module>
+        <module>SingletonPattern</module>
     </modules>
 </project>
