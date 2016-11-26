@@ -20,6 +20,9 @@ public abstract class AbstractLogger {
             write(message);
         }
         if (nextLogger != null) {
+            //这里其实是遍历了责任链上的所有后继元素
+            //一般我们也可以只选择对应的职责执行完以后就结束遍历,不再将后继元素遍历
+            //若如此做,则不需要判断后继指针的值,而是用具体条件筛选出唯一符合条件的那个元素
             nextLogger.logMessage(level, message);
         }
     }
