@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>AbstractLogger</OriginalElement>
+  <nodes>
+    <node x="0.0" y="80.0">ConsoleLogger</node>
+    <node x="141.0" y="80.0">FileLogger</node>
+    <node x="157.0" y="160.0">Main</node>
+    <node x="254.0" y="80.0">ErrorLogger</node>
+    <node x="126.49999999999997" y="0.0">AbstractLogger</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Main" target="FileLogger">
+      <point x="3.552713678800501E-15" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Main" target="ConsoleLogger">
+      <point x="-20.33333333333333" y="-15.0" />
+      <point x="167.16666666666666" y="135.0" />
+      <point x="60.5" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ErrorLogger" target="AbstractLogger">
+      <point x="0.0" y="-15.0" />
+      <point x="306.0" y="55.0" />
+      <point x="228.16666666666663" y="55.0" />
+      <point x="40.66666666666666" y="15.0" />
+    </edge>
+    <edge source="FileLogger" target="AbstractLogger">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ConsoleLogger" target="AbstractLogger">
+      <point x="0.0" y="-15.0" />
+      <point x="60.5" y="55.0" />
+      <point x="146.83333333333331" y="55.0" />
+      <point x="-40.66666666666666" y="15.0" />
+    </edge>
+    <edge source="Main" target="ErrorLogger">
+      <point x="20.33333333333333" y="-15.0" />
+      <point x="207.83333333333331" y="135.0" />
+      <point x="306.0" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="179.0" y="95.0" />
+  <SelectedNodes>
+    <node>AbstractLogger</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
