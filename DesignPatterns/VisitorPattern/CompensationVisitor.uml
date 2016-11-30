@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>visitor.mode.CompensationVisitor</OriginalElement>
+  <nodes>
+    <node x="165.5" y="79.0">visitor.mode.Visitor</node>
+    <node x="64.99999999999999" y="237.0">visitor.mode.MainTest</node>
+    <node x="36.178571428571416" y="0.0">visitor.mode.Element</node>
+    <node x="31.178571428571416" y="79.0">visitor.mode.Employee</node>
+    <node x="120.0" y="158.0">visitor.mode.CompensationVisitor</node>
+    <node x="0.0" y="158.0">visitor.mode.Employees</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="visitor.mode.CompensationVisitor" target="visitor.mode.Visitor">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="visitor.mode.MainTest" target="visitor.mode.Employee">
+      <point x="0.0" y="-14.5" />
+      <point x="109.49999999999999" y="133.0" />
+      <point x="100.17857142857142" y="133.0" />
+      <point x="23.0" y="14.5" />
+    </edge>
+    <edge source="visitor.mode.Employee" target="visitor.mode.Element">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="visitor.mode.Employees" target="visitor.mode.Employee">
+      <point x="0.0" y="-14.5" />
+      <point x="49.5" y="133.0" />
+      <point x="54.178571428571416" y="133.0" />
+      <point x="-23.0" y="14.5" />
+    </edge>
+    <edge source="visitor.mode.MainTest" target="visitor.mode.CompensationVisitor">
+      <point x="29.66666666666667" y="-14.5" />
+      <point x="139.16666666666666" y="212.0" />
+      <point x="202.0" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="visitor.mode.MainTest" target="visitor.mode.Employees">
+      <point x="-29.66666666666667" y="-14.5" />
+      <point x="79.83333333333331" y="212.0" />
+      <point x="49.5" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="142.0" y="133.0" />
+  <SelectedNodes>
+    <node>visitor.mode.CompensationVisitor</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
