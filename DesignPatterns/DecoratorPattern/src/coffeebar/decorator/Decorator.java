@@ -12,8 +12,9 @@ public class Decorator extends Drink {
     @Override
     public float cost() {
         // TODO Auto-generated method stub
-
-        return super.getPrice() + Obj.cost();
+        float price = super.getPrice();
+        float objPrice = Obj.cost();
+        return price + objPrice;
     }
 
     @Override

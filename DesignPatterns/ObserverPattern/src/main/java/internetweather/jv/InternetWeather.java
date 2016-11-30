@@ -3,15 +3,15 @@ package internetweather.jv;
 public class InternetWeather {
     public static void main(String[] args) {
         CurrentConditions mCurrentConditions;
-        ForcastConditions mForcastConditions;
+        ForecastConditions mForecastConditions;
         WeatherData mWeatherData;
 
         mCurrentConditions = new CurrentConditions();
-        mForcastConditions = new ForcastConditions();
+        mForecastConditions = new ForecastConditions();
         mWeatherData = new WeatherData();
 
         mWeatherData.addObserver(mCurrentConditions);
-        mWeatherData.addObserver(mForcastConditions);
+        mWeatherData.addObserver(mForecastConditions);
         mWeatherData.setData(30, 150, 40);
 
         mWeatherData.deleteObserver(mCurrentConditions);

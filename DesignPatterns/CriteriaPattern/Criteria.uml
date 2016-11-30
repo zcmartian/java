@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Criteria</OriginalElement>
+  <nodes>
+    <node x="490.0" y="100.0">CriteriaMale</node>
+    <node x="0.0" y="100.0">OrCriteria</node>
+    <node x="109.0" y="100.0">AndCriteria</node>
+    <node x="226.0" y="100.0">CriteriaFemale</node>
+    <node x="150.43005952380952" y="0.0">Criteria</node>
+    <node x="613.0" y="100.0">Person</node>
+    <node x="311.8206845238095" y="190.0">Main</node>
+    <node x="361.0" y="100.0">CriteriaSingle</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="AndCriteria" target="Criteria">
+      <point x="24.25" y="-15.0" />
+      <point x="181.75" y="80.0" />
+      <point x="187.43005952380952" y="80.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="OrCriteria" target="Criteria">
+      <point x="-22.25" y="-15.0" />
+      <point x="22.25" y="50.0" />
+      <point x="155.7157738095238" y="50.0" />
+      <point x="-31.714285714285722" y="15.0" />
+    </edge>
+    <edge source="Main" target="CriteriaMale">
+      <point x="15.25" y="-15.0" />
+      <point x="357.5706845238095" y="160.0" />
+      <point x="541.5" y="160.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="CriteriaMale" target="Criteria">
+      <point x="0.0" y="-15.0" />
+      <point x="541.5" y="60.0" />
+      <point x="219.14434523809524" y="60.0" />
+      <point x="31.714285714285722" y="15.0" />
+    </edge>
+    <edge source="Main" target="AndCriteria">
+      <point x="-15.25" y="-15.0" />
+      <point x="327.0706845238095" y="160.0" />
+      <point x="157.5" y="160.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Main" target="CriteriaSingle">
+      <point x="5.083333333333343" y="-15.0" />
+      <point x="347.4040178571429" y="150.0" />
+      <point x="415.5" y="150.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Main" target="OrCriteria">
+      <point x="-25.416666666666657" y="-15.0" />
+      <point x="316.9040178571429" y="170.0" />
+      <point x="44.5" y="170.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="CriteriaFemale" target="Criteria">
+      <point x="0.0" y="-15.0" />
+      <point x="283.5" y="80.0" />
+      <point x="198.00148809523807" y="80.0" />
+      <point x="10.571428571428555" y="15.0" />
+    </edge>
+    <edge source="CriteriaSingle" target="Criteria">
+      <point x="0.0" y="-15.0" />
+      <point x="415.5" y="70.0" />
+      <point x="208.57291666666663" y="70.0" />
+      <point x="21.14285714285711" y="15.0" />
+    </edge>
+    <edge source="Main" target="Person">
+      <point x="25.416666666666657" y="-15.0" />
+      <point x="367.7373511904762" y="170.0" />
+      <point x="649.0" y="170.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Main" target="CriteriaFemale">
+      <point x="-5.083333333333343" y="-15.0" />
+      <point x="337.2373511904762" y="150.0" />
+      <point x="283.5" y="150.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="342.5" y="110.0" />
+  <SelectedNodes>
+    <node>Criteria</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

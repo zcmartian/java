@@ -14,6 +14,7 @@ public class CurrentConditions implements Observer {
     @Override
     public void update(Observable arg0, Object arg1) {
         // TODO Auto-generated method stub
+        // 推模式
         this.mTemperatrue = ((Data) (arg1)).mTemperatrue;
         this.mPressure = ((Data) (arg1)).mPressure;
         this.mHumidity = ((Data) (arg1)).mHumidity;

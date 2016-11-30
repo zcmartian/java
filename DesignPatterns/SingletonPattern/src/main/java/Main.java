@@ -8,5 +8,9 @@ public class Main {
             System.out.println(SingletonTwo.getInstance().info());
             System.out.println(SingletonThree.getInstance().info());
         }
+        Animal[] animals = AnimalHelperSingleton.INSTANCE.buildAnimalList();
+        for (Animal animal : animals) {
+            System.out.println(animal);
+        }
     }
 }

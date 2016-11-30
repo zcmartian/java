@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>mediator.Mediator</OriginalElement>
+  <nodes>
+    <node x="158.0" y="160.0">mediator.Curtains</node>
+    <node x="257.0" y="160.0">mediator.Alarm</node>
+    <node x="482.0" y="160.0">mediator.TV</node>
+    <node x="237.63888888888889" y="240.0">mediator.MainTest</node>
+    <node x="343.0" y="160.0">mediator.CoffeeMachine</node>
+    <node x="125.5" y="0.0">mediator.Mediator</node>
+    <node x="251.25" y="80.0">mediator.Colleague</node>
+    <node x="0.0" y="160.0">mediator.ConcreteMediator</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="mediator.MainTest" target="mediator.ConcreteMediator">
+      <point x="-34.0" y="-15.0" />
+      <point x="246.13888888888889" y="220.0" />
+      <point x="69.0" y="220.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mediator.ConcreteMediator" target="mediator.Colleague">
+      <point x="34.5" y="-15.0" />
+      <point x="103.5" y="130.0" />
+      <point x="260.25" y="130.0" />
+      <point x="-36.0" y="15.0" />
+    </edge>
+    <edge source="mediator.Colleague" target="mediator.Mediator">
+      <point x="0.0" y="-15.0" />
+      <point x="296.25" y="55.0" />
+      <point x="190.0" y="55.0" />
+      <point x="21.5" y="15.0" />
+    </edge>
+    <edge source="mediator.TV" target="mediator.Colleague">
+      <point x="0.0" y="-15.0" />
+      <point x="505.5" y="130.0" />
+      <point x="332.25" y="130.0" />
+      <point x="36.0" y="15.0" />
+    </edge>
+    <edge source="mediator.Alarm" target="mediator.Colleague">
+      <point x="0.0" y="-15.0" />
+      <point x="290.0" y="140.0" />
+      <point x="296.25" y="140.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mediator.MainTest" target="mediator.Alarm">
+      <point x="0.0" y="-15.0" />
+      <point x="280.1388888888889" y="220.0" />
+      <point x="290.0" y="220.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mediator.ConcreteMediator" target="mediator.Mediator">
+      <point x="-34.5" y="-15.0" />
+      <point x="34.5" y="55.0" />
+      <point x="147.0" y="55.0" />
+      <point x="-21.5" y="15.0" />
+    </edge>
+    <edge source="mediator.Curtains" target="mediator.Colleague">
+      <point x="0.0" y="-15.0" />
+      <point x="197.5" y="140.0" />
+      <point x="278.25" y="140.0" />
+      <point x="-18.0" y="15.0" />
+    </edge>
+    <edge source="mediator.MainTest" target="mediator.CoffeeMachine">
+      <point x="17.0" y="-15.0" />
+      <point x="297.1388888888889" y="210.0" />
+      <point x="402.5" y="210.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mediator.MainTest" target="mediator.TV">
+      <point x="34.0" y="-15.0" />
+      <point x="314.1388888888889" y="220.0" />
+      <point x="505.5" y="220.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mediator.MainTest" target="mediator.Curtains">
+      <point x="-17.0" y="-15.0" />
+      <point x="263.1388888888889" y="210.0" />
+      <point x="197.5" y="210.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mediator.CoffeeMachine" target="mediator.Colleague">
+      <point x="0.0" y="-15.0" />
+      <point x="402.5" y="140.0" />
+      <point x="314.25" y="140.0" />
+      <point x="18.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="264.5" y="135.0" />
+  <SelectedNodes>
+    <node>mediator.Mediator</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

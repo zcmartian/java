@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>CalculateApi</OriginalElement>
+  <nodes>
+    <node x="37.83333333333334" y="0.0">CalculateCommand</node>
+    <node x="190.78571428571428" y="160.0">CalculateClient</node>
+    <node x="110.0" y="80.0">SubtractCommand</node>
+    <node x="89.625" y="235.0">Receiver</node>
+    <node x="305.5" y="0.0">CalculateApi</node>
+    <node x="317.0" y="315.0">Invoker</node>
+    <node x="264.375" y="235.0">Command</node>
+    <node x="406.0" y="80.0">ConcreteCalculateApi</node>
+    <node x="0.0" y="80.0">Calculator</node>
+    <node x="153.0" y="315.0">ConcreteCommand</node>
+    <node x="193.0" y="395.0">Client</node>
+    <node x="270.0" y="80.0">AddCommand</node>
+    <node x="0.0" y="315.0">ConcreteReceiver</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="AddCommand" target="CalculateApi">
+      <point x="29.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Client" target="ConcreteReceiver">
+      <point x="-21.33333333333333" y="-15.0" />
+      <point x="203.66666666666669" y="370.0" />
+      <point x="66.5" y="370.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="CalculateClient" target="AddCommand">
+      <point x="14.5" y="-15.0" />
+      <point x="263.2857142857143" y="130.0" />
+      <point x="328.0" y="130.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="AddCommand" target="CalculateCommand">
+      <point x="-29.0" y="-15.0" />
+      <point x="299.0" y="50.0" />
+      <point x="163.83333333333334" y="50.0" />
+      <point x="54.0" y="15.0" />
+    </edge>
+    <edge source="SubtractCommand" target="CalculateApi">
+      <point x="35.0" y="-15.0" />
+      <point x="215.0" y="60.0" />
+      <point x="322.6666666666667" y="60.0" />
+      <point x="-34.333333333333314" y="15.0" />
+    </edge>
+    <edge source="CalculateClient" target="Calculator">
+      <point x="-43.5" y="-15.0" />
+      <point x="205.28571428571428" y="140.0" />
+      <point x="45.0" y="140.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ConcreteReceiver" target="Receiver">
+      <point x="0.0" y="-15.0" />
+      <point x="66.5" y="290.0" />
+      <point x="109.875" y="290.0" />
+      <point x="-20.25" y="15.0" />
+    </edge>
+    <edge source="ConcreteCommand" target="Command">
+      <point x="36.0" y="-15.0" />
+      <point x="261.0" y="290.0" />
+      <point x="287.375" y="290.0" />
+      <point x="-23.0" y="15.0" />
+    </edge>
+    <edge source="Calculator" target="CalculateCommand">
+      <point x="22.5" y="-15.0" />
+      <point x="67.5" y="60.0" />
+      <point x="91.83333333333334" y="60.0" />
+      <point x="-18.0" y="15.0" />
+    </edge>
+    <edge source="ConcreteCommand" target="Receiver">
+      <point x="-36.0" y="-15.0" />
+      <point x="189.0" y="290.0" />
+      <point x="150.375" y="290.0" />
+      <point x="20.25" y="15.0" />
+    </edge>
+    <edge source="SubtractCommand" target="CalculateCommand">
+      <point x="-35.0" y="-15.0" />
+      <point x="145.0" y="60.0" />
+      <point x="127.83333333333334" y="60.0" />
+      <point x="18.0" y="15.0" />
+    </edge>
+    <edge source="ConcreteCalculateApi" target="CalculateApi">
+      <point x="0.0" y="-15.0" />
+      <point x="483.5" y="60.0" />
+      <point x="391.33333333333337" y="60.0" />
+      <point x="34.33333333333337" y="15.0" />
+    </edge>
+    <edge source="Client" target="ConcreteCommand">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Invoker" target="Command">
+      <point x="0.0" y="-15.0" />
+      <point x="355.0" y="290.0" />
+      <point x="333.375" y="290.0" />
+      <point x="23.0" y="15.0" />
+    </edge>
+    <edge source="Client" target="Invoker">
+      <point x="21.33333333333333" y="-15.0" />
+      <point x="246.33333333333331" y="370.0" />
+      <point x="355.0" y="370.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="CalculateClient" target="SubtractCommand">
+      <point x="-14.5" y="-15.0" />
+      <point x="234.28571428571428" y="130.0" />
+      <point x="180.0" y="130.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="CalculateClient" target="ConcreteCalculateApi">
+      <point x="43.5" y="-15.0" />
+      <point x="292.2857142857143" y="140.0" />
+      <point x="483.5" y="140.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8449438202247191" x="280.5" y="212.5" />
+  <SelectedNodes>
+    <node>CalculateApi</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

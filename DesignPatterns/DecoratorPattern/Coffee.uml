@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>coffeebar.coffee.Coffee</OriginalElement>
+  <nodes>
+    <node x="416.0" y="160.0">coffeebar.decorator.Milk</node>
+    <node x="311.0" y="160.0">coffeebar.coffee.Espresso</node>
+    <node x="173.75000000000003" y="80.0">coffeebar.coffee.Coffee</node>
+    <node x="493.0" y="160.0">coffeebar.decorator.Chocolate</node>
+    <node x="483.75" y="0.0">coffeebar.Drink</node>
+    <node x="501.69696969696975" y="80.0">coffeebar.decorator.Decorator</node>
+    <node x="317.2878787878788" y="240.0">coffeebar.CoffeeBar</node>
+    <node x="226.00000000000003" y="160.0">coffeebar.coffee.Decaf</node>
+    <node x="0.0" y="160.0">coffeebar.coffee.LongBlack</node>
+    <node x="112.00000000000003" y="160.0">coffeebar.coffee.ShortBlack</node>
+    <node x="603.0" y="160.0">coffeebar.decorator.Soy</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="coffeebar.decorator.Soy" target="coffeebar.decorator.Decorator">
+      <point x="0.0" y="-15.0" />
+      <point x="629.5" y="140.0" />
+      <point x="577.5303030303031" y="140.0" />
+      <point x="30.33333333333337" y="15.0" />
+    </edge>
+    <edge source="coffeebar.CoffeeBar" target="coffeebar.decorator.Chocolate">
+      <point x="33.75" y="-15.0" />
+      <point x="396.0378787878788" y="220.0" />
+      <point x="538.0" y="220.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="coffeebar.coffee.LongBlack" target="coffeebar.coffee.Coffee">
+      <point x="0.0" y="-15.0" />
+      <point x="46.0" y="130.0" />
+      <point x="182.50000000000003" y="130.0" />
+      <point x="-26.25" y="15.0" />
+    </edge>
+    <edge source="coffeebar.CoffeeBar" target="coffeebar.coffee.Decaf">
+      <point x="-11.25" y="-15.0" />
+      <point x="351.0378787878788" y="210.0" />
+      <point x="258.5" y="210.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="coffeebar.coffee.Espresso" target="coffeebar.coffee.Coffee">
+      <point x="0.0" y="-15.0" />
+      <point x="353.5" y="130.0" />
+      <point x="235.00000000000003" y="130.0" />
+      <point x="26.25" y="15.0" />
+    </edge>
+    <edge source="coffeebar.CoffeeBar" target="coffeebar.decorator.Milk">
+      <point x="11.25" y="-15.0" />
+      <point x="373.5378787878788" y="210.0" />
+      <point x="444.5" y="210.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="coffeebar.coffee.Decaf" target="coffeebar.coffee.Coffee">
+      <point x="0.0" y="-15.0" />
+      <point x="258.5" y="140.0" />
+      <point x="217.50000000000003" y="140.0" />
+      <point x="8.75" y="15.0" />
+    </edge>
+    <edge source="coffeebar.decorator.Chocolate" target="coffeebar.decorator.Decorator">
+      <point x="0.0" y="-15.0" />
+      <point x="538.0" y="140.0" />
+      <point x="547.1969696969697" y="140.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="coffeebar.decorator.Decorator" target="coffeebar.Drink">
+      <point x="22.75" y="-15.0" />
+      <point x="569.9469696969697" y="55.0" />
+      <point x="536.25" y="55.0" />
+      <point x="21.0" y="15.0" />
+    </edge>
+    <edge source="coffeebar.decorator.Milk" target="coffeebar.decorator.Decorator">
+      <point x="0.0" y="-15.0" />
+      <point x="444.5" y="140.0" />
+      <point x="516.8636363636365" y="140.0" />
+      <point x="-30.333333333333314" y="15.0" />
+    </edge>
+    <edge source="coffeebar.coffee.Coffee" target="coffeebar.Drink">
+      <point x="0.0" y="-15.0" />
+      <point x="208.75000000000003" y="55.0" />
+      <point x="494.25" y="55.0" />
+      <point x="-21.0" y="15.0" />
+    </edge>
+    <edge source="coffeebar.coffee.ShortBlack" target="coffeebar.coffee.Coffee">
+      <point x="0.0" y="-15.0" />
+      <point x="159.00000000000003" y="140.0" />
+      <point x="200.00000000000003" y="140.0" />
+      <point x="-8.75" y="15.0" />
+    </edge>
+    <edge source="coffeebar.CoffeeBar" target="coffeebar.coffee.LongBlack">
+      <point x="-33.75" y="-15.0" />
+      <point x="328.5378787878788" y="220.0" />
+      <point x="46.0" y="220.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="328.0" y="135.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

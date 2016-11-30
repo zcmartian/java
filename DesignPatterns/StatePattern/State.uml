@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>statemode.state.State</OriginalElement>
+  <nodes>
+    <node x="272.49999999999994" y="280.0">statemode.state.MainTest</node>
+    <node x="483.99999999999994" y="90.0">statemode.state.SoldState</node>
+    <node x="361.99999999999994" y="90.0">statemode.state.WinnerState</node>
+    <node x="318.74999999999994" y="0.0">statemode.state.State</node>
+    <node x="256.49999999999994" y="200.0">statemode.state.CandyMachine</node>
+    <node x="0.0" y="90.0">statemode.state.HasCoin</node>
+    <node x="233.99999999999994" y="90.0">statemode.state.SoldOutState</node>
+    <node x="16.0" y="435.0">statemode.MainTest</node>
+    <node x="99.99999999999994" y="90.0">statemode.state.OnReadyState</node>
+    <node x="0.0" y="355.0">statemode.CandyMachine</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="statemode.state.MainTest" target="statemode.state.CandyMachine">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="statemode.state.SoldOutState" target="statemode.state.CandyMachine">
+      <point x="27.0" y="15.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+    <edge source="statemode.state.CandyMachine" target="statemode.state.HasCoin">
+      <point x="-53.1818181818182" y="-15.0" />
+      <point x="261.81818181818176" y="180.0" />
+      <point x="20.0" y="180.0" />
+      <point x="-20.0" y="15.0" />
+    </edge>
+    <edge source="statemode.state.SoldState" target="statemode.state.State">
+      <point x="0.0" y="-15.0" />
+      <point x="527.5" y="60.0" />
+      <point x="364.49999999999994" y="60.0" />
+      <point x="15.25" y="15.0" />
+    </edge>
+    <edge source="statemode.state.SoldState" target="statemode.state.CandyMachine">
+      <point x="21.75" y="15.0" />
+      <point x="549.25" y="170.0" />
+      <point x="357.5454545454545" y="170.0" />
+      <point x="42.54545454545455" y="-15.0" />
+    </edge>
+    <edge source="statemode.state.WinnerState" target="statemode.state.CandyMachine">
+      <point x="25.5" y="15.0" />
+      <point x="438.49999999999994" y="150.0" />
+      <point x="336.27272727272725" y="150.0" />
+      <point x="21.27272727272728" y="-15.0" />
+    </edge>
+    <edge source="statemode.state.SoldOutState" target="statemode.state.State">
+      <point x="0.0" y="-15.0" />
+      <point x="287.99999999999994" y="70.0" />
+      <point x="344.16666666666663" y="70.0" />
+      <point x="-5.083333333333314" y="15.0" />
+    </edge>
+    <edge source="statemode.state.CandyMachine" target="statemode.state.OnReadyState">
+      <point x="-31.90909090909092" y="-15.0" />
+      <point x="283.090909090909" y="160.0" />
+      <point x="128.49999999999994" y="160.0" />
+      <point x="-28.5" y="15.0" />
+    </edge>
+    <edge source="statemode.state.CandyMachine" target="statemode.state.SoldOutState">
+      <point x="-10.63636363636364" y="-15.0" />
+      <point x="304.3636363636363" y="140.0" />
+      <point x="260.99999999999994" y="140.0" />
+      <point x="-27.0" y="15.0" />
+    </edge>
+    <edge source="statemode.state.WinnerState" target="statemode.state.State">
+      <point x="0.0" y="-15.0" />
+      <point x="412.99999999999994" y="70.0" />
+      <point x="354.33333333333326" y="70.0" />
+      <point x="5.083333333333314" y="15.0" />
+    </edge>
+    <edge source="statemode.state.HasCoin" target="statemode.state.CandyMachine">
+      <point x="20.0" y="15.0" />
+      <point x="60.0" y="170.0" />
+      <point x="272.4545454545454" y="170.0" />
+      <point x="-42.54545454545456" y="-15.0" />
+    </edge>
+    <edge source="statemode.state.OnReadyState" target="statemode.state.CandyMachine">
+      <point x="28.5" y="15.0" />
+      <point x="185.49999999999994" y="150.0" />
+      <point x="293.72727272727263" y="150.0" />
+      <point x="-21.27272727272728" y="-15.0" />
+    </edge>
+    <edge source="statemode.state.OnReadyState" target="statemode.state.State">
+      <point x="0.0" y="-15.0" />
+      <point x="156.99999999999994" y="60.0" />
+      <point x="333.99999999999994" y="60.0" />
+      <point x="-15.25" y="15.0" />
+    </edge>
+    <edge source="statemode.state.CandyMachine" target="statemode.state.State">
+      <point x="53.18181818181819" y="-15.0" />
+      <point x="368.18181818181813" y="180.0" />
+      <point x="581.4999999999999" y="180.0" />
+      <point x="581.4999999999999" y="50.0" />
+      <point x="374.66666666666663" y="50.0" />
+      <point x="25.416666666666686" y="15.0" />
+    </edge>
+    <edge source="statemode.state.CandyMachine" target="statemode.state.SoldState">
+      <point x="31.909090909090907" y="-15.0" />
+      <point x="346.9090909090909" y="160.0" />
+      <point x="505.74999999999994" y="160.0" />
+      <point x="-21.75" y="15.0" />
+    </edge>
+    <edge source="statemode.MainTest" target="statemode.CandyMachine">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="statemode.state.HasCoin" target="statemode.state.State">
+      <point x="0.0" y="-15.0" />
+      <point x="40.0" y="50.0" />
+      <point x="323.83333333333326" y="50.0" />
+      <point x="-25.416666666666686" y="15.0" />
+    </edge>
+    <edge source="statemode.state.CandyMachine" target="statemode.state.WinnerState">
+      <point x="10.63636363636364" y="-15.0" />
+      <point x="325.63636363636357" y="140.0" />
+      <point x="387.49999999999994" y="140.0" />
+      <point x="-25.5" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="291.0" y="232.5" />
+  <SelectedNodes>
+    <node>statemode.state.State</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
