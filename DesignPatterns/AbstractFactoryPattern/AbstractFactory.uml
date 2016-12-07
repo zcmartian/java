@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ProductAMedium</OriginalElement>
+  <nodes>
+    <node x="609.0" y="89.0">ProductAPrime</node>
+    <node x="405.07500000000005" y="0.0">ProductA</node>
+    <node x="255.57500000000002" y="0.0">ProductB</node>
+    <node x="486.95000000000005" y="168.0">FactoryPrime</node>
+    <node x="157.0" y="89.0">ProductAMedium</node>
+    <node x="0.0" y="89.0">ProductBMedium</node>
+    <node x="342.75" y="247.0">Client</node>
+    <node x="145.45000000000002" y="168.0">FactoryMedium</node>
+    <node x="467.0" y="89.0">ProductBPrime</node>
+    <node x="316.0" y="89.0">AbstractFactory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="FactoryPrime" target="ProductAPrime">
+      <point x="37.66666666666666" y="-14.5" />
+      <point x="581.1166666666667" y="143.0" />
+      <point x="671.0" y="143.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="FactoryPrime" target="AbstractFactory">
+      <point x="-37.66666666666666" y="-14.5" />
+      <point x="505.78333333333336" y="143.0" />
+      <point x="414.25" y="143.0" />
+      <point x="32.75" y="14.5" />
+    </edge>
+    <edge source="Client" target="FactoryPrime">
+      <point x="17.25" y="-14.5" />
+      <point x="394.5" y="222.0" />
+      <point x="543.45" y="222.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Client" target="FactoryMedium">
+      <point x="-17.25" y="-14.5" />
+      <point x="360.0" y="222.0" />
+      <point x="209.45000000000002" y="222.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="FactoryMedium" target="ProductBMedium">
+      <point x="-42.66666666666666" y="-14.5" />
+      <point x="166.78333333333336" y="143.0" />
+      <point x="68.5" y="143.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ProductBPrime" target="ProductB">
+      <point x="0.0" y="-14.5" />
+      <point x="528.0" y="59.0" />
+      <point x="320.82500000000005" y="59.0" />
+      <point x="21.75" y="14.5" />
+    </edge>
+    <edge source="FactoryMedium" target="AbstractFactory">
+      <point x="42.66666666666666" y="-14.5" />
+      <point x="252.11666666666667" y="143.0" />
+      <point x="348.75" y="143.0" />
+      <point x="-32.75" y="14.5" />
+    </edge>
+    <edge source="FactoryPrime" target="ProductBPrime">
+      <point x="0.0" y="-14.5" />
+      <point x="543.45" y="143.0" />
+      <point x="528.0" y="143.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ProductBMedium" target="ProductB">
+      <point x="0.0" y="-14.5" />
+      <point x="68.5" y="59.0" />
+      <point x="277.32500000000005" y="59.0" />
+      <point x="-21.75" y="14.5" />
+    </edge>
+    <edge source="ProductAMedium" target="ProductA">
+      <point x="0.0" y="-14.5" />
+      <point x="226.5" y="69.0" />
+      <point x="427.32500000000005" y="69.0" />
+      <point x="-22.25" y="14.5" />
+    </edge>
+    <edge source="ProductAPrime" target="ProductA">
+      <point x="0.0" y="-14.5" />
+      <point x="671.0" y="49.0" />
+      <point x="471.82500000000005" y="49.0" />
+      <point x="22.25" y="14.5" />
+    </edge>
+    <edge source="FactoryMedium" target="ProductAMedium">
+      <point x="0.0" y="-14.5" />
+      <point x="209.45000000000002" y="143.0" />
+      <point x="226.5" y="143.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="366.5" y="138.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

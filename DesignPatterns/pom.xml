@@ -57,5 +57,6 @@
         <module>MediatorPattern</module>
         <module>InterpreterPattern</module>
         <module>StrategyPattern</module>
+        <module>AbstractFactoryPattern</module>
     </modules>
 </project>
