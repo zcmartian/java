@@ -37,8 +37,7 @@ public class SelectSockets {
             // selected set contains keys of the ready channels.
             int n = selector.select();
             if (n == 0) {
-//                continue; // nothing to do
-                System.out.println("no key be ready");
+                continue; // nothing to do
             }
             // Get an iterator over the set of selected keys
             Iterator it = selector.selectedKeys().iterator();
@@ -80,13 +79,12 @@ public class SelectSockets {
     // ----------------------------------------------------------
     // Use the same byte buffer for all channels. A single thread is
     // servicing all the channels, so no danger of concurrent acccess.
-    private ByteBuffer buffer = ByteBuffer.allocateDirect(1024);
+    private ByteBuffer buffer = ByteBuffer.allocate(1024);
 
     /**
      * Sample data handler method for a channel with data ready to read.
      * @param key
      * A SelectionKey object associated with a channel determined by * the selector to be ready for reading. If the channel returns
-    141
      *          an EOF condition, it is closed here, which automatically
      *          invalidates the associated key. The selector will then
      *          de-register the channel on the next select call.
@@ -98,10 +96,11 @@ public class SelectSockets {
         // Loop while data is available; channel is nonblocking
         while ((count = socketChannel.read(buffer)) > 0) {
             buffer.flip(); // Make buffer readable
+            System.out.println(new String(buffer.array()).trim());
             // Send the data; don't assume it goes all at once
-            while (buffer.hasRemaining()) {
-            }
-            socketChannel.write(buffer);
+//            while (buffer.hasRemaining()) {
+//            }
+//            socketChannel.write(buffer);
             // WARNING: the above loop is evil. Because
             // it's writing back to the same nonblocking
             // channel it read the data from, this code can
@@ -109,9 +108,7 @@ public class SelectSockets {
             // you'd do something more useful than this.
             buffer.clear(); // Empty buffer
         }
-        if (count < 0)
-
-        {
+        if (count < 0) {
             // Close channel on EOF, invalidates the key
             socketChannel.close();
         }
