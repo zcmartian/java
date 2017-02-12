@@ -1,6 +1,6 @@
 package com.mars; /**
- * Created by marszhou on 16/8/19.
- */
+                   * Created by marszhou on 16/8/19.
+                   */
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,8 +33,8 @@ public class ServerHandler implements Runnable {
                     }
                     System.out
                             .println("The server receive order : " + body + " on " + Thread.currentThread().getName());
-                    currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body) ? new Date(System.currentTimeMillis())
-                            .toString() : "BAD ORDER";
+                    currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body)
+                            ? new Date(System.currentTimeMillis()).toString() : "BAD ORDER";
                     out.println(currentTime);
                 }
             } catch (IOException e) {

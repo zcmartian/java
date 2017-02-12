@@ -26,6 +26,7 @@ public class MultiplexerServer implements Runnable {
             serverSocketChannel.configureBlocking(false);
             serverSocketChannel.socket().bind(new InetSocketAddress(port), 1024);
             serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+            System.out.println("server init serverSocketChannel : " + serverSocketChannel.hashCode());
             System.out.println("The server is start in port : " + port);
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,9 +43,7 @@ public class MultiplexerServer implements Runnable {
 
         while (!stop) {
             try {
-                System.out.println("selector.select() begin");
                 selector.select(/*1000*/);
-                System.out.println("selector.select() end");
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
                 Iterator<SelectionKey> it = selectionKeys.iterator();
                 SelectionKey key = null;
@@ -77,24 +76,45 @@ public class MultiplexerServer implements Runnable {
     }
 
     private void handleInput(SelectionKey key) throws IOException {
-        System.out.println(key.readyOps());
+//        String readyKey = null;
+//        switch (key.readyOps()) {
+//            case 1:
+//                readyKey = "OP_READ";
+//                break;
+//            case 4:
+//                readyKey = "OP_WRITE";
+//                break;
+//            case 8:
+//                readyKey = "OP_CONNECT";
+//                break;
+//            case 16:
+//                readyKey = "OP_ACCEPT";
+//                break;
+//            default:
+//                readyKey = "NULL";
+//                break;
+//        }
+//        System.out.println(readyKey);
         if (key.isValid()) {
             if (key.isAcceptable()) {
                 ServerSocketChannel serverSocketChannel = (ServerSocketChannel) key.channel();
+                System.out.println("Server accept key : " + key + " which serverSocketChannel is : " + serverSocketChannel.hashCode());
                 SocketChannel socketChannel = serverSocketChannel.accept();
+                System.out.println("serverSocketChannel accept socketChannel is : " + socketChannel.hashCode());
                 socketChannel.configureBlocking(false);
                 socketChannel.register(selector, SelectionKey.OP_READ);
             }
 
             if (key.isReadable()) {
                 SocketChannel socketChannel = (SocketChannel) key.channel();
+                System.out.println("Server read key : " + key + " which socketChannel is : " + socketChannel.hashCode());
                 ByteBuffer readBuffer = ByteBuffer.allocate(1024);
                 int readBytes = socketChannel.read(readBuffer);
                 if (readBytes > 0) {
                     readBuffer.flip();
                     byte[] bytes = new byte[readBuffer.remaining()];
                     readBuffer.get(bytes);
-                    String body = new String(bytes, "UTF-8");
+                    String body = new String(bytes, "UTF-8").trim();
                     System.out.println("The server receive order : " + body);
                     String currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body) ? new Date(
                             System.currentTimeMillis()).toString() : "BAD ORDER";
@@ -102,6 +122,7 @@ public class MultiplexerServer implements Runnable {
                 } else if (readBytes < 0) {
                     key.cancel();
                     socketChannel.close();
+                    System.out.println("socketChannel " + socketChannel.hashCode() + " is closed.");
                 }
             }
         }

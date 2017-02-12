@@ -26,6 +26,7 @@ public class ClientHandle implements Runnable {
             selector = Selector.open();
             socketChannel = SocketChannel.open();
             socketChannel.configureBlocking(false);
+            System.out.println("client init socketChannel : " + socketChannel.hashCode());
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
@@ -81,21 +82,21 @@ public class ClientHandle implements Runnable {
         if (key.isValid()) {
 
             if (key.isConnectable()) {
-                System.out.println("client connectble");
                 SocketChannel socketChannel = (SocketChannel) key.channel();
+                System.out.println("client connected key : " + key + " which socketChannel is " + socketChannel.hashCode());
                 socketChannel.finishConnect();
                 doWrite();
                 socketChannel.register(selector, SelectionKey.OP_READ);
             } else if (key.isReadable()) {
-                System.out.println("client readble...");
                 SocketChannel channel = (SocketChannel) key.channel();
+                System.out.println("client read key : " + key + " which channel is " + channel.hashCode());
                 ByteBuffer readBuffer = ByteBuffer.allocate(1024);
                 int readBytes = socketChannel.read(readBuffer);
                 if (readBytes > 0) {
                     readBuffer.flip();
                     byte[] bytes = new byte[readBuffer.remaining()];
                     readBuffer.get(bytes);
-                    String body = new String(bytes, "UTF-8");
+                    String body = new String(bytes, "UTF-8").trim();
                     System.out.println("now is : " + body);
                     this.stop = true;
                 } else if (readBytes < 0) {
