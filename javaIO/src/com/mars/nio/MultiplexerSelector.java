@@ -1,4 +1,4 @@
-package com.mars;
+package com.mars.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -14,12 +14,12 @@ import java.util.Set;
 /**
  * Created by marszhou on 16/8/20.
  */
-public class MultiplexerServer implements Runnable {
+public class MultiplexerSelector implements Runnable {
     private Selector selector;
     private ServerSocketChannel serverSocketChannel;
     private volatile boolean stop;
 
-    public MultiplexerServer(int port) {
+    public MultiplexerSelector(int port) {
         try {
             selector = Selector.open();
             serverSocketChannel = ServerSocketChannel.open();
@@ -76,29 +76,10 @@ public class MultiplexerServer implements Runnable {
     }
 
     private void handleInput(SelectionKey key) throws IOException {
-//        String readyKey = null;
-//        switch (key.readyOps()) {
-//            case 1:
-//                readyKey = "OP_READ";
-//                break;
-//            case 4:
-//                readyKey = "OP_WRITE";
-//                break;
-//            case 8:
-//                readyKey = "OP_CONNECT";
-//                break;
-//            case 16:
-//                readyKey = "OP_ACCEPT";
-//                break;
-//            default:
-//                readyKey = "NULL";
-//                break;
-//        }
-//        System.out.println(readyKey);
         if (key.isValid()) {
             if (key.isAcceptable()) {
                 ServerSocketChannel serverSocketChannel = (ServerSocketChannel) key.channel();
-                System.out.println("Server accept key : " + key + " which serverSocketChannel is : " + serverSocketChannel.hashCode());
+                System.out.println("BIOServer accept key : " + key + " which serverSocketChannel is : " + serverSocketChannel.hashCode());
                 SocketChannel socketChannel = serverSocketChannel.accept();
                 System.out.println("serverSocketChannel accept socketChannel is : " + socketChannel.hashCode());
                 socketChannel.configureBlocking(false);
@@ -107,7 +88,7 @@ public class MultiplexerServer implements Runnable {
 
             if (key.isReadable()) {
                 SocketChannel socketChannel = (SocketChannel) key.channel();
-                System.out.println("Server read key : " + key + " which socketChannel is : " + socketChannel.hashCode());
+                System.out.println("BIOServer read key : " + key + " which socketChannel is : " + socketChannel.hashCode());
                 ByteBuffer readBuffer = ByteBuffer.allocate(1024);
                 int readBytes = socketChannel.read(readBuffer);
                 if (readBytes > 0) {

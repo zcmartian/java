@@ -1,9 +1,9 @@
-package com.mars;
+package com.mars.aio;
 
 /**
  * Created by mars on 2017/2/12.
  */
-public class AIOTimeServer {
+public class AIOClient {
     public static void main(String ... args) {
         int port = 8080;
         if (args != null && args.length > 0) {
@@ -14,7 +14,7 @@ public class AIOTimeServer {
             }
         }
 
-        AsyncTimeServerHandler timeServerHandler = new AsyncTimeServerHandler(port);
-        new Thread(timeServerHandler, "AIO-AsyncTimeServerHandler-001").start();
+        AsyncClientHandler timeClientHandler = new AsyncClientHandler("localhost", port);
+        new Thread(timeClientHandler, "AIO-AsyncClientHandler-001").start();
     }
 }

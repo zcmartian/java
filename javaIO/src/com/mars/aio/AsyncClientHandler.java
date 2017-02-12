@@ -1,4 +1,4 @@
-package com.mars;
+package com.mars.aio;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -11,14 +11,14 @@ import java.util.concurrent.CountDownLatch;
 /**
  * Created by mars on 2017/2/12.
  */
-public class AsyncTimeClientHandler implements CompletionHandler<Void, AsyncTimeClientHandler>, Runnable{
+public class AsyncClientHandler implements CompletionHandler<Void, AsyncClientHandler>, Runnable{
 
     private AsynchronousSocketChannel client;
     private String host;
     private int port;
     private CountDownLatch latch;
 
-    public AsyncTimeClientHandler(String host, int port) {
+    public AsyncClientHandler(String host, int port) {
         this.host = host;
         this.port = port;
         try {
@@ -47,7 +47,7 @@ public class AsyncTimeClientHandler implements CompletionHandler<Void, AsyncTime
     }
 
     @Override
-    public void completed(Void result, AsyncTimeClientHandler attachment) {
+    public void completed(Void result, AsyncClientHandler attachment) {
         byte[] req = "QUERY TIME ORDER".getBytes();
         final ByteBuffer writeBuffer = ByteBuffer.allocate(req.length);
         writeBuffer.put(req);
@@ -99,7 +99,7 @@ public class AsyncTimeClientHandler implements CompletionHandler<Void, AsyncTime
     }
 
     @Override
-    public void failed(Throwable exc, AsyncTimeClientHandler attachment) {
+    public void failed(Throwable exc, AsyncClientHandler attachment) {
         exc.printStackTrace();
         try {
             client.close();
