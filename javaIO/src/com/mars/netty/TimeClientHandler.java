@@ -1,4 +1,4 @@
-package com.mars;
+package com.mars.netty;
 
 import java.util.logging.Logger;
 

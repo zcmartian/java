@@ -1,4 +1,4 @@
-package com.mars;
+package com.mars.netty;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
