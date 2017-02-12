@@ -1,3 +1,4 @@
+
 /**
  * Created by marszhou on 16/1/8.
  */
@@ -14,7 +15,7 @@ import java.util.Iterator;
  * NIO客户端
  */
 public class NIOClient {
-    //通道管理器
+    // 通道管理器
     private Selector selector;
 
     /**
@@ -23,7 +24,7 @@ public class NIOClient {
      * @param port  连接的服务器的端口号
      * @throws IOException
      */
-    public void initClient(String ip,int port) throws IOException {
+    public void initClient(String ip, int port) throws IOException {
         // 获得一个Socket通道
         SocketChannel channel = SocketChannel.open();
         // 设置通道为非阻塞
@@ -32,9 +33,9 @@ public class NIOClient {
         this.selector = Selector.open();
 
         // 客户端连接服务器,其实方法执行并没有实现连接，需要在listen（）方法中调
-        //用channel.finishConnect();才能完成连接
-        channel.connect(new InetSocketAddress(ip,port));
-        //将通道管理器和该通道绑定，并为该通道注册SelectionKey.OP_CONNECT事件。
+        // 用channel.finishConnect();才能完成连接
+        channel.connect(new InetSocketAddress(ip, port));
+        // 将通道管理器和该通道绑定，并为该通道注册SelectionKey.OP_CONNECT事件。
         channel.register(selector, SelectionKey.OP_CONNECT);
     }
 
@@ -46,7 +47,9 @@ public class NIOClient {
     public void listen() throws IOException {
         // 轮询访问selector
         while (true) {
+            System.out.println("selector.select() ...");
             selector.select();
+            System.out.println("selector.select() returns.");
             // 获得selector中选中的项的迭代器
             Iterator ite = this.selector.selectedKeys().iterator();
             while (ite.hasNext()) {
@@ -55,19 +58,18 @@ public class NIOClient {
                 ite.remove();
                 // 连接事件发生
                 if (key.isConnectable()) {
-                    SocketChannel channel = (SocketChannel) key
-                            .channel();
+                    SocketChannel channel = (SocketChannel) key.channel();
                     // 如果正在连接，则完成连接
-                    if(channel.isConnectionPending()){
+                    if (channel.isConnectionPending()) {
                         channel.finishConnect();
 
                     }
                     // 设置成非阻塞
                     channel.configureBlocking(false);
 
-                    //在这里可以给服务端发送信息哦
+                    // 在这里可以给服务端发送信息哦
                     channel.write(ByteBuffer.wrap(new String("Send a msg to server").getBytes()));
-                    //在和服务端连接成功之后，为了可以接收到服务端的信息，需要给通道设置读的权限。
+                    // 在和服务端连接成功之后，为了可以接收到服务端的信息，需要给通道设置读的权限。
                     channel.register(this.selector, SelectionKey.OP_READ);
 
                     // 获得了可读的事件
@@ -79,12 +81,13 @@ public class NIOClient {
 
         }
     }
+
     /**
      * 处理读取服务端发来的信息 的事件
      * @param key
      * @throws IOException
      */
-    public void read(SelectionKey key) throws IOException{
+    public void read(SelectionKey key) throws IOException {
         // 服务器可读取消息:得到事件发生的Socket通道
         SocketChannel channel = (SocketChannel) key.channel();
         // 创建读取的缓冲区
@@ -98,16 +101,14 @@ public class NIOClient {
         channel.close();
     }
 
-
     /**
      * 启动客户端测试
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
         NIOClient client = new NIOClient();
-        client.initClient("localhost",8000);
+        client.initClient("localhost", 8000);
         client.listen();
     }
 
 }
-
