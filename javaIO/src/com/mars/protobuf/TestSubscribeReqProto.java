@@ -1,7 +1,7 @@
-package com.mars;
+package com.mars.protobuf;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import netty.SubscribeReqProto;
+import com.mars.protobuf.SubscribeReqProto;
 
 import java.util.ArrayList;
 import java.util.List;

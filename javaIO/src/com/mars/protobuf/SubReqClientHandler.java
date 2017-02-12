@@ -1,8 +1,8 @@
-package com.mars;
+package com.mars.protobuf;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
-import netty.SubscribeReqProto;
+import com.mars.protobuf.SubscribeReqProto;
 
 import java.util.ArrayList;
 import java.util.List;

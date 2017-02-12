@@ -23,7 +23,7 @@ public class FileServerHandler extends SimpleChannelInboundHandler<String> {
 
     /*
      * (non-Javadoc)
-     * @see io.netty.channel.SimpleChannelInboundHandler#messageReceived(io.netty .channel.ChannelHandlerContext,
+     * @see io.com.mars.protobuf.channel.SimpleChannelInboundHandler#messageReceived(io.com.mars.protobuf .channel.ChannelHandlerContext,
      * java.lang.Object)
      */
     public void messageReceived(ChannelHandlerContext ctx, String msg) throws Exception {
@@ -46,7 +46,7 @@ public class FileServerHandler extends SimpleChannelInboundHandler<String> {
 
     /*
      * (non-Javadoc)
-     * @see io.netty.channel.ChannelHandlerAdapter#exceptionCaught(io.netty.channel .ChannelHandlerContext,
+     * @see io.com.mars.protobuf.channel.ChannelHandlerAdapter#exceptionCaught(io.com.mars.protobuf.channel .ChannelHandlerContext,
      * java.lang.Throwable)
      */
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {

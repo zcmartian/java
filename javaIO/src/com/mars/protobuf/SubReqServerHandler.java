@@ -1,9 +1,9 @@
-package com.mars;
+package com.mars.protobuf;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
-import netty.SubscribeReqProto;
-import netty.SubscribeRespProto;
+import com.mars.protobuf.SubscribeReqProto;
+import com.mars.protobuf.SubscribeRespProto;
 
 /**
  * Created by marszhou on 16/8/24.
