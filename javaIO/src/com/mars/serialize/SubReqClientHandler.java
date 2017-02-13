@@ -1,11 +1,7 @@
-package com.mars.protobuf;
+package com.mars.serialize;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
-import com.mars.protobuf.SubscribeReqProto;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by marszhou on 16/8/24.
@@ -23,24 +19,18 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
         ctx.flush();
     }
 
-    // private com.mars.SubscribeReq subReq(int i) {
-    private SubscribeReqProto.SubscribeReq subReq(int i) {
-        // com.mars.SubscribeReq req = new com.mars.SubscribeReq();
-        SubscribeReqProto.SubscribeReq.Builder req = SubscribeReqProto.SubscribeReq.newBuilder();
-        List<String> address = new ArrayList<String>();
-        address.add("Shanghai 安化路");
-        address.add("Shanghai 长岛路");
-        address.add("Shanghai 纳贤路");
-        req.addAllAddress(address);
+    private com.mars.serialize.SubscribeReq subReq(int i) {
+        com.mars.serialize.SubscribeReq req = new com.mars.serialize.SubscribeReq();
+        req.setAddress("Shanghai 安化路");
         req.setProductName("Netty 权威指南");
         req.setSubReqID(i);
         req.setUserName("marszhou");
-        return req.build();
+        return req;
     }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("Receive server response : [" + msg + "]");
+        System.out.println("Receive server response : [" + msg.toString() + "]");
     }
 
     @Override

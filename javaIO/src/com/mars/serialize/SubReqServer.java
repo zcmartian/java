@@ -1,4 +1,4 @@
-package com.mars.netty;
+package com.mars.serialize;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -8,13 +8,16 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.LineBasedFrameDecoder;
-import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.serialization.ClassResolvers;
+import io.netty.handler.codec.serialization.ObjectDecoder;
+import io.netty.handler.codec.serialization.ObjectEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 
 /**
- * Created by marszhou on 16/8/22.
+ * Created by marszhou on 16/8/24.
  */
-public class TimeServer {
+public class SubReqServer {
     public static void main(String[] args) throws Exception {
         int port = 8080;
         if (args != null && args.length > 0) {
@@ -24,7 +27,7 @@ public class TimeServer {
                 e.printStackTrace();
             }
         }
-        new TimeServer().bind(port);
+        new SubReqServer().bind(port);
     }
 
     public void bind(int port) throws Exception {
@@ -34,22 +37,23 @@ public class TimeServer {
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
-                    .option(ChannelOption.SO_BACKLOG, 1024).childHandler(new ChildChannelHandler());
+                    .option(ChannelOption.SO_BACKLOG, 100).handler(new LoggingHandler(LogLevel.INFO))
+                    .childHandler(new ChannelInitializer<SocketChannel>() {
+                        @Override
+                        public void initChannel(SocketChannel ch) {
+                            ch.pipeline().addLast(new ObjectDecoder(1024 * 1024,
+                                    ClassResolvers.weakCachingConcurrentResolver(this.getClass().getClassLoader())));
+                            ch.pipeline().addLast(new ObjectEncoder());
+                            ch.pipeline().addLast(new SubReqServerHandler());
+                        }
+                    });
             ChannelFuture future = bootstrap.bind(port).sync();
             future.channel().closeFuture().sync();
+        } catch (Exception e) {
+
         } finally {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
-        }
-    }
-
-    private class ChildChannelHandler extends ChannelInitializer<SocketChannel> {
-
-        @Override
-        protected void initChannel(SocketChannel socketChannel) throws Exception {
-            socketChannel.pipeline().addLast(new LineBasedFrameDecoder(1024));
-            socketChannel.pipeline().addLast(new StringDecoder());
-            socketChannel.pipeline().addLast(new TimeServerHandler());
         }
     }
 }

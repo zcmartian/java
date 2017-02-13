@@ -1,4 +1,4 @@
-package com.mars.protobuf;
+package com.mars.netty.time;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -8,15 +8,13 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.protobuf.ProtobufDecoder;
-import io.netty.handler.codec.protobuf.ProtobufEncoder;
-import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
-import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
+import io.netty.handler.codec.LineBasedFrameDecoder;
+import io.netty.handler.codec.string.StringDecoder;
 
 /**
- * Created by marszhou on 16/8/24.
+ * Created by marszhou on 16/8/22.
  */
-public class SubReqClient {
+public class TimeClient {
     public static void main(String[] args) throws Exception {
         int port = 8080;
         if (args != null && args.length > 0) {
@@ -26,7 +24,7 @@ public class SubReqClient {
                 e.printStackTrace();
             }
         }
-        new SubReqClient().connect(port, "127.0.0.1");
+        new TimeClient().connect(port, "127.0.0.1");
     }
 
     public void connect(int port, String host) throws Exception {
@@ -38,15 +36,9 @@ public class SubReqClient {
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
-//                            ch.pipeline().addLast(
-//                                    new ObjectDecoder(1024, ClassResolvers.cacheDisabled((this.getClass()
-//                                            .getClassLoader()))));
-//                            ch.pipeline().addLast(new ObjectEncoder());
-                            ch.pipeline().addLast(new ProtobufVarint32FrameDecoder());
-                            ch.pipeline().addLast(new ProtobufDecoder(SubscribeRespProto.SubscribeResp.getDefaultInstance()));
-                            ch.pipeline().addLast(new ProtobufVarint32LengthFieldPrepender());
-                            ch.pipeline().addLast(new ProtobufEncoder());
-                            ch.pipeline().addLast(new SubReqClientHandler());
+                            ch.pipeline().addLast(new LineBasedFrameDecoder(1024));
+                            ch.pipeline().addLast(new StringDecoder());
+                            ch.pipeline().addLast(new TimeClientHandler());
                         }
                     });
 

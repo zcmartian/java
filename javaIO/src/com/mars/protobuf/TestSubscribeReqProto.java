@@ -23,7 +23,7 @@ public class TestSubscribeReqProto {
         builder.setSubReqID(1);
         builder.setUserName("marszhou");
         builder.setProductName("Netty book");
-        List<String> address = new ArrayList<String>();
+        List<String> address = new ArrayList<>();
         address.add("Shanghai 安化路");
         address.add("Shanghai 长岛路");
         address.add("Shanghai 纳贤路");
@@ -36,6 +36,12 @@ public class TestSubscribeReqProto {
         System.out.println("Before encode : " + req.toString());
         SubscribeReqProto.SubscribeReq req2 = decode(encode(req));
         System.out.println("After decode : " + req2.toString());
+        System.out.println("After decode subReqID : " + req2.getSubReqID());
+        System.out.println("After decode userName : " + req2.getUserName());
+        System.out.println("After decode productName : " + req2.getProductName());
+        for (String address : req2.getAddressList()) {
+            System.out.println("After decode address : " + address);
+        }
         System.out.println("Assert equal : --> " + req2.equals(req));
     }
 }

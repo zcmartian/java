@@ -1,4 +1,4 @@
-package com.mars.netty;
+package com.mars.netty.time;
 
 import java.util.Date;
 
