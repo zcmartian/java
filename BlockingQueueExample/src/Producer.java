@@ -13,9 +13,9 @@ public class Producer implements Runnable {
 		System.out.println(System.currentTimeMillis() + Thread.currentThread().getName() + " start!");
 		try {
 			queue.put("1");
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			queue.put("2");
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			queue.put("3");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
