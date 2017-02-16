@@ -45,7 +45,7 @@ public class DeadLockExample {
 		Thread.sleep(2000);
 		thread1.interrupt();
 		thread2.interrupt();
-		thread1.join();`
+		thread1.join();
 		thread2.join();
 	}
 
