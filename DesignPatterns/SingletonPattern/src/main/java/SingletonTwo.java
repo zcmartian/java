@@ -2,7 +2,7 @@
  * Created by mars on 16/11/25.
  */
 public class SingletonTwo {
-    private static SingletonTwo instance = null;
+    private volatile static SingletonTwo instance = null;
 
     private SingletonTwo() {}
 
