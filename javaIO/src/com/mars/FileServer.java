@@ -45,7 +45,7 @@ public class FileServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         /*
                          * (non-Javadoc)
-                         * @see io.netty.channel.ChannelInitializer#initChannel(io .netty.channel.Channel)
+                         * @see io.com.mars.protobuf.channel.ChannelInitializer#initChannel(io .com.mars.protobuf.channel.Channel)
                          */
                         public void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast(new StringEncoder(CharsetUtil.UTF_8),

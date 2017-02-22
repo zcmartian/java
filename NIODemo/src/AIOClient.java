@@ -13,7 +13,7 @@ public class AIOClient {
         final AsynchronousSocketChannel client = AsynchronousSocketChannel.open();
         client.connect(new InetSocketAddress("localhost", 8000), null, new CompletionHandler<Void, Object>() {
             @Override public void completed(Void result, Object attachment) {
-                client.write(ByteBuffer.wrap("Hello!".getBytes()), null, new CompletionHandler<Integer, Object>() {
+                client.write(ByteBuffer.wrap("Hello!\n".getBytes()), null, new CompletionHandler<Integer, Object>() {
                     @Override
                     public void completed(Integer result, Object attachment) {
                         try {
@@ -22,7 +22,7 @@ public class AIOClient {
                                 @Override public void completed(Integer result,
                                         ByteBuffer attachment) {
                                     buffer.flip();
-                                    System.out.println(new String(buffer.array()));
+                                    System.out.println(new String(buffer.array()).trim());
                                     try {
                                         client.close();
                                     } catch (IOException e) {
