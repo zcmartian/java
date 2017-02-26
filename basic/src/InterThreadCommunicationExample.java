@@ -6,6 +6,7 @@ import java.util.Queue;
  */
 public class InterThreadCommunicationExample {
 
+
     public static void main(String args[]) {
 
         final Queue sharedQ = new LinkedList();
@@ -21,28 +22,27 @@ public class InterThreadCommunicationExample {
 
 class Producer extends Thread {
     private final Queue sharedQ;
-
+    private static final int COUNT = 1000;
     public Producer(Queue sharedQ) {
-        super("Producer");
+        super("Producer-thread");
         this.sharedQ = sharedQ;
     }
 
     @Override
     public void run() {
 
-        for (int i = 0; i < 4; i++) {
-
+        for (int i = 0; i < COUNT; i++) {
             synchronized (sharedQ) {
                 // waiting condition - wait until Queue is not empty
-                while (sharedQ.size() >= 1) {
+                while (sharedQ.size() >= 10) {
                     try {
-                        System.out.println("Queue is full, waiting");
+                        System.out.println(Thread.currentThread() + " Queue is full, waiting");
                         sharedQ.wait();
                     } catch (InterruptedException ex) {
                         ex.printStackTrace();
                     }
                 }
-                System.out.println("producing : " + i);
+                System.out.println(Thread.currentThread() + "producing : " + i);
                 sharedQ.add(i);
                 sharedQ.notify();
             }
@@ -52,9 +52,9 @@ class Producer extends Thread {
 
 class Consumer extends Thread {
     private final Queue sharedQ;
-
+    private static final int COUNT = 1000;
     public Consumer(Queue sharedQ) {
-        super("Consumer");
+        super("Consumer-thread");
         this.sharedQ = sharedQ;
     }
 
@@ -66,18 +66,18 @@ class Consumer extends Thread {
                 // waiting condition - wait until Queue is not empty
                 while (sharedQ.size() == 0) {
                     try {
-                        System.out.println("Queue is empty, waiting");
+                        System.out.println(Thread.currentThread() + "Queue is empty, waiting");
                         sharedQ.wait();
                     } catch (InterruptedException ex) {
                         ex.printStackTrace();
                     }
                 }
                 int number = (Integer) sharedQ.poll();
-                System.out.println("consuming : " + number);
+                System.out.println(Thread.currentThread() + "consuming : " + number);
                 sharedQ.notify();
 
                 // termination condition
-                if (number == 3) {
+                if (number == COUNT - 1) {
                     break;
                 }
             }
