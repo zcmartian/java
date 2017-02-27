@@ -12,10 +12,12 @@ public class InterThreadCommunicationExample {
         final Queue sharedQ = new LinkedList();
 
         Thread producer = new Producer(sharedQ);
-        Thread consumer = new Consumer(sharedQ);
+        Thread consumer = new Consumer(sharedQ, "Consumer-1");
+        Thread consumer2 = new Consumer(sharedQ, "Consumer-2");
 
         producer.start();
         consumer.start();
+        consumer2.start();
 
     }
 }
@@ -53,8 +55,9 @@ class Producer extends Thread {
 class Consumer extends Thread {
     private final Queue sharedQ;
     private static final int COUNT = 1000;
-    public Consumer(Queue sharedQ) {
-        super("Consumer-thread");
+    private String threadName;
+    public Consumer(Queue sharedQ, String threadName) {
+        super(threadName);
         this.sharedQ = sharedQ;
     }
 
