@@ -8,11 +8,12 @@ public class ThreadExit extends Thread {
         ThreadExit thread = new ThreadExit();
         System.out.println("Starting thread...");
         thread.start();
-        Thread.sleep(3000);
-        System.out.println("Asking thread to stop...");
-        thread.stop = true;// 如果线程阻塞，将不会检查此变量
-        thread.interrupt();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
+        thread.terminal();
+//        System.out.println("Asking thread to stop...");
+//        thread.stop = true;// 如果线程阻塞，将不会检查此变量
+//        thread.interrupt();
+//        Thread.sleep(3000);
         System.out.println("Stopping application...");
         // System.exit( 0 );
     }
@@ -21,11 +22,15 @@ public class ThreadExit extends Thread {
         while (!stop) {
             System.out.println("Thread running...");
             try {
-                Thread.sleep(1000);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
                 System.out.println("Thread interrupted...");
             }
         }
         System.out.println("Thread exiting under request...");
+    }
+
+    public void terminal() {
+        this.stop = true;
     }
 }
