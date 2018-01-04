@@ -18,5 +18,8 @@ public class HelloApp {
         GreetingService greetingService2 = (GreetingService) context
                 .getBean("greetingService2");
         greetingService2.sayGreeting();
+
+        Long id = (Long) context.getBean("iauthAppId");
+        System.out.println(id);
     }
 }

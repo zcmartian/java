@@ -13,4 +13,8 @@
             <value>Hello world 2!</value>
         </constructor-arg>
     </bean>
+
+    <bean id="iauthAppId" class="java.lang.Long">
+        <constructor-arg type="java.lang.String" value="12345"/>
+    </bean>
 </beans>
