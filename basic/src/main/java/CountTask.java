@@ -38,9 +38,9 @@ public class CountTask extends RecursiveTask<Integer> {
         return sum;
     }
 
-    public static void main(String ... args) {
+    public static void main(String... args) {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
-        CountTask task = new CountTask(1,4);
+        CountTask task = new CountTask(1, 4);
         Future<Integer> result = forkJoinPool.submit(task);
         try {
             System.out.println(result.get());

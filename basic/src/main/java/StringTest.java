@@ -22,18 +22,18 @@ public class StringTest {
         }
 
         {
-            String str2 = new String("str")+new String("01");
+            String str2 = new String("str") + new String("01");
             str2.intern();
             String str1 = "str01";
-            System.out.println(str2==str1);
+            System.out.println(str2 == str1);
             System.out.println("**********");
         }
 
         {
             String str1 = "str01";
-            String str2 = new String("str")+new String("01");
+            String str2 = new String("str") + new String("01");
             str2.intern();
-            System.out.println(str2==str1);
+            System.out.println(str2 == str1);
             System.out.println("**********");
         }
 

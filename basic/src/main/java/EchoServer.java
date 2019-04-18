@@ -1,7 +1,7 @@
-
 /**
  * Created by mars on 2017/2/8.
  */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,7 +35,7 @@ public class EchoServer {
         @Override
         public void run() {
             try (BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
-                    PrintWriter pw = new PrintWriter(client.getOutputStream())) {
+                 PrintWriter pw = new PrintWriter(client.getOutputStream())) {
                 String msg = br.readLine();
                 System.out.println("收到" + client.getInetAddress() + "发送的: " + msg);
                 pw.println(msg);

@@ -4,6 +4,7 @@
 class Base {
     public static int a = 10;//1
     public int b = 20;//7
+
     static {
         System.out.println("Static Init Base " + a);//2
         // System.out.println("Null Init " + b);
@@ -15,7 +16,7 @@ class Base {
 }
 
 /**
- *一级子类和基类包含的内容一样
+ * 一级子类和基类包含的内容一样
  **/
 class SuperClass extends Base {
     public static int a1 = getSuperStaticNumber();//3
@@ -41,7 +42,7 @@ class SuperClass extends Base {
 }
 
 /**
- *二级子类为测试该代码的驱动类
+ * 二级子类为测试该代码的驱动类
  */
 public class SubClass extends SuperClass {
     public static int a2 = getStaticNumber();//5

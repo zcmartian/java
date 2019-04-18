@@ -6,7 +6,7 @@ import java.net.URL;
 /**
  * Created by mars on 2017/1/19.
  */
-public class NetworkClassLoader extends ClassLoader{
+public class NetworkClassLoader extends ClassLoader {
     private String rootUrl;
 
     public NetworkClassLoader(String rootUrl) {
@@ -29,12 +29,12 @@ public class NetworkClassLoader extends ClassLoader{
         try {
             String path = classNameToPath(name);
             URL url = new URL(path);
-            byte[] buff = new byte[1024*4];
+            byte[] buff = new byte[1024 * 4];
             int len = -1;
             is = url.openStream();
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            while((len = is.read(buff)) != -1) {
-                baos.write(buff,0,len);
+            while ((len = is.read(buff)) != -1) {
+                baos.write(buff, 0, len);
             }
             return baos.toByteArray();
         } catch (Exception e) {
@@ -43,7 +43,7 @@ public class NetworkClassLoader extends ClassLoader{
             if (is != null) {
                 try {
                     is.close();
-                } catch(IOException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

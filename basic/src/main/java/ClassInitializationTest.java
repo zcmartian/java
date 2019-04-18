@@ -1,6 +1,7 @@
 /**
  * Created by mars on 2017/1/18.
  */
+
 /**
  * Java program to demonstrate class loading and initialization in Java.
  */
@@ -26,6 +27,7 @@ class Parent {
         familyName = "Lawson";
         System.out.println("static block of Super class is initialized");
     }
+
     {
         System.out.println("non static blocks in super class is initialized");
     }
@@ -48,6 +50,7 @@ class Child extends Parent {
         familyName = "FamilyMart";
         System.out.println("static block of Sub class is initialized in Java ");
     }
+
     {
         System.out.println("non static blocks in sub class is initialized");
     }

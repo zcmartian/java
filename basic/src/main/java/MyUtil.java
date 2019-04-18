@@ -1,4 +1,3 @@
-
 /**
  * Created by mars on 2017/2/7.
  */
@@ -32,7 +31,7 @@ public class MyUtil {
             try (OutputStream out = new FileOutputStream(target)) {
                 byte[] buffer = new byte[4096];
                 int bytesToRead;
-                while((bytesToRead = in.read(buffer)) != -1) {
+                while ((bytesToRead = in.read(buffer)) != -1) {
                     out.write(buffer, 0, bytesToRead);
                 }
             }
@@ -45,7 +44,7 @@ public class MyUtil {
                 FileChannel inChannel = in.getChannel();
                 FileChannel outChannel = out.getChannel();
                 ByteBuffer buffer = ByteBuffer.allocate(4096);
-                while(inChannel.read(buffer) != -1) {
+                while (inChannel.read(buffer) != -1) {
                     buffer.flip();
                     outChannel.write(buffer);
                     buffer.clear();

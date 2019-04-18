@@ -62,6 +62,7 @@ public class SelectSockets {
     }
 
     // ----------------------------------------------------------
+
     /**
      * Register the given channel with the given selector for the given
      * operations of interest
@@ -83,11 +84,11 @@ public class SelectSockets {
 
     /**
      * Sample data handler method for a channel with data ready to read.
-     * @param key
-     * A SelectionKey object associated with a channel determined by * the selector to be ready for reading. If the channel returns
-     *          an EOF condition, it is closed here, which automatically
-     *          invalidates the associated key. The selector will then
-     *          de-register the channel on the next select call.
+     *
+     * @param key A SelectionKey object associated with a channel determined by * the selector to be ready for reading. If the channel returns
+     *            an EOF condition, it is closed here, which automatically
+     *            invalidates the associated key. The selector will then
+     *            de-register the channel on the next select call.
      */
     protected void readDataFromSocket(SelectionKey key) throws Exception {
         SocketChannel socketChannel = (SocketChannel) key.channel();
@@ -115,10 +116,12 @@ public class SelectSockets {
     }
 
     // ----------------------------------------------------------
+
     /**
      * Spew a greeting to the incoming client connection.
-     * @param channel
-     * The newly connected SocketChannel to say hello to. */
+     *
+     * @param channel The newly connected SocketChannel to say hello to.
+     */
     private void sayHello(SocketChannel channel) throws Exception {
         buffer.clear();
         buffer.put("Hi there!\r\n".getBytes());

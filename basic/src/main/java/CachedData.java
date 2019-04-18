@@ -36,7 +36,7 @@ public class CachedData {
         System.out.println(Thread.currentThread() + " " + data);
     }
 
-    public static void main(String ... args) throws InterruptedException {
+    public static void main(String... args) throws InterruptedException {
         CachedData cachedData = new CachedData();
         MyThread thread1 = new MyThread(cachedData);
         MyThread thread2 = new MyThread(cachedData);

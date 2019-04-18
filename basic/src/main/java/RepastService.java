@@ -40,10 +40,10 @@ public class RepastService {
         try {
             setSemaphore.acquire();
             lock.lock();
-            while(isFull()) {
+            while (isFull()) {
                 setCondition.await();
             }
-            for (int i=0;i<productionPosition.length;i++) {
+            for (int i = 0; i < productionPosition.length; i++) {
                 if (productionPosition[i] == null) {
                     productionPosition[i] = "数据";
                     System.out.println(Thread.currentThread().getName() + " 生产了 " + productionPosition[i]);
@@ -66,7 +66,7 @@ public class RepastService {
             while (isEmpty()) {
                 getCondition.await();
             }
-            for (int i=0;i<productionPosition.length;i++) {
+            for (int i = 0; i < productionPosition.length; i++) {
                 if (productionPosition[i] != null) {
                     System.out.println(Thread.currentThread().getName() + " 消费了 " + productionPosition[i]);
                     productionPosition[i] = null;

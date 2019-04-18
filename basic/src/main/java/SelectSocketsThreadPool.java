@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.SocketChannel;
@@ -19,16 +18,17 @@ public class SelectSocketsThreadPool extends SelectSockets {
     }
 
     // -------------------------------------------------------------
+
     /**
      * Sample data handler method for a channel with data ready to read. This
      * method is invoked from the go( ) method in the parent class. This handler
      * delegates to a worker thread in a thread pool to service the channel,
      * then returns immediately.
-     * @param key
-     * A SelectionKey object representing a channel determined by the * selector to be ready for reading. If the channel returns an
-     * EOF condition, it is closed here, which automatically
-     * invalidates the associated key. The selector will then
-     * de-register the channel on the next select call.
+     *
+     * @param key A SelectionKey object representing a channel determined by the * selector to be ready for reading. If the channel returns an
+     *            EOF condition, it is closed here, which automatically
+     *            invalidates the associated key. The selector will then
+     *            de-register the channel on the next select call.
      */
     protected void readDataFromSocket(SelectionKey key) throws Exception {
         WorkerThread worker = pool.getWorker();
@@ -44,6 +44,7 @@ public class SelectSocketsThreadPool extends SelectSockets {
     }
 
     // ---------------------------------------------------------------
+
     /**
      * A very simple thread pool class. The pool size is set at construction
      * time and remains fixed. Threads are cycled through a FIFO idle queue.
@@ -93,7 +94,7 @@ public class SelectSocketsThreadPool extends SelectSockets {
      * tasked by calling its serviceChannel( ) method with a SelectionKey
      * object. The serviceChannel( ) method stores the key reference in the
      * thread object then calls notify( ) to wake it up. When the channel has
-     146
+     * 146
      * been drained, the worker thread returns itself to its parent pool.
      */
     private class WorkerThread extends Thread {

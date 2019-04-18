@@ -5,17 +5,17 @@ public class VolatileTest {
     int a = 1;
     int b = 2;
 
-    public void change(){
+    public void change() {
         a = 3;
         b = a;
     }
 
-    public void print(){
-        System.out.println("b="+b+";a="+a);
+    public void print() {
+        System.out.println("b=" + b + ";a=" + a);
     }
 
     public static void main(String[] args) {
-        while (true){
+        while (true) {
             final VolatileTest test = new VolatileTest();
             new Thread(new Runnable() {
                 @Override

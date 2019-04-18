@@ -8,7 +8,7 @@ public class Sort {
         }
 
         for (int i = 0; i < array.length; i++) {
-             for (int j = array.length - 1; j > i; j--) {
+            for (int j = array.length - 1; j > i; j--) {
 //            for (int j = i + 1; j < array.length; j++) {
                 if (array[i] > array[j]) {
                     swap(array, i, j);
@@ -23,7 +23,7 @@ public class Sort {
             return;
         }
         int min = 0;
-        for (int i = 0; i<array.length;i++) {
+        for (int i = 0; i < array.length; i++) {
             min = i;
             for (int j = i + 1; j < array.length; j++) {
                 if (array[min] > array[j]) {
@@ -43,12 +43,12 @@ public class Sort {
             return;
         }
 
-        for (int i=1;i<array.length;i++) {
-            int j=i;
+        for (int i = 1; i < array.length; i++) {
+            int j = i;
             int target = array[i];
 
-            while (j > 0 && target < array[j-1]) {
-                array[j] = array[j-1];
+            while (j > 0 && target < array[j - 1]) {
+                array[j] = array[j - 1];
                 j--;
             }
             array[j] = target;
@@ -103,7 +103,7 @@ public class Sort {
         System.out.println();
     }
 
-    public static void main(String ... args) {
+    public static void main(String... args) {
         Sort sort = new Sort();
         int[] array = sort.generateArray(11);
         sort.printArray(array);
@@ -111,7 +111,7 @@ public class Sort {
 //        sort.BubbleSortOne(array);
 //        sort.SelectSort(array);
 //        sort.InsertSort(array);
-        sort.quickSort(array, 0, array.length-1);
+        sort.quickSort(array, 0, array.length - 1);
         sort.printArray(array);
     }
 }

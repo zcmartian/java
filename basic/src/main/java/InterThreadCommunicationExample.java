@@ -25,6 +25,7 @@ public class InterThreadCommunicationExample {
 class Producer extends Thread {
     private final Queue sharedQ;
     private static final int COUNT = 1000;
+
     public Producer(Queue sharedQ) {
         super("Producer-thread");
         this.sharedQ = sharedQ;
@@ -56,6 +57,7 @@ class Consumer extends Thread {
     private final Queue sharedQ;
     private static final int COUNT = 1000;
     private String threadName;
+
     public Consumer(Queue sharedQ, String threadName) {
         super(threadName);
         this.sharedQ = sharedQ;

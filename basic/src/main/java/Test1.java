@@ -3,7 +3,7 @@
  */
 class Singleton {
 
-     private static Singleton mInstance = new Singleton();// 位置1
+    private static Singleton mInstance = new Singleton();// 位置1
     // 位置1输出：
     // counter1: 1
     // counter2: 0

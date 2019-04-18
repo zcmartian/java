@@ -24,6 +24,7 @@ public class Student implements Comparable<Student> {
     }
 
 }
+
 class Test01 {
 
     public static void main(String[] args) {
@@ -33,7 +34,7 @@ class Test01 {
         set.add(new Student("Bruce LEE", 60));
         set.add(new Student("Bob YANG", 22));
 
-        for(Student stu : set) {
+        for (Student stu : set) {
             System.out.println(stu);
         }
 //      输出结果:

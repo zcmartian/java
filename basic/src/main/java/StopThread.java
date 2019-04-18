@@ -5,16 +5,16 @@ import java.util.logging.Logger;
  * Created by mars on 2017/2/16.
  */
 public class StopThread {
-    private class Runner extends Thread{
+    private class Runner extends Thread {
         boolean bExit = false;
 
-        public void exit(boolean bExit){
+        public void exit(boolean bExit) {
             this.bExit = bExit;
         }
 
         @Override
-        public void run(){
-            while(!bExit){
+        public void run() {
+            while (!bExit) {
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException ex) {
@@ -25,7 +25,7 @@ public class StopThread {
         }
     }
 
-    public static void main(String ... args) throws InterruptedException {
+    public static void main(String... args) throws InterruptedException {
         while (true) {
             Thread.sleep(10);
             System.out.println(System.nanoTime() + " Test loop begin.");

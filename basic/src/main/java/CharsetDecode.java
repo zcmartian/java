@@ -34,20 +34,21 @@ public class CharsetDecode {
     }
 
     /**
-    * General purpose static method which reads bytes from a Channel,
-    * decodes them according
-    * @param source A ReadableByteChannel object which will be read to * EOF as a source of encoded bytes.
-    * @param writer A Writer object to which decoded chars will be
-    * written.
-    * @param charset A Charset object, whose CharsetDecoder will be used * to do the character set decoding.
-    */
+     * General purpose static method which reads bytes from a Channel,
+     * decodes them according
+     *
+     * @param source  A ReadableByteChannel object which will be read to * EOF as a source of encoded bytes.
+     * @param writer  A Writer object to which decoded chars will be
+     *                written.
+     * @param charset A Charset object, whose CharsetDecoder will be used * to do the character set decoding.
+     */
     public static void decodeChannel(ReadableByteChannel source, Writer writer, Charset charset)
             throws UnsupportedCharsetException, IOException {
         // Get a decoder instance from the Charset
         CharsetDecoder decoder = charset.newDecoder();
         // Tell decoder to replace bad chars with default mark
-        decoder.onMalformedInput (CodingErrorAction.REPLACE);
-        decoder.onUnmappableCharacter (CodingErrorAction.REPLACE);
+        decoder.onMalformedInput(CodingErrorAction.REPLACE);
+        decoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
         // Allocate radically different input and output
         // buffer sizes
         // for testing purposes
@@ -60,7 +61,7 @@ public class CharsetDecode {
             // Input buffer underflow; decoder wants more input
             if (result == CoderResult.UNDERFLOW) {
                 // decoder consumed all input, prepare to refill
-                bb.clear( );
+                bb.clear();
                 // Fill the input buffer; watch for EOF
                 eof = (source.read(bb) == -1);
                 // Prepare the buffer for reading by decoder
@@ -78,15 +79,16 @@ public class CharsetDecode {
         }
         drainCharBuf(cb, writer);
         // Drain any chars remaining in the output buffer
-        drainCharBuf (cb, writer);
+        drainCharBuf(cb, writer);
         // Close the channel; push out any buffered data to stdout
-        source.close( );
+        source.close();
         writer.flush();
     }
 
     /**
      * Helper method to drain the char buffer and write its content to * the given Writer object. Upon return, the buffer is empty and * ready to be refilled.
-     * @param cb A CharBuffer containing chars to be written.
+     *
+     * @param cb     A CharBuffer containing chars to be written.
      * @param writer A Writer object to consume the chars in cb.
      */
     static void drainCharBuf(CharBuffer cb, Writer writer) throws IOException {

@@ -23,7 +23,7 @@ public class Reference {
                 '}';
     }
 
-    public static void main(String ... args) {
+    public static void main(String... args) {
         Reference reference = new Reference(100);
 
         System.out.println(reference);

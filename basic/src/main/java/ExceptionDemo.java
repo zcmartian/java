@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 /**
  * Created by mars on 2017/1/24.
  */
@@ -9,7 +7,7 @@ public class ExceptionDemo {
             System.out.println("Try");
             throw new Exception("throw");
 //            return;
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Catch");
             e.printStackTrace();
         } finally {
