@@ -10,7 +10,6 @@ public class Decrementer implements Runnable {
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
         try {
             Thread.sleep(1000);
             this.latch.countDown();

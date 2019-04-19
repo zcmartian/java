@@ -3,7 +3,6 @@ import java.util.concurrent.CountDownLatch;
 public class CountDownLatchExample {
 
     public static void main(String[] args) throws Exception {
-        // TODO Auto-generated method stub
         CountDownLatch latch = new CountDownLatch(3);
 
         Waiter waiter = new Waiter(latch);
@@ -13,6 +12,28 @@ public class CountDownLatchExample {
         new Thread(decrementer).start();
 
         Thread.sleep(4000);
+    }
+
+}
+
+class Waiter implements Runnable {
+
+    CountDownLatch latch = null;
+
+    public Waiter(CountDownLatch latch) {
+        this.latch = latch;
+    }
+
+    @Override
+    public void run() {
+        try {
+            System.out.println("Waiter run");
+            latch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Waiter Released");
     }
 
 }

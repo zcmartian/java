@@ -1,6 +1,11 @@
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
+
+interface Data {
+    String getResult();
+}
 
 public class Main3 {
 
@@ -27,5 +32,26 @@ public class Main3 {
         }
         System.out.println("数据=" + data.getResult());
         executorService.shutdown();
+    }
+}
+
+class RealData2 implements Callable<String> {
+    private String para;
+
+    public RealData2(String para) {
+        this.para = para;
+    }
+
+    @Override
+    public String call() throws Exception {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 10; ++i) {
+            sb.append(para);
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+            }
+        }
+        return sb.toString();
     }
 }

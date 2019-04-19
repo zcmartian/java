@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 public class DelayQueueExample {
 
     public static void main(String[] args) throws Exception {
-        // TODO Auto-generated method stub
         DelayQueue<Delayed> queue = new DelayQueue<Delayed>();
 
         Delayed element1 = new DelayedElement();
@@ -21,4 +20,16 @@ public class DelayQueueExample {
         System.out.println(System.currentTimeMillis() + " " + Thread.currentThread().getName() + " after take!");
     }
 
+}
+
+class DelayedElement implements Delayed {
+    @Override
+    public int compareTo(Delayed o) {
+        return 0;
+    }
+
+    @Override
+    public long getDelay(TimeUnit unit) {
+        return 1;
+    }
 }

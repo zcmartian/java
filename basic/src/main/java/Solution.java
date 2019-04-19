@@ -9,26 +9,7 @@ public class Solution {
         root.left.right = new TreeNode(4);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(9);
-//        Set<String> words = new HashSet<>();
-//        words.add("hot");
-//        words.add("dot");
-//        words.add("dog");
-//        words.add("lot");
-//        words.add("log");
-//        PriorityQueue<Integer> queue = new PriorityQueue<>(2);
-//        int[] array = {3, 2, 1, 5, 6, 4};
-//        for(int num : array) {
-//            queue.offer(num);
-//            if(queue.size()>2) {
-//                queue.poll();
-//            }
-//        }
-//        MedianFinder medianFinder = new MedianFinder();
-//        for(int i=1;i<10;i++) {
-//            medianFinder.addNum(i);
-//            System.out.println(medianFinder.findMedian());
-//        }
-//        int[] arr = new int[]{10,9,2,5,3,7,101,18};
+
         System.out.println(new Solution().getMinimumDifference(root));
     }
 
