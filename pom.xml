@@ -9,7 +9,24 @@
     <artifactId>javaDemos</artifactId>
     <version>1.0-snapshot</version>
     <packaging>jar</packaging>
-    <modules></modules>
+    <modules>
+        <module>CacheTest</module>
+        <module>DesignPatterns</module>
+        <module>javaIO</module>
+        <module>marszhou-httpServlet</module>
+        <module>marszhou-smart-web</module>
+        <module>NIODemo</module>
+        <module>rpc</module>
+        <module>basic</module>
+        <module>servlet-demo</module>
+        <module>smart-framework</module>
+        <module>springAopDemo</module>
+        <module>SpringIdol</module>
+        <module>SpringJmsSample</module>
+        <module>springDemo</module>
+        <module>webapp-1</module>
+        <module>webDemo</module>
+    </modules>
     <build>
         <plugins>
             <plugin>
