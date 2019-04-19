@@ -3,5 +3,6 @@
  */
 public abstract class AbstractFactory {
     public abstract ProductA produceA();
+
     public abstract ProductB produceB();
 }

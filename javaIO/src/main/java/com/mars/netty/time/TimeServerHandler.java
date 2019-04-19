@@ -1,11 +1,11 @@
 package com.mars.netty.time;
 
-import java.util.Date;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+
+import java.util.Date;
 
 /**
  * Created by marszhou on 16/8/22.

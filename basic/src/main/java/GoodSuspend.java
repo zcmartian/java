@@ -4,6 +4,20 @@
 public class GoodSuspend {
     public static Object u = new Object();
 
+    public static void main(String[] args) throws InterruptedException {
+        ChangObjectThread t1 = new ChangObjectThread();
+        ReadObjectThread t2 = new ReadObjectThread();
+
+        t1.start();
+        t2.start();
+        Thread.sleep(1000);
+        t1.suspendMe();
+        System.out.println("suspend t1 2 sec");
+        Thread.sleep(2000);
+        System.out.println("resume t2");
+        t1.resumeMe();
+    }
+
     public static class ChangObjectThread extends Thread {
         volatile static boolean isSuspend = false;
 
@@ -52,19 +66,5 @@ public class GoodSuspend {
                 Thread.yield();
             }
         }
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        ChangObjectThread t1 = new ChangObjectThread();
-        ReadObjectThread t2 = new ReadObjectThread();
-
-        t1.start();
-        t2.start();
-        Thread.sleep(1000);
-        t1.suspendMe();
-        System.out.println("suspend t1 2 sec");
-        Thread.sleep(2000);
-        System.out.println("resume t2");
-        t1.resumeMe();
     }
 }

@@ -36,17 +36,17 @@ public class HelloForm extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request,
-            HttpServletResponse response)
+                       HttpServletResponse response)
             throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
         Cookie firstName = new Cookie("first_name",
                 request.getParameter("first_name"));
         Cookie lastName = new Cookie("last_name",
                 request.getParameter("last_name"));
-        firstName.setMaxAge(60*60*24);
-        lastName.setMaxAge(60*60*24);
-        response.addCookie( firstName );
-        response.addCookie( lastName );
+        firstName.setMaxAge(60 * 60 * 24);
+        lastName.setMaxAge(60 * 60 * 24);
+        response.addCookie(firstName);
+        response.addCookie(lastName);
         PrintWriter out = response.getWriter();
         String title = "使用POST方法获取表单数据";
         String docType =

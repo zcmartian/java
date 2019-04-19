@@ -3,14 +3,13 @@ package com.dianping.marszhou.webapp1.test;
 import com.dianping.marszhou.webapp1.helper.DatabaseHelper;
 import com.dianping.marszhou.webapp1.model.Customer;
 import com.dianping.marszhou.webapp1.service.CustomerService;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 
 /**
  * Created by marszhou on 15/12/18.

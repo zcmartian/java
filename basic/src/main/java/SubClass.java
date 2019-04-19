@@ -3,12 +3,13 @@
  */
 class Base {
     public static int a = 10;//1
-    public int b = 20;//7
 
     static {
         System.out.println("Static Init Base " + a);//2
         // System.out.println("Null Init " + b);
     }
+
+    public int b = 20;//7
 
     public Base() {
         System.out.println("Init Base " + this.b);//8
@@ -20,14 +21,15 @@ class Base {
  **/
 class SuperClass extends Base {
     public static int a1 = getSuperStaticNumber();//3
+
+    static {
+        System.out.println("Static Init SuperClass" + a1);//4
+    }
+
     public int b1 = getSuperInstanceNumber();//9
 
     public SuperClass() {
         System.out.println("Init SuperClass" + this.b1);//10
-    }
-
-    static {
-        System.out.println("Static Init SuperClass" + a1);//4
     }
 
     public static int getSuperStaticNumber() {
@@ -46,6 +48,11 @@ class SuperClass extends Base {
  */
 public class SubClass extends SuperClass {
     public static int a2 = getStaticNumber();//5
+
+    static {
+        System.out.println("Static Init " + a2);//6
+    }
+
     public int b2 = getInstanceNumber();//11
 
     public SubClass() {
@@ -57,16 +64,12 @@ public class SubClass extends SuperClass {
         return 1000;
     }
 
-    public int getInstanceNumber() {
-        System.out.println("Instance member init Sub");
-        return 2000;
-    }
-
     public static void main(String args[]) {
         new SubClass();
     }
 
-    static {
-        System.out.println("Static Init " + a2);//6
+    public int getInstanceNumber() {
+        System.out.println("Instance member init Sub");
+        return 2000;
     }
 }

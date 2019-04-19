@@ -2,20 +2,20 @@ package mars.zhou;
 
 public class CriticismEngineImpl implements CriticismEngine {
 
-	@Override
-	public String getCriticism() {
-		// TODO Auto-generated method stub
-		int i = (int) (Math.random() * getCriticismPool().length);
-		return criticismPool[i];
-	}
+    private String[] criticismPool;
 
-	public String[] getCriticismPool() {
-		return criticismPool;
-	}
+    @Override
+    public String getCriticism() {
+        // TODO Auto-generated method stub
+        int i = (int) (Math.random() * getCriticismPool().length);
+        return criticismPool[i];
+    }
 
-	public void setCriticismPool(String[] criticismPool) {
-		this.criticismPool = criticismPool;
-	}
+    public String[] getCriticismPool() {
+        return criticismPool;
+    }
 
-	private String[] criticismPool;
+    public void setCriticismPool(String[] criticismPool) {
+        this.criticismPool = criticismPool;
+    }
 }

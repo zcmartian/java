@@ -1,11 +1,11 @@
-public class Test {
+public class Test2 {
     static {
         System.out.println("test static");
     }
 
-    Person person = new Person("Test");
+    Person2 person = new Person2("Test");
 
-    public Test() {
+    public Test2() {
         System.out.println("test constructor");
     }
 

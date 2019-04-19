@@ -1,9 +1,9 @@
 package com.mars.netty.subscribe;
 
+import com.mars.protobuf.SubscribeReqProto;
 import com.mars.protobuf.SubscribeRespProto;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
-import com.mars.protobuf.SubscribeReqProto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,7 @@ public class SubReqClientHandler extends ChannelHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println("Receive server response : [" + ((SubscribeRespProto.SubscribeResp)msg).toString()+ "]");
+        System.out.println("Receive server response : [" + ((SubscribeRespProto.SubscribeResp) msg).toString() + "]");
     }
 
     @Override

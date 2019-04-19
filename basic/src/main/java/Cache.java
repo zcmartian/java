@@ -29,6 +29,24 @@ public class Cache<K, V> {
         daemonThread.start();
     }
 
+    // ������ں���
+    public static void main(String[] args) throws Exception {
+        Cache<Integer, String> cache = new Cache<Integer, String>();
+        cache.put(1, "aaaa", 3, TimeUnit.SECONDS);
+        System.out.println(System.currentTimeMillis() + Thread.currentThread().getName() + " start!");
+        Thread.sleep(1000 * 2);
+        {
+            String str = cache.get(1);
+            System.out.println(str);
+        }
+
+        Thread.sleep(1000 * 2);
+        {
+            String str = cache.get(1);
+            System.out.println(str);
+        }
+    }
+
     private void daemonCheck() {
 
         if (LOG.isLoggable(Level.INFO))
@@ -76,23 +94,5 @@ public class Cache<K, V> {
 
     public V get(K key) {
         return cacheObjMap.get(key);
-    }
-
-    // ������ں���
-    public static void main(String[] args) throws Exception {
-        Cache<Integer, String> cache = new Cache<Integer, String>();
-        cache.put(1, "aaaa", 3, TimeUnit.SECONDS);
-        System.out.println(System.currentTimeMillis() + Thread.currentThread().getName() + " start!");
-        Thread.sleep(1000 * 2);
-        {
-            String str = cache.get(1);
-            System.out.println(str);
-        }
-
-        Thread.sleep(1000 * 2);
-        {
-            String str = cache.get(1);
-            System.out.println(str);
-        }
     }
 }

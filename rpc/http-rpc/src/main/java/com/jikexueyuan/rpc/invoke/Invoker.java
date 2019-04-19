@@ -1,8 +1,8 @@
 package com.jikexueyuan.rpc.invoke;
 
-import java.io.OutputStream;
-
 import com.jikexueyuan.rpc.exception.RpcException;
+
+import java.io.OutputStream;
 
 /**
  * Created by version_z on 2015/8/22.

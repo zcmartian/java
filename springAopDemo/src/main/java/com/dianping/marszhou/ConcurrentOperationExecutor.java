@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * Created by marszhou on 16/3/8.
  */
 @Resource
-public class ConcurrentOperationExecutor implements Ordered{
+public class ConcurrentOperationExecutor implements Ordered {
     private static final int DEFAULT_MAX_RETRIES = 3;
 
     private int maxRetries = DEFAULT_MAX_RETRIES;
@@ -21,16 +21,16 @@ public class ConcurrentOperationExecutor implements Ordered{
         return this.order;
     }
 
-    public void setMaxRetries(int maxRetries) {
-        this.maxRetries = maxRetries;
-    }
-
     public void setOrder(int order) {
         this.order = order;
     }
 
+    public void setMaxRetries(int maxRetries) {
+        this.maxRetries = maxRetries;
+    }
+
     public Object doConcurrentOperation(ProceedingJoinPoint pjp) throws Throwable {
-        int numAttempts =0;
+        int numAttempts = 0;
         PessimisticLockingFailureException pessimisticLockingFailureException;
         do {
             numAttempts++;

@@ -1,7 +1,7 @@
 /**
  * Created by mars on 16/12/7.
  */
-public class ProductBMedium implements ProductB{
+public class ProductBMedium implements ProductB {
     public void operation1() {
         System.out.println(this.getClass().getName() + "operation1 operating...");
     }

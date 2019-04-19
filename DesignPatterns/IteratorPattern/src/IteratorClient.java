@@ -10,7 +10,7 @@ public class IteratorClient {
     // 在实际访问时,访问方法都是更新遍历的下标,然后通过具体集合各自的访问方法来对集合实现真正的访问
     // 但是在外界看来,迭代器有一个统一的接口,通过对统一的算法步骤的封装来实现可扩展性.
     public static void main(String[] args) {
-        String[] names = { "张三", "李四", "王五" };
+        String[] names = {"张三", "李四", "王五"};
         Aggregate aggregate = new ConcreteAggregate(names);
         Iterator iterator = aggregate.createIterator();
         iterator.first();

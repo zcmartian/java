@@ -14,7 +14,7 @@ public class AudioPlayer implements MediaPlayer {
             //AudioPlayer 的适配方法,调用 MediaAdapter适配器的 play 方法
             mediaAdapter = new MediaAdapter(mediaType);
             mediaAdapter.play(mediaType, fileName);
-        } else if (mediaType.equals("avi") ) {
+        } else if (mediaType.equals("avi")) {
             //直接适配器,适配到一个实例对象,直接调用和被适配对象一样的接口.
             aviAdapter = new AviAdapter();
             aviAdapter.play(mediaType, fileName);

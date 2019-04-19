@@ -28,7 +28,9 @@ public class CakeHouseMenu extends MenuComponent {
     public void print() {
         // TODO Auto-generated method stub
         System.out.println("****This is CakeHouseMenu****");
-    };
+    }
+
+    ;
 
     // 其他功能代码
 

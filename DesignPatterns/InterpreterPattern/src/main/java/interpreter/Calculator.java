@@ -1,11 +1,11 @@
 package interpreter;
 
+import interpreter.cls.RPN;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-
-import interpreter.cls.RPN;
 
 public class Calculator {
 
@@ -23,7 +23,7 @@ public class Calculator {
         try {
             System.out.println("Input a expression:");
             BufferedReader is = new BufferedReader(new InputStreamReader(System.in));
-            for (;;) {
+            for (; ; ) {
                 String input = new String();
                 input = is.readLine().trim();
                 if (input.equals("q"))

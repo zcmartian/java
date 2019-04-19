@@ -55,5 +55,7 @@ public class DinerMenu {
             position++;
             return menuItem;
         }
-    };
+    }
+
+    ;
 }

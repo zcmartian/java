@@ -4,6 +4,23 @@ public class ThreadExample extends Thread {
     // ����һ��������
     private static Object o = new Object();
 
+    public static void main(String[] args) throws Exception {
+        Thread threads[] = new Thread[100];
+        for (int i = 0; i < threads.length; i++) {
+            threads[i] = new ThreadExample();
+        }
+        for (int i = 0; i < threads.length; i++) {
+            threads[i].start();
+        }
+        // if (args.length > 0) {
+        for (int i = 0; i < threads.length; i++) {
+            // 100���̶߳�ִ��������
+            threads[i].join();
+        }
+        // }
+        System.out.println("n=" + ThreadExample.n);
+    }
+
     public void run() {
         System.out.println(System.currentTimeMillis() + Thread.currentThread().getName() + " start!");
 
@@ -22,22 +39,5 @@ public class ThreadExample extends Thread {
         synchronized (o) {
             n++;
         }
-    }
-
-    public static void main(String[] args) throws Exception {
-        Thread threads[] = new Thread[100];
-        for (int i = 0; i < threads.length; i++) {
-            threads[i] = new ThreadExample();
-        }
-        for (int i = 0; i < threads.length; i++) {
-            threads[i].start();
-        }
-        // if (args.length > 0) {
-        for (int i = 0; i < threads.length; i++) {
-            // 100���̶߳�ִ��������
-            threads[i].join();
-        }
-        // }
-        System.out.println("n=" + ThreadExample.n);
     }
 }

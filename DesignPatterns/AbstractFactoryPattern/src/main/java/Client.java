@@ -2,7 +2,7 @@
  * Created by mars on 16/12/7.
  */
 public class Client {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         AbstractFactory factoryPrime = new FactoryPrime();
         AbstractFactory factoryMedium = new FactoryMedium();
 

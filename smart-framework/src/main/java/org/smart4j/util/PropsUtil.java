@@ -3,6 +3,7 @@ package org.smart4j.util;
 /**
  * Created by marszhou on 15/12/20.
  */
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

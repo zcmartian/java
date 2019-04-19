@@ -8,6 +8,18 @@ public class ReentryLock implements Runnable {
 
     private static ReentrantLock lock = new ReentrantLock();
 
+    public static void main(String... args) throws InterruptedException {
+        ReentryLock reentryLock = new ReentryLock();
+        ReentryLock reentryLock2 = new ReentryLock();
+        Thread thread1 = new Thread(reentryLock);
+        Thread thread2 = new Thread(reentryLock2);
+        thread1.start();
+        thread2.start();
+        thread1.join();
+        thread2.join();
+        System.out.println(obj.getValue());
+    }
+
     private void increase() {
         int i = obj.getValue();
         i += 1;
@@ -24,18 +36,6 @@ public class ReentryLock implements Runnable {
                 lock.unlock();
             }
         }
-    }
-
-    public static void main(String... args) throws InterruptedException {
-        ReentryLock reentryLock = new ReentryLock();
-        ReentryLock reentryLock2 = new ReentryLock();
-        Thread thread1 = new Thread(reentryLock);
-        Thread thread2 = new Thread(reentryLock2);
-        thread1.start();
-        thread2.start();
-        thread1.join();
-        thread2.join();
-        System.out.println(obj.getValue());
     }
 
 }

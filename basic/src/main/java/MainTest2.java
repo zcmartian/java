@@ -1,11 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainTest {
-
-    static class OOMObject {
-
-    }
+public class MainTest2 {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -13,6 +9,10 @@ public class MainTest {
         while (true) {
             list.add(new OOMObject());
         }
+    }
+
+    static class OOMObject {
+
     }
 
 }

@@ -83,12 +83,12 @@ public class UploadServlet extends HttpServlet {
                         file = new File(
                                 filePath
                                         + fileName.substring(fileName
-                                                .lastIndexOf("/")));
+                                        .lastIndexOf("/")));
                     } else {
                         file = new File(
                                 filePath
                                         + fileName.substring(fileName
-                                                .lastIndexOf("/") + 1));
+                                        .lastIndexOf("/") + 1));
                     }
                     fi.write(file);
                     out.println("Uploaded Filename: " + fileName + "<br>");

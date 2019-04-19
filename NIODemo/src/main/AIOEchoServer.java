@@ -39,7 +39,7 @@ public class AIOEchoServer {
 
                     @Override
                     public void completed(AsynchronousSocketChannel result,
-                            Object attachment) {
+                                          Object attachment) {
                         System.out.println(Thread.currentThread().getName());
                         Future<Integer> writeResult = null;
                         try {

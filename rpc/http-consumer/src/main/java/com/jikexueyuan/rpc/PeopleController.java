@@ -1,8 +1,8 @@
 package com.jikexueyuan.rpc;
 
-import javax.annotation.Resource;
-
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * Created by version_z on 2015/8/23.

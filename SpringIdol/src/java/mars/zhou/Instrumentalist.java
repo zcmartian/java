@@ -1,42 +1,42 @@
 package mars.zhou;
 
 public class Instrumentalist implements Performer {
-	public Instrumentalist() {
-	}
+    private String song;
+    private int age;
+    private Instrument instrument;
 
-	@Override
-	public void perform() throws PerformanceException {
-		// TODO Auto-generated method stub
-		System.out.println("Playing" + getSong() + " : ");
-		instrument.play();
-	}
+    public Instrumentalist() {
+    }
 
-	public String getSong() {
-		return song;
-	}
+    @Override
+    public void perform() throws PerformanceException {
+        // TODO Auto-generated method stub
+        System.out.println("Playing" + getSong() + " : ");
+        instrument.play();
+    }
 
-	public void setSong(String song) {
-		this.song = song;
-	}
+    public String getSong() {
+        return song;
+    }
 
-	public String screamSong() {
-		return song;
-	}
+    public void setSong(String song) {
+        this.song = song;
+    }
 
-	public void setInstrument(Instrument instrument) {
-		this.instrument = instrument;
-	}
+    public String screamSong() {
+        return song;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public void setInstrument(Instrument instrument) {
+        this.instrument = instrument;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	private String song;
-	private int age;
-	private Instrument instrument;
+    public void setAge(int age) {
+        this.age = age;
+    }
 
 }

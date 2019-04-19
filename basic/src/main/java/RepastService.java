@@ -14,6 +14,21 @@ public class RepastService {
     private volatile Condition getCondition = lock.newCondition();
     private volatile Object[] productionPosition = new Object[4];
 
+    public static void main(String... args) throws InterruptedException {
+        RepastService repastService = new RepastService();
+        ThreadP[] arrayP = new ThreadP[60];
+        ThreadC[] arrayC = new ThreadC[60];
+        for (int i = 0; i < 60; i++) {
+            arrayP[i] = new ThreadP(repastService);
+            arrayC[i] = new ThreadC(repastService);
+        }
+        Thread.sleep(2000);
+        for (int i = 0; i < 60; i++) {
+            arrayP[i].start();
+            arrayC[i].start();
+        }
+    }
+
     public boolean isFull() {
         boolean isFull = true;
         for (int i = 0; i < productionPosition.length; i++) {
@@ -81,21 +96,6 @@ public class RepastService {
             getSemaphore.release();
         }
 
-    }
-
-    public static void main(String... args) throws InterruptedException {
-        RepastService repastService = new RepastService();
-        ThreadP[] arrayP = new ThreadP[60];
-        ThreadC[] arrayC = new ThreadC[60];
-        for (int i = 0; i < 60; i++) {
-            arrayP[i] = new ThreadP(repastService);
-            arrayC[i] = new ThreadC(repastService);
-        }
-        Thread.sleep(2000);
-        for (int i = 0; i < 60; i++) {
-            arrayP[i].start();
-            arrayC[i].start();
-        }
     }
 }
 

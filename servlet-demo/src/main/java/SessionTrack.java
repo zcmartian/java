@@ -15,9 +15,8 @@ import java.util.Date;
 public class SessionTrack extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
-            HttpServletResponse response)
-            throws ServletException, IOException
-    {
+                      HttpServletResponse response)
+            throws ServletException, IOException {
         // 如果不存在 session 会话，则创建一个 session 对象
         HttpSession session = request.getSession(true);
         // 获取 session 创建时间
@@ -33,15 +32,15 @@ public class SessionTrack extends HttpServlet {
         String userID = new String("ABCD");
 
         // 检查网页上是否有新的访问者
-        if (session.isNew()){
+        if (session.isNew()) {
             title = "欢迎来到我的网站";
             session.setAttribute(userIDKey, userID);
         } else {
-            visitCount = (Integer)session.getAttribute(visitCountKey);
+            visitCount = (Integer) session.getAttribute(visitCountKey);
             visitCount = visitCount + 1;
-            userID = (String)session.getAttribute(userIDKey);
+            userID = (String) session.getAttribute(userIDKey);
         }
-        session.setAttribute(visitCountKey,  visitCount);
+        session.setAttribute(visitCountKey, visitCount);
 
         // 设置响应内容类型
         response.setContentType("text/html");
@@ -64,7 +63,7 @@ public class SessionTrack extends HttpServlet {
                 "  <td>id</td>\n" +
                 "  <td>" + session.getId() + "</td></tr>\n" +
                 "<tr>\n" +
- "  <td>Creation Time</td>\n"
+                "  <td>Creation Time</td>\n"
                 + "  <td>" + createTime + "  </td></tr>\n" + "<tr>\n"
                 + "  <td>Time of Last Access</td>\n" + "  <td>"
                 + lastAccessTime + "  </td></tr>\n" + "<tr>\n"

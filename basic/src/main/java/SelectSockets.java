@@ -9,10 +9,16 @@ import java.util.Iterator;
  */
 public class SelectSockets {
     public static int PORT_NUMBER = 1234;
+    // ----------------------------------------------------------
+    // Use the same byte buffer for all channels. A single thread is
+    // servicing all the channels, so no danger of concurrent acccess.
+    private ByteBuffer buffer = ByteBuffer.allocate(1024);
 
     public static void main(String[] argv) throws Exception {
         new SelectSockets().go(argv);
     }
+
+    // ----------------------------------------------------------
 
     public void go(String[] argv) throws Exception {
         int port = PORT_NUMBER;
@@ -61,8 +67,6 @@ public class SelectSockets {
         }
     }
 
-    // ----------------------------------------------------------
-
     /**
      * Register the given channel with the given selector for the given
      * operations of interest
@@ -76,11 +80,6 @@ public class SelectSockets {
         // Register it with the selector
         channel.register(selector, ops);
     }
-
-    // ----------------------------------------------------------
-    // Use the same byte buffer for all channels. A single thread is
-    // servicing all the channels, so no danger of concurrent acccess.
-    private ByteBuffer buffer = ByteBuffer.allocate(1024);
 
     /**
      * Sample data handler method for a channel with data ready to read.

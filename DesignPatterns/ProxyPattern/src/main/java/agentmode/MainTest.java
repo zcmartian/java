@@ -1,8 +1,8 @@
 package agentmode;
 
-import java.rmi.RemoteException;
-
 import agentmode.candymachine.CandyMachine;
+
+import java.rmi.RemoteException;
 
 public class MainTest {
     public static void main(String[] args) throws RemoteException {

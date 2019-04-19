@@ -1,15 +1,11 @@
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class ExecutorServiceExample {
 
     public static void main(String[] args) throws Exception, ExecutionException {
-        // TODO Auto-generated method stub
         ExecutorService es = Executors.newFixedThreadPool(10);
         es.execute(new Runnable() {
             public void run() {

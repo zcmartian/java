@@ -2,34 +2,27 @@ package com.dianping.marszhou.webapp1.service;
 
 import com.dianping.marszhou.webapp1.helper.DatabaseHelper;
 import com.dianping.marszhou.webapp1.model.Customer;
-import com.dianping.marszhou.webapp1.util.PropsUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 /**
  * Created by marszhou on 15/12/18.
  */
 public class CustomerService {
 
-    private static class CustomerServiceHolder {
-        private static final CustomerService INSTANCE = new CustomerService();
-    }
+    private static final Logger LOGGER = LoggerFactory
+            .getLogger(CustomerService.class);
 
-    private CustomerService(){}
+    private CustomerService() {
+    }
 
     public static final CustomerService getInstance() {
         return CustomerServiceHolder.INSTANCE;
     }
-
-    private static final Logger LOGGER = LoggerFactory
-            .getLogger(CustomerService.class);
-
 
     public List<Customer> getCustomerList() {
         List<Customer> customerList = new ArrayList<Customer>();
@@ -64,7 +57,7 @@ public class CustomerService {
     }
 
     public boolean createCustomer(Map<String, Object> fieldMap) {
-        String sql = "insert into customer values ("+ fieldMap.get("id") + "," + fieldMap.get("name")
+        String sql = "insert into customer values (" + fieldMap.get("id") + "," + fieldMap.get("name")
                 + ", " + fieldMap.get("contact") + "," + fieldMap.get("phone")
                 + ", " + fieldMap.get("email") + ", " + fieldMap.get("remark") + ")";
         return DatabaseHelper.insertEntity(Customer.class, sql);
@@ -79,5 +72,9 @@ public class CustomerService {
     public boolean deleteCustomer(long id) {
         String sql = "delete from customer where id=" + id;
         return DatabaseHelper.deleteEntity(Customer.class, sql);
+    }
+
+    private static class CustomerServiceHolder {
+        private static final CustomerService INSTANCE = new CustomerService();
     }
 }

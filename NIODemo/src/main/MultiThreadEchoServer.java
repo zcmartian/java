@@ -12,9 +12,31 @@ import java.util.concurrent.Executors;
  */
 public class MultiThreadEchoServer {
     private static ExecutorService tp = Executors.newCachedThreadPool();
+
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+        ServerSocket echoServer = null;
+        Socket clientSocket = null;
+        try {
+            echoServer = new ServerSocket(8000);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        while (true) {
+            try {
+                clientSocket = echoServer.accept();
+                System.out.println(clientSocket.getRemoteSocketAddress() + " connected!");
+                tp.execute(new HandleMsg(clientSocket));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     static class HandleMsg implements Runnable {
 
         Socket clientSocket;
+
         public HandleMsg(Socket clientSocket) {
             this.clientSocket = clientSocket;
         }
@@ -32,7 +54,7 @@ public class MultiThreadEchoServer {
                     os.println(inputLine);
                 }
                 long e = System.currentTimeMillis();
-                System.out.println("spend:" + (e-b) + "ms");
+                System.out.println("spend:" + (e - b) + "ms");
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
@@ -45,25 +67,6 @@ public class MultiThreadEchoServer {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
-        }
-    }
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-        ServerSocket echoServer = null;
-        Socket clientSocket = null;
-        try {
-            echoServer = new ServerSocket(8000);
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-        while (true) {
-            try {
-                clientSocket = echoServer.accept();
-                System.out.println(clientSocket.getRemoteSocketAddress() + " connected!");
-                tp.execute(new HandleMsg(clientSocket));
-            } catch (IOException e) {
-                e.printStackTrace();
             }
         }
     }

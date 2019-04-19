@@ -1,9 +1,9 @@
 package internetweather.jv;
 
+import internetweather.jv.WeatherData.Data;
+
 import java.util.Observable;
 import java.util.Observer;
-
-import internetweather.jv.WeatherData.Data;
 
 public class CurrentConditions implements Observer {
 

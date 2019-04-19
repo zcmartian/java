@@ -1,16 +1,16 @@
-public class Main {
+public class Main5 {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
 }
 
-class Person {
+class Person2 {
     static {
         System.out.println("person static");
     }
 
-    public Person(String str) {
+    public Person2(String str) {
         System.out.println("person " + str);
     }
 }
@@ -20,7 +20,7 @@ class MyClass extends Test {
         System.out.println("myclass static");
     }
 
-    Person person = new Person("MyClass");
+    Person2 person = new Person2("MyClass");
 
     public MyClass() {
         System.out.println("myclass constructor");

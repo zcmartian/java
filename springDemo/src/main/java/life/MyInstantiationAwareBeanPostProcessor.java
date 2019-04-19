@@ -4,11 +4,11 @@ package life;
  * Created by mars on 2017/2/19.
  */
 
-import java.beans.PropertyDescriptor;
-
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter;
+
+import java.beans.PropertyDescriptor;
 
 public class MyInstantiationAwareBeanPostProcessor extends InstantiationAwareBeanPostProcessorAdapter {
 
@@ -34,7 +34,7 @@ public class MyInstantiationAwareBeanPostProcessor extends InstantiationAwareBea
     // 接口方法、设置某个属性时调用
     @Override
     public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean,
-            String beanName) throws BeansException {
+                                                    String beanName) throws BeansException {
         System.out.println("InstantiationAwareBeanPostProcessor调用postProcessPropertyValues方法");
         return pvs;
     }

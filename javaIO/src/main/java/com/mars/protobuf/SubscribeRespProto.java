@@ -4,616 +4,665 @@
 package com.mars.protobuf;
 
 public final class SubscribeRespProto {
-  private SubscribeRespProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-  public interface SubscribeRespOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
+    static {
+    }
 
-    // required int32 subReqID = 1;
-    /**
-     * <code>required int32 subReqID = 1;</code>
-     */
-    boolean hasSubReqID();
-    /**
-     * <code>required int32 subReqID = 1;</code>
-     */
-    int getSubReqID();
+    private SubscribeRespProto() {
+    }
 
-    // required int32 respCode = 2;
-    /**
-     * <code>required int32 respCode = 2;</code>
-     */
-    boolean hasRespCode();
-    /**
-     * <code>required int32 respCode = 2;</code>
-     */
-    int getRespCode();
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistryLite registry) {
+    }
 
-    // required string desc = 3;
-    /**
-     * <code>required string desc = 3;</code>
-     */
-    boolean hasDesc();
-    /**
-     * <code>required string desc = 3;</code>
-     */
-    java.lang.String getDesc();
-    /**
-     * <code>required string desc = 3;</code>
-     */
-    com.google.protobuf.ByteString
+    public interface SubscribeRespOrBuilder
+            extends com.google.protobuf.MessageLiteOrBuilder {
+
+        // required int32 subReqID = 1;
+
+        /**
+         * <code>required int32 subReqID = 1;</code>
+         */
+        boolean hasSubReqID();
+
+        /**
+         * <code>required int32 subReqID = 1;</code>
+         */
+        int getSubReqID();
+
+        // required int32 respCode = 2;
+
+        /**
+         * <code>required int32 respCode = 2;</code>
+         */
+        boolean hasRespCode();
+
+        /**
+         * <code>required int32 respCode = 2;</code>
+         */
+        int getRespCode();
+
+        // required string desc = 3;
+
+        /**
+         * <code>required string desc = 3;</code>
+         */
+        boolean hasDesc();
+
+        /**
+         * <code>required string desc = 3;</code>
+         */
+        java.lang.String getDesc();
+
+        /**
+         * <code>required string desc = 3;</code>
+         */
+        com.google.protobuf.ByteString
         getDescBytes();
-  }
-  /**
-   * Protobuf type {@code com.mars.protobuf.com.mars.serialize.SubscribeResp}
-   */
-  public static final class SubscribeResp extends
-      com.google.protobuf.GeneratedMessageLite
-      implements SubscribeRespOrBuilder {
-    @Override
-    public String toString() {
-      return "SubscribeResp{" +
-              "subReqID_=" + getSubReqID() +
-              ", respCode_=" + getRespCode() +
-              ", desc_=" + getDesc() +
-              '}';
     }
-
-    // Use com.mars.serialize.SubscribeResp.newBuilder() to construct.
-    private SubscribeResp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
-      super(builder);
-
-    }
-    private SubscribeResp(boolean noInit) {}
-
-    private static final SubscribeResp defaultInstance;
-    public static SubscribeResp getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public SubscribeResp getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private SubscribeResp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              subReqID_ = input.readInt32();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              respCode_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              desc_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<SubscribeResp> PARSER =
-        new com.google.protobuf.AbstractParser<SubscribeResp>() {
-      public SubscribeResp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SubscribeResp(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SubscribeResp> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required int32 subReqID = 1;
-    public static final int SUBREQID_FIELD_NUMBER = 1;
-    private int subReqID_;
-    /**
-     * <code>required int32 subReqID = 1;</code>
-     */
-    public boolean hasSubReqID() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required int32 subReqID = 1;</code>
-     */
-    public int getSubReqID() {
-      return subReqID_;
-    }
-
-    // required int32 respCode = 2;
-    public static final int RESPCODE_FIELD_NUMBER = 2;
-    private int respCode_;
-    /**
-     * <code>required int32 respCode = 2;</code>
-     */
-    public boolean hasRespCode() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required int32 respCode = 2;</code>
-     */
-    public int getRespCode() {
-      return respCode_;
-    }
-
-    // required string desc = 3;
-    public static final int DESC_FIELD_NUMBER = 3;
-    private java.lang.Object desc_;
-    /**
-     * <code>required string desc = 3;</code>
-     */
-    public boolean hasDesc() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>required string desc = 3;</code>
-     */
-    public java.lang.String getDesc() {
-      java.lang.Object ref = desc_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          desc_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string desc = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDescBytes() {
-      java.lang.Object ref = desc_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        desc_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private void initFields() {
-      subReqID_ = 0;
-      respCode_ = 0;
-      desc_ = "";
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasSubReqID()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasRespCode()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDesc()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, subReqID_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, respCode_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getDescBytes());
-      }
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, subReqID_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, respCode_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getDescBytes());
-      }
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.mars.protobuf.SubscribeRespProto.SubscribeResp prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
 
     /**
      * Protobuf type {@code com.mars.protobuf.com.mars.serialize.SubscribeResp}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          com.mars.protobuf.SubscribeRespProto.SubscribeResp, Builder>
-        implements com.mars.protobuf.SubscribeRespProto.SubscribeRespOrBuilder {
-      // Construct using com.mars.protobuf.SubscribeRespProto.com.mars.serialize.SubscribeResp.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+    public static final class SubscribeResp extends
+            com.google.protobuf.GeneratedMessageLite
+            implements SubscribeRespOrBuilder {
+        // required int32 subReqID = 1;
+        public static final int SUBREQID_FIELD_NUMBER = 1;
+        // required int32 respCode = 2;
+        public static final int RESPCODE_FIELD_NUMBER = 2;
+        // required string desc = 3;
+        public static final int DESC_FIELD_NUMBER = 3;
+        private static final SubscribeResp defaultInstance;
+        private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<SubscribeResp> PARSER =
+                new com.google.protobuf.AbstractParser<SubscribeResp>() {
+                    public SubscribeResp parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new SubscribeResp(input, extensionRegistry);
+                    }
+                };
 
-      private void maybeForceBuilderInitialization() {
-      }
-      private static Builder create() {
-        return new Builder();
-      }
+        static {
+            defaultInstance = new SubscribeResp(true);
+            defaultInstance.initFields();
+        }
 
-      public Builder clear() {
-        super.clear();
-        subReqID_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        respCode_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        desc_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
+        private int bitField0_;
+        private int subReqID_;
+        private int respCode_;
+        private java.lang.Object desc_;
+        private byte memoizedIsInitialized = -1;
+        private int memoizedSerializedSize = -1;
 
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
+        // Use com.mars.serialize.SubscribeResp.newBuilder() to construct.
+        private SubscribeResp(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+            super(builder);
 
-      public com.mars.protobuf.SubscribeRespProto.SubscribeResp getDefaultInstanceForType() {
-        return com.mars.protobuf.SubscribeRespProto.SubscribeResp.getDefaultInstance();
-      }
+        }
 
-      public com.mars.protobuf.SubscribeRespProto.SubscribeResp build() {
-        com.mars.protobuf.SubscribeRespProto.SubscribeResp result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private SubscribeResp(boolean noInit) {
         }
-        return result;
-      }
+        private SubscribeResp(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            bitField0_ |= 0x00000001;
+                            subReqID_ = input.readInt32();
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            respCode_ = input.readInt32();
+                            break;
+                        }
+                        case 26: {
+                            bitField0_ |= 0x00000004;
+                            desc_ = input.readBytes();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                makeExtensionsImmutable();
+            }
+        }
 
-      public com.mars.protobuf.SubscribeRespProto.SubscribeResp buildPartial() {
-        com.mars.protobuf.SubscribeRespProto.SubscribeResp result = new com.mars.protobuf.SubscribeRespProto.SubscribeResp(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
+        public static SubscribeResp getDefaultInstance() {
+            return defaultInstance;
         }
-        result.subReqID_ = subReqID_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.respCode_ = respCode_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.desc_ = desc_;
-        result.bitField0_ = to_bitField0_;
-        return result;
-      }
 
-      public Builder mergeFrom(com.mars.protobuf.SubscribeRespProto.SubscribeResp other) {
-        if (other == com.mars.protobuf.SubscribeRespProto.SubscribeResp.getDefaultInstance()) return this;
-        if (other.hasSubReqID()) {
-          setSubReqID(other.getSubReqID());
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-        if (other.hasRespCode()) {
-          setRespCode(other.getRespCode());
-        }
-        if (other.hasDesc()) {
-          bitField0_ |= 0x00000004;
-          desc_ = other.desc_;
-          
-        }
-        return this;
-      }
 
-      public final boolean isInitialized() {
-        if (!hasSubReqID()) {
-          
-          return false;
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-        if (!hasRespCode()) {
-          
-          return false;
-        }
-        if (!hasDesc()) {
-          
-          return false;
-        }
-        return true;
-      }
 
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.mars.protobuf.SubscribeRespProto.SubscribeResp parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.mars.protobuf.SubscribeRespProto.SubscribeResp) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      // required int32 subReqID = 1;
-      private int subReqID_ ;
-      /**
-       * <code>required int32 subReqID = 1;</code>
-       */
-      public boolean hasSubReqID() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int32 subReqID = 1;</code>
-       */
-      public int getSubReqID() {
-        return subReqID_;
-      }
-      /**
-       * <code>required int32 subReqID = 1;</code>
-       */
-      public Builder setSubReqID(int value) {
-        bitField0_ |= 0x00000001;
-        subReqID_ = value;
-        
-        return this;
-      }
-      /**
-       * <code>required int32 subReqID = 1;</code>
-       */
-      public Builder clearSubReqID() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        subReqID_ = 0;
-        
-        return this;
-      }
-
-      // required int32 respCode = 2;
-      private int respCode_ ;
-      /**
-       * <code>required int32 respCode = 2;</code>
-       */
-      public boolean hasRespCode() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required int32 respCode = 2;</code>
-       */
-      public int getRespCode() {
-        return respCode_;
-      }
-      /**
-       * <code>required int32 respCode = 2;</code>
-       */
-      public Builder setRespCode(int value) {
-        bitField0_ |= 0x00000002;
-        respCode_ = value;
-        
-        return this;
-      }
-      /**
-       * <code>required int32 respCode = 2;</code>
-       */
-      public Builder clearRespCode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        respCode_ = 0;
-        
-        return this;
-      }
-
-      // required string desc = 3;
-      private java.lang.Object desc_ = "";
-      /**
-       * <code>required string desc = 3;</code>
-       */
-      public boolean hasDesc() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required string desc = 3;</code>
-       */
-      public java.lang.String getDesc() {
-        java.lang.Object ref = desc_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          desc_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
         }
-      }
-      /**
-       * <code>required string desc = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDescBytes() {
-        java.lang.Object ref = desc_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          desc_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string desc = 3;</code>
-       */
-      public Builder setDesc(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        desc_ = value;
-        
-        return this;
-      }
-      /**
-       * <code>required string desc = 3;</code>
-       */
-      public Builder clearDesc() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        desc_ = getDefaultInstance().getDesc();
-        
-        return this;
-      }
-      /**
-       * <code>required string desc = 3;</code>
-       */
-      public Builder setDescBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        desc_ = value;
-        
-        return this;
-      }
 
-      // @@protoc_insertion_point(builder_scope:com.mars.protobuf.com.mars.serialize.SubscribeResp)
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return PARSER.parseFrom(input);
+        }
+
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return PARSER.parseFrom(input, extensionRegistry);
+        }
+
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return PARSER.parseDelimitedFrom(input);
+        }
+
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
+        }
+
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return PARSER.parseFrom(input);
+        }
+
+        public static com.mars.protobuf.SubscribeRespProto.SubscribeResp parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return PARSER.parseFrom(input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return Builder.create();
+        }
+
+        public static Builder newBuilder(com.mars.protobuf.SubscribeRespProto.SubscribeResp prototype) {
+            return newBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public String toString() {
+            return "SubscribeResp{" +
+                    "subReqID_=" + getSubReqID() +
+                    ", respCode_=" + getRespCode() +
+                    ", desc_=" + getDesc() +
+                    '}';
+        }
+
+        public SubscribeResp getDefaultInstanceForType() {
+            return defaultInstance;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<SubscribeResp> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>required int32 subReqID = 1;</code>
+         */
+        public boolean hasSubReqID() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+
+        /**
+         * <code>required int32 subReqID = 1;</code>
+         */
+        public int getSubReqID() {
+            return subReqID_;
+        }
+
+        /**
+         * <code>required int32 respCode = 2;</code>
+         */
+        public boolean hasRespCode() {
+            return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+
+        /**
+         * <code>required int32 respCode = 2;</code>
+         */
+        public int getRespCode() {
+            return respCode_;
+        }
+
+        /**
+         * <code>required string desc = 3;</code>
+         */
+        public boolean hasDesc() {
+            return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+
+        /**
+         * <code>required string desc = 3;</code>
+         */
+        public java.lang.String getDesc() {
+            java.lang.Object ref = desc_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    desc_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <code>required string desc = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+        getDescBytes() {
+            java.lang.Object ref = desc_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                desc_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        private void initFields() {
+            subReqID_ = 0;
+            respCode_ = 0;
+            desc_ = "";
+        }
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized != -1) return isInitialized == 1;
+
+            if (!hasSubReqID()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasRespCode()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasDesc()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            getSerializedSize();
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                output.writeInt32(1, subReqID_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                output.writeInt32(2, respCode_);
+            }
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                output.writeBytes(3, getDescBytes());
+            }
+        }
+
+        public int getSerializedSize() {
+            int size = memoizedSerializedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, subReqID_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(2, respCode_);
+            }
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeBytesSize(3, getDescBytes());
+            }
+            memoizedSerializedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
+                throws java.io.ObjectStreamException {
+            return super.writeReplace();
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public Builder toBuilder() {
+            return newBuilder(this);
+        }
+
+        /**
+         * Protobuf type {@code com.mars.protobuf.com.mars.serialize.SubscribeResp}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageLite.Builder<
+                        com.mars.protobuf.SubscribeRespProto.SubscribeResp, Builder>
+                implements com.mars.protobuf.SubscribeRespProto.SubscribeRespOrBuilder {
+            private int bitField0_;
+            // required int32 subReqID = 1;
+            private int subReqID_;
+            // required int32 respCode = 2;
+            private int respCode_;
+            // required string desc = 3;
+            private java.lang.Object desc_ = "";
+
+            // Construct using com.mars.protobuf.SubscribeRespProto.com.mars.serialize.SubscribeResp.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private static Builder create() {
+                return new Builder();
+            }
+
+            private void maybeForceBuilderInitialization() {
+            }
+
+            public Builder clear() {
+                super.clear();
+                subReqID_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                respCode_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                desc_ = "";
+                bitField0_ = (bitField0_ & ~0x00000004);
+                return this;
+            }
+
+            public Builder clone() {
+                return create().mergeFrom(buildPartial());
+            }
+
+            public com.mars.protobuf.SubscribeRespProto.SubscribeResp getDefaultInstanceForType() {
+                return com.mars.protobuf.SubscribeRespProto.SubscribeResp.getDefaultInstance();
+            }
+
+            public com.mars.protobuf.SubscribeRespProto.SubscribeResp build() {
+                com.mars.protobuf.SubscribeRespProto.SubscribeResp result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public com.mars.protobuf.SubscribeRespProto.SubscribeResp buildPartial() {
+                com.mars.protobuf.SubscribeRespProto.SubscribeResp result = new com.mars.protobuf.SubscribeRespProto.SubscribeResp(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.subReqID_ = subReqID_;
+                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+                    to_bitField0_ |= 0x00000002;
+                }
+                result.respCode_ = respCode_;
+                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+                    to_bitField0_ |= 0x00000004;
+                }
+                result.desc_ = desc_;
+                result.bitField0_ = to_bitField0_;
+                return result;
+            }
+
+            public Builder mergeFrom(com.mars.protobuf.SubscribeRespProto.SubscribeResp other) {
+                if (other == com.mars.protobuf.SubscribeRespProto.SubscribeResp.getDefaultInstance()) return this;
+                if (other.hasSubReqID()) {
+                    setSubReqID(other.getSubReqID());
+                }
+                if (other.hasRespCode()) {
+                    setRespCode(other.getRespCode());
+                }
+                if (other.hasDesc()) {
+                    bitField0_ |= 0x00000004;
+                    desc_ = other.desc_;
+
+                }
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                if (!hasSubReqID()) {
+
+                    return false;
+                }
+                if (!hasRespCode()) {
+
+                    return false;
+                }
+                if (!hasDesc()) {
+
+                    return false;
+                }
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.mars.protobuf.SubscribeRespProto.SubscribeResp parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.mars.protobuf.SubscribeRespProto.SubscribeResp) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>required int32 subReqID = 1;</code>
+             */
+            public boolean hasSubReqID() {
+                return ((bitField0_ & 0x00000001) == 0x00000001);
+            }
+
+            /**
+             * <code>required int32 subReqID = 1;</code>
+             */
+            public int getSubReqID() {
+                return subReqID_;
+            }
+
+            /**
+             * <code>required int32 subReqID = 1;</code>
+             */
+            public Builder setSubReqID(int value) {
+                bitField0_ |= 0x00000001;
+                subReqID_ = value;
+
+                return this;
+            }
+
+            /**
+             * <code>required int32 subReqID = 1;</code>
+             */
+            public Builder clearSubReqID() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                subReqID_ = 0;
+
+                return this;
+            }
+
+            /**
+             * <code>required int32 respCode = 2;</code>
+             */
+            public boolean hasRespCode() {
+                return ((bitField0_ & 0x00000002) == 0x00000002);
+            }
+
+            /**
+             * <code>required int32 respCode = 2;</code>
+             */
+            public int getRespCode() {
+                return respCode_;
+            }
+
+            /**
+             * <code>required int32 respCode = 2;</code>
+             */
+            public Builder setRespCode(int value) {
+                bitField0_ |= 0x00000002;
+                respCode_ = value;
+
+                return this;
+            }
+
+            /**
+             * <code>required int32 respCode = 2;</code>
+             */
+            public Builder clearRespCode() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                respCode_ = 0;
+
+                return this;
+            }
+
+            /**
+             * <code>required string desc = 3;</code>
+             */
+            public boolean hasDesc() {
+                return ((bitField0_ & 0x00000004) == 0x00000004);
+            }
+
+            /**
+             * <code>required string desc = 3;</code>
+             */
+            public java.lang.String getDesc() {
+                java.lang.Object ref = desc_;
+                if (!(ref instanceof java.lang.String)) {
+                    java.lang.String s = ((com.google.protobuf.ByteString) ref)
+                            .toStringUtf8();
+                    desc_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>required string desc = 3;</code>
+             */
+            public Builder setDesc(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                desc_ = value;
+
+                return this;
+            }
+
+            /**
+             * <code>required string desc = 3;</code>
+             */
+            public com.google.protobuf.ByteString
+            getDescBytes() {
+                java.lang.Object ref = desc_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    desc_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>required string desc = 3;</code>
+             */
+            public Builder setDescBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                desc_ = value;
+
+                return this;
+            }
+
+            /**
+             * <code>required string desc = 3;</code>
+             */
+            public Builder clearDesc() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                desc_ = getDefaultInstance().getDesc();
+
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:com.mars.protobuf.com.mars.serialize.SubscribeResp)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.mars.protobuf.com.mars.serialize.SubscribeResp)
     }
 
-    static {
-      defaultInstance = new SubscribeResp(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:com.mars.protobuf.com.mars.serialize.SubscribeResp)
-  }
-
-
-  static {
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

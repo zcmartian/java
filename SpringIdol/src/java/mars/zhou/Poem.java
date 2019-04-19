@@ -1,5 +1,5 @@
 package mars.zhou;
 
 public interface Poem {
-	public void recite();
+    public void recite();
 }

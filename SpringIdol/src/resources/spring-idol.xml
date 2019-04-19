@@ -1,101 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://www.springframework.org/schema/aop
     http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<bean id="duke" class="mars.zhou.Juggler">
-		<constructor-arg value="15" />
-	</bean>
+    <bean id="duke" class="mars.zhou.Juggler">
+        <constructor-arg value="15"/>
+    </bean>
 
-	<bean id="sonnet29" class="mars.zhou.Sonnet29" />
+    <bean id="sonnet29" class="mars.zhou.Sonnet29"/>
 
-	<bean id="duke2" class="mars.zhou.Juggler">
-		<constructor-arg value="15" />
-		<constructor-arg>
-			<bean class="mars.zhou.Sonnet29" />
-		</constructor-arg>
-	</bean>
+    <bean id="duke2" class="mars.zhou.Juggler">
+        <constructor-arg value="15"/>
+        <constructor-arg>
+            <bean class="mars.zhou.Sonnet29"/>
+        </constructor-arg>
+    </bean>
 
-	<bean id="poeticDuke" class="mars.zhou.PoeticJuggler">
-		<constructor-arg value="15" />
-		<constructor-arg ref="sonnet29" />
-	</bean>
+    <bean id="poeticDuke" class="mars.zhou.PoeticJuggler">
+        <constructor-arg value="15"/>
+        <constructor-arg ref="sonnet29"/>
+    </bean>
 
-	<bean id="theStage" class="mars.zhou.Stage" factory-method="getInstance" />
+    <bean id="theStage" class="mars.zhou.Stage" factory-method="getInstance"/>
 
-	<bean id="ticket" class="mars.zhou.Ticket" scope="prototype" />
+    <bean id="ticket" class="mars.zhou.Ticket" scope="prototype"/>
 
-	<bean id="auditorium" class="mars.zhou.Auditorium" init-method="turnOnLights"
-		destroy-method="turnOffLights" />
+    <bean id="auditorium" class="mars.zhou.Auditorium" init-method="turnOnLights"
+          destroy-method="turnOffLights"/>
 
-	<bean id="kenny" class="mars.zhou.Instrumentalist">
-		<property name="song" value="Jingle Bells" />
-		<property name="age" value="37" />
-		<property name="instrument">
-			<bean class="mars.zhou.Saxophone" />
-		</property>
-	</bean>
+    <bean id="kenny" class="mars.zhou.Instrumentalist">
+        <property name="song" value="Jingle Bells"/>
+        <property name="age" value="37"/>
+        <property name="instrument">
+            <bean class="mars.zhou.Saxophone"/>
+        </property>
+    </bean>
 
-	<bean id="saxophone" class="mars.zhou.Saxophone" />
-	<bean id="piano" class="mars.zhou.Piano" />
-	<bean id="guitar" class="mars.zhou.Guitar" />
-	<bean id="symbal" class="mars.zhou.Symbal" />
-	<bean id="harmonica" class="mars.zhou.Harmonica" />
+    <bean id="saxophone" class="mars.zhou.Saxophone"/>
+    <bean id="piano" class="mars.zhou.Piano"/>
+    <bean id="guitar" class="mars.zhou.Guitar"/>
+    <bean id="symbal" class="mars.zhou.Symbal"/>
+    <bean id="harmonica" class="mars.zhou.Harmonica"/>
 
-	<bean id="hank" class="mars.zhou.OneManBand" init-method="initialize" destroy-method="close">
-		<property name="instruments">
-			<!-- <list> <ref bean="guitar" /> <ref bean="symbal" /> <ref bean="harmonica" 
-				/> </list> -->
-			<map>
-				<entry key="GUITAR" value-ref="guitar" />
-				<entry key="CYMBAL" value-ref="symbal" />
-				<entry key="HARMONICA" value-ref="harmonica" />
-			</map>
-		</property>
-	</bean>
+    <bean id="hank" class="mars.zhou.OneManBand" init-method="initialize" destroy-method="close">
+        <property name="instruments">
+            <!-- <list> <ref bean="guitar" /> <ref bean="symbal" /> <ref bean="harmonica"
+                /> </list> -->
+            <map>
+                <entry key="GUITAR" value-ref="guitar"/>
+                <entry key="CYMBAL" value-ref="symbal"/>
+                <entry key="HARMONICA" value-ref="harmonica"/>
+            </map>
+        </property>
+    </bean>
 
-	<bean id="audience" class="mars.zhou.Audience" />
+    <bean id="audience" class="mars.zhou.Audience"/>
 
-	<aop:config>
-		<aop:aspect ref="audience">
-			<aop:pointcut id="performance"
-				expression="execution(* mars.zhou.Performer.perform(..))" />
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:pointcut id="performance"
+                          expression="execution(* mars.zhou.Performer.perform(..))"/>
 
-			<aop:before pointcut-ref="performance" method="takeSeats" />
+            <aop:before pointcut-ref="performance" method="takeSeats"/>
 
-			<aop:before pointcut-ref="performance" method="turnOffCellphones" />
+            <aop:before pointcut-ref="performance" method="turnOffCellphones"/>
 
-			<aop:after pointcut-ref="performance" method="applaud" />
+            <aop:after pointcut-ref="performance" method="applaud"/>
 
-			<aop:after-throwing pointcut-ref="performance"
-				method="demandRefund" />
-		</aop:aspect>
-	</aop:config>
+            <aop:after-throwing pointcut-ref="performance"
+                                method="demandRefund"/>
+        </aop:aspect>
+    </aop:config>
 
-	<aop:config>
-		<aop:aspect ref="audience">
-			<aop:pointcut id="performance2"
-				expression="execution(* mars.zhou.Performer.perform(..))" />
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:pointcut id="performance2"
+                          expression="execution(* mars.zhou.Performer.perform(..))"/>
 
-			<aop:around pointcut-ref="performance2" method="watchPerformance" />
-		</aop:aspect>
-	</aop:config>
+            <aop:around pointcut-ref="performance2" method="watchPerformance"/>
+        </aop:aspect>
+    </aop:config>
 
-	<bean id="criticismEngine" class="mars.zhou.CriticismEngineImpl">
-		<property name="criticismPool">
-			<list>
-				<value>I'm not being rude.</value>
-				<value>You may be the lease talent</value>
-				<value>Do everyone</value>
-			</list>
-		</property>
-	</bean>
+    <bean id="criticismEngine" class="mars.zhou.CriticismEngineImpl">
+        <property name="criticismPool">
+            <list>
+                <value>I'm not being rude.</value>
+                <value>You may be the lease talent</value>
+                <value>Do everyone</value>
+            </list>
+        </property>
+    </bean>
 
-<!-- 	<bean class="mars.zhou.JudgeAspect" factory-method="aspectOf">
-		<property name="criticismEngine" ref="criticismEngine" />
-	</bean> -->
+    <!-- 	<bean class="mars.zhou.JudgeAspect" factory-method="aspectOf">
+            <property name="criticismEngine" ref="criticismEngine" />
+        </bean> -->
 
 </beans>

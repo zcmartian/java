@@ -1,8 +1,8 @@
 package com.jikexueyuan.rpc.container;
 
-import java.util.concurrent.CountDownLatch;
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by version_z on 2015/9/8.

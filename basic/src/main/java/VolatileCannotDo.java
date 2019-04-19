@@ -4,15 +4,6 @@
 public class VolatileCannotDo {
     public static volatile int i = 0;
 
-    public static class PlusTask implements Runnable {
-        @Override
-        public void run() {
-            for (int k = 0; k < 10000; ++k) {
-                ++i;
-            }
-        }
-    }
-
     public static void main(String[] args) throws InterruptedException {
         Thread[] threads = new Thread[10];
 
@@ -26,5 +17,14 @@ public class VolatileCannotDo {
         }
 
         System.out.println(i);
+    }
+
+    public static class PlusTask implements Runnable {
+        @Override
+        public void run() {
+            for (int k = 0; k < 10000; ++k) {
+                ++i;
+            }
+        }
     }
 }

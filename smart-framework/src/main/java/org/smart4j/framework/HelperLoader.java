@@ -8,7 +8,7 @@ import org.smart4j.util.ClassUtil;
  */
 public final class HelperLoader {
     public static void init() {
-        Class<?>[] classList = { ClassHelper.class, BeanHelper.class,
+        Class<?>[] classList = {ClassHelper.class, BeanHelper.class,
                 IocHelper.class, ControllerHelper.class, DatabaseHelper.class};
         for (Class<?> cls : classList) {
             ClassUtil.loadClass(cls.getName(), true);

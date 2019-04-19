@@ -1,10 +1,10 @@
 package com.dianping.marszhou.smartweb.service;
 
-import org.smart4j.helper.DatabaseHelper;
 import com.dianping.marszhou.smartweb.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.smart4j.annotation.Service;
+import org.smart4j.helper.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;

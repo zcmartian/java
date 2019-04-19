@@ -2,6 +2,18 @@
  * Created by Administrator on 2017/2/8.
  */
 public class Sort {
+    public static void main(String... args) {
+        Sort sort = new Sort();
+        int[] array = sort.generateArray(11);
+        sort.printArray(array);
+        System.out.println("Bubble sort :");
+//        sort.BubbleSortOne(array);
+//        sort.SelectSort(array);
+//        sort.InsertSort(array);
+        sort.quickSort(array, 0, array.length - 1);
+        sort.printArray(array);
+    }
+
     private void BubbleSortOne(int[] array) {
         if (array == null || array.length == 0) {
             return;
@@ -101,17 +113,5 @@ public class Sort {
             System.out.print(array[i] + " ");
         }
         System.out.println();
-    }
-
-    public static void main(String... args) {
-        Sort sort = new Sort();
-        int[] array = sort.generateArray(11);
-        sort.printArray(array);
-        System.out.println("Bubble sort :");
-//        sort.BubbleSortOne(array);
-//        sort.SelectSort(array);
-//        sort.InsertSort(array);
-        sort.quickSort(array, 0, array.length - 1);
-        sort.printArray(array);
     }
 }

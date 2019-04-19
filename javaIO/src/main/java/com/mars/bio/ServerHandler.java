@@ -1,6 +1,6 @@
 package com.mars.bio; /**
-                   * Created by marszhou on 16/8/19.
-                   */
+ * Created by marszhou on 16/8/19.
+ */
 
 import java.io.BufferedReader;
 import java.io.IOException;

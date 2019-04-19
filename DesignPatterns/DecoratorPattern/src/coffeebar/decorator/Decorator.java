@@ -7,7 +7,9 @@ public class Decorator extends Drink {
 
     public Decorator(Drink Obj) {
         this.Obj = Obj;
-    };
+    }
+
+    ;
 
     @Override
     public float cost() {

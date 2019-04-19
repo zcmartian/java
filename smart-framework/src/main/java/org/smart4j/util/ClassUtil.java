@@ -19,7 +19,7 @@ import java.util.jar.JarFile;
 public final class ClassUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClassUtil.class);
 
-    public static  ClassLoader getClassLoader() {
+    public static ClassLoader getClassLoader() {
         return Thread.currentThread().getContextClassLoader();
     }
 
@@ -46,7 +46,7 @@ public final class ClassUtil {
                         String packagePath = url.getPath().replaceAll("%20", " ");
                         addClass(classSet, packagePath, packageName);
                     } else if (protocol.equals("jar")) {
-                        JarURLConnection jarURLConnection = (JarURLConnection)url.openConnection();
+                        JarURLConnection jarURLConnection = (JarURLConnection) url.openConnection();
                         if (jarURLConnection != null) {
                             JarFile jarFile = jarURLConnection.getJarFile();
                             if (jarFile != null) {

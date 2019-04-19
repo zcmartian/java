@@ -1,12 +1,12 @@
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Enumeration;
-import java.util.Properties;
-
 import colors.Color;
 import factories.AbstractFactory;
 import factories.FactoryProducer;
 import shapes.Shape;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Enumeration;
+import java.util.Properties;
 
 public class Main {
 

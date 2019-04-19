@@ -27,7 +27,9 @@ public class SubMenu extends MenuComponent {
     public void print() {
         // TODO Auto-generated method stub
         System.out.println("****This is SubMenu****");
-    };
+    }
+
+    ;
     // 其他功能代码
 
 }

@@ -1,13 +1,12 @@
 package com.jikexueyuan.rpc.serialize.json;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.alibaba.fastjson.JSON;
 import com.jikexueyuan.rpc.exception.RpcException;
 import com.jikexueyuan.rpc.exception.RpcExceptionCodeEnum;
 import com.jikexueyuan.rpc.serialize.Parser;
 import com.jikexueyuan.rpc.serialize.Request;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created on 2015/8/17.

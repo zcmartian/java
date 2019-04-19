@@ -12,7 +12,7 @@ public class ReadFileThread extends Thread {
     @Override
     public void run() {
         String finalI = Thread.currentThread().getName();
-        String fileName = Main.MEITUANCSVFOLDER + finalI + ".csv";
+        String fileName = Main2.MEITUANCSVFOLDER + finalI + ".csv";
         BankInfo bankInfo;
         try {
             File file = new File(fileName);
@@ -22,14 +22,14 @@ public class ReadFileThread extends Thread {
                 System.out.println("filename:" + fileName);
                 String tempString;
                 while ((tempString = reader.readLine()) != null) {
-                    bankInfo = Main.parseToBankInfo(tempString);
+                    bankInfo = Main2.parseToBankInfo(tempString);
                     if (bankInfo != null) {
                         Long poiId = bankInfo.getPoi_id();
-                        ArrayList<BankInfo> bankList = Main.originalMeiTuanMap
+                        ArrayList<BankInfo> bankList = Main2.originalMeiTuanMap
                                 .get(poiId);
                         if (bankList == null) {
                             bankList = new ArrayList<>();
-                            Main.originalMeiTuanMap.put(poiId, bankList);
+                            Main2.originalMeiTuanMap.put(poiId, bankList);
                         }
                         bankList.add(bankInfo);
                     }

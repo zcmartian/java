@@ -9,11 +9,11 @@ public class SingletonThree {
         return SingletonHolder.instance;
     }
 
-    private static class SingletonHolder {
-        private static SingletonThree instance = new SingletonThree();
-    }
-
     public String info() {
         return this.toString();
+    }
+
+    private static class SingletonHolder {
+        private static SingletonThree instance = new SingletonThree();
     }
 }

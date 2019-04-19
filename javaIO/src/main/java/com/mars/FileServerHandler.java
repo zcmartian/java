@@ -4,18 +4,18 @@ package com.mars;
  * Created by marszhou on 16/8/26.
  */
 
-import java.io.File;
-import java.io.RandomAccessFile;
-
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.DefaultFileRegion;
 import io.netty.channel.FileRegion;
 import io.netty.channel.SimpleChannelInboundHandler;
 
+import java.io.File;
+import java.io.RandomAccessFile;
+
 /**
  * @author Administrator
- * @date 2014年3月9日
  * @version 1.0
+ * @date 2014年3月9日
  */
 public class FileServerHandler extends SimpleChannelInboundHandler<String> {
 

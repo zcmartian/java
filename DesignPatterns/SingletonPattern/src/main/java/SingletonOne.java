@@ -4,13 +4,14 @@
 public class SingletonOne {
     private static SingletonOne instance = new SingletonOne();
 
-    private SingletonOne() {}
-
-    public String info() {
-        return this.toString();
+    private SingletonOne() {
     }
 
     public static SingletonOne getInstance() {
         return instance;
+    }
+
+    public String info() {
+        return this.toString();
     }
 }

@@ -2,6 +2,8 @@ import java.util.concurrent.ConcurrentMap;
 
 public class ThreadModule implements Runnable {
 
+    static ConcurrentMap<String, String> concurrentMap;
+
     public ThreadModule(ConcurrentMap<String, String> map) {
         concurrentMap = map;
     }
@@ -12,6 +14,4 @@ public class ThreadModule implements Runnable {
         Object value = concurrentMap.get("key");
         System.out.println(value.toString());
     }
-
-    static ConcurrentMap<String, String> concurrentMap;
 }

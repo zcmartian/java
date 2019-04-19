@@ -8,29 +8,6 @@ import java.util.logging.Logger;
  */
 public class CyclicBarrierExample2 {
 
-    //Runnable task for each thread
-    private static class Task implements Runnable {
-
-        private CyclicBarrier barrier;
-
-        public Task(CyclicBarrier barrier) {
-            this.barrier = barrier;
-        }
-
-        @Override
-        public void run() {
-            try {
-                System.out.println(Thread.currentThread().getName() + " is waiting on barrier");
-                barrier.await();
-                System.out.println(Thread.currentThread().getName() + " has crossed the barrier");
-            } catch (InterruptedException ex) {
-                Logger.getLogger(CyclicBarrierExample.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (BrokenBarrierException ex) {
-                Logger.getLogger(CyclicBarrierExample.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-
     public static void main(String args[]) throws InterruptedException {
 
         //creating CyclicBarrier with 3 parties i.e. 3 Threads needs to call await()
@@ -53,5 +30,28 @@ public class CyclicBarrierExample2 {
         Thread.sleep(1000L);
         t3.start();
 
+    }
+
+    //Runnable task for each thread
+    private static class Task implements Runnable {
+
+        private CyclicBarrier barrier;
+
+        public Task(CyclicBarrier barrier) {
+            this.barrier = barrier;
+        }
+
+        @Override
+        public void run() {
+            try {
+                System.out.println(Thread.currentThread().getName() + " is waiting on barrier");
+                barrier.await();
+                System.out.println(Thread.currentThread().getName() + " has crossed the barrier");
+            } catch (InterruptedException ex) {
+                Logger.getLogger(CyclicBarrierExample.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (BrokenBarrierException ex) {
+                Logger.getLogger(CyclicBarrierExample.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 }

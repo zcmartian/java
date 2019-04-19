@@ -5,33 +5,32 @@ import javax.jms.*;
 
 public class Receiver {
     public static void main(String[] args) {
-        // ConnectionFactory �����ӹ�����JMS ������������
+        // ConnectionFactory ：连接工厂，JMS 用它创建连接
         ConnectionFactory connectionFactory;
-        // Connection ��JMS �ͻ��˵�JMS Provider ������
+        // Connection ：JMS 客户端到JMS Provider 的连接
         Connection connection = null;
-        // Session�� һ�����ͻ������Ϣ���߳�
+        // Session： 一个发送或接收消息的线程
         Session session;
-        // Destination ����Ϣ��Ŀ�ĵ�;��Ϣ���͸�˭.
+        // Destination ：消息的目的地;消息发送给谁.
         Destination destination;
-        // �����ߣ���Ϣ������
+        // 消息接收者
         MessageConsumer consumer;
         connectionFactory = new ActiveMQConnectionFactory(
                 ActiveMQConnection.DEFAULT_USER,
                 ActiveMQConnection.DEFAULT_PASSWORD,
                 "tcp://localhost:61616");
         try {
-            // ����ӹ����õ����Ӷ���
+            // 构造从工厂得到连接对象
             connection = connectionFactory.createConnection();
-            // ����
+            // 启动
             connection.start();
-            // ��ȡ��������
+            // 获取操作连接
             session = connection.createSession(Boolean.FALSE,
                     Session.AUTO_ACKNOWLEDGE);
-            // ��ȡsessionע�����ֵxingbo.xu-queue��һ����������queue��������ActiveMq��console����
+            // 获取session注意参数值xingbo.xu-queue是一个服务器的queue，须在在ActiveMq的console配置
             destination = session.createQueue("FirstQueue");
             consumer = session.createConsumer(destination);
             while (true) {
-                //���ý����߽�����Ϣ��ʱ�䣬Ϊ�˱��ڲ��ԣ�����˭��Ϊ100s
                 TextMessage message = (TextMessage) consumer.receive(100000);
                 if (null != message) {
                     System.out.println("�յ���Ϣ" + message.getText());

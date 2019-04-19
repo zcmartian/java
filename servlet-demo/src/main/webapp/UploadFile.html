@@ -7,9 +7,9 @@
 <h3>文件上传：</h3>
 请选择要上传的文件：<br/>
 
-<form action="UploadServlet" method="post"
-      enctype="multipart/form-data">
-    <input type="file" name="file" size="50"/>
+<form action="UploadServlet" enctype="multipart/form-data"
+      method="post">
+    <input name="file" size="50" type="file"/>
     <br/>
     <input type="submit" value="上传文件"/>
 </form>

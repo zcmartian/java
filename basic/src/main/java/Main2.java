@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Main {
+public class Main2 {
 
     public static final String DIANPINGCSV = "/Users/marszhou/Downloads/dianping2.csv";
     public static final String DIANPINGMEITUANCSV = "/Users/marszhou/Downloads/meituanmapp.csv";
@@ -102,7 +102,7 @@ public class Main {
             thread.join();
 
             System.out.println("current originalMeiTuanMap size is: "
-                    + Main.originalMeiTuanMap.size());
+                    + Main2.originalMeiTuanMap.size());
             originalMeiTuanMapCount += originalMeiTuanMap.size();
 
             updateMeituanMap();

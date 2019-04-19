@@ -1,7 +1,6 @@
 package com.mars.protobuf;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.mars.protobuf.SubscribeReqProto;
 
 import java.util.ArrayList;
 import java.util.List;

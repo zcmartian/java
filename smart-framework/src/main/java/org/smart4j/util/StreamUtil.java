@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 public final class StreamUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(StreamUtil.class);
 
-    public static String getString(InputStream is){
+    public static String getString(InputStream is) {
         StringBuilder sb = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));

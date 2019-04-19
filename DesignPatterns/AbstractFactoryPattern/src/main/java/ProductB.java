@@ -3,5 +3,6 @@
  */
 public interface ProductB {
     void operation1();
+
     void operation2();
 }

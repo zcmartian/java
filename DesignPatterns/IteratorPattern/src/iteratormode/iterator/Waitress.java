@@ -1,8 +1,8 @@
 package iteratormode.iterator;
 
-import java.util.ArrayList;
-
 import iteratormode.MenuItem;
+
+import java.util.ArrayList;
 
 public class Waitress {
     private ArrayList<Iterator> iterators = new ArrayList<Iterator>();

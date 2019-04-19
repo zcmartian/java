@@ -16,7 +16,7 @@ public class TimeServerHandlerExecutePool {
                 TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(queueSize));
     }
 
-    public void  execute(Runnable task) {
+    public void execute(Runnable task) {
         executorService.execute(task);
     }
 

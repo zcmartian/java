@@ -1,12 +1,5 @@
 package com.mars;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.RandomAccessFile;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.util.regex.Pattern;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
@@ -15,6 +8,12 @@ import io.netty.handler.stream.ChunkedFile;
 import io.netty.util.CharsetUtil;
 
 import javax.activation.MimetypesFileTypeMap;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.RandomAccessFile;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.regex.Pattern;
 
 /**
  * Created by marszhou on 16/8/24.

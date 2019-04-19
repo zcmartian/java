@@ -29,7 +29,7 @@ import java.util.Map;
  * Created by marszhou on 15/12/21.
  */
 @WebServlet(urlPatterns = "/*", loadOnStartup = 0)
-public class DistpatcherServlet extends HttpServlet{
+public class DistpatcherServlet extends HttpServlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         HelperLoader.init();

@@ -1,9 +1,5 @@
 package com.jikexueyuan.rpc.proxy;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-
 import com.jikexueyuan.rpc.invoke.ConsumerConfig;
 import com.jikexueyuan.rpc.invoke.HttpInvoker;
 import com.jikexueyuan.rpc.invoke.Invoker;
@@ -11,6 +7,10 @@ import com.jikexueyuan.rpc.serialize.Formater;
 import com.jikexueyuan.rpc.serialize.Parser;
 import com.jikexueyuan.rpc.serialize.json.JsonFormater;
 import com.jikexueyuan.rpc.serialize.json.JsonParser;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * Created by version_z on 2015/8/22.
@@ -28,7 +28,7 @@ public class ConsumerProxyFactory implements InvocationHandler {
 
     public Object create() throws Exception {
         Class interfaceClass = Class.forName(clazz);
-        return Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class[] { interfaceClass }, this);
+        return Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class[]{interfaceClass}, this);
     }
 
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

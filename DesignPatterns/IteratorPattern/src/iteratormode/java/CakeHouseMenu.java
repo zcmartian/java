@@ -1,9 +1,9 @@
 package iteratormode.java;
 
+import iteratormode.MenuItem;
+
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import iteratormode.MenuItem;
 
 public class CakeHouseMenu {
     private ArrayList<MenuItem> menuItems;

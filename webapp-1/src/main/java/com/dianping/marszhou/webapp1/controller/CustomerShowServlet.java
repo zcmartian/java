@@ -14,8 +14,9 @@ import java.io.IOException;
  * Created by marszhou on 15/12/18.
  */
 @WebServlet("/customer_show")
-public class CustomerShowServlet extends HttpServlet{
+public class CustomerShowServlet extends HttpServlet {
     private CustomerService customerService;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
             IOException, ServletException {

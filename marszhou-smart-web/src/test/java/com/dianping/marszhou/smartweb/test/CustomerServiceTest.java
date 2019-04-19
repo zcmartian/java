@@ -1,20 +1,18 @@
 package com.dianping.marszhou.smartweb.test;
 
+import com.dianping.marszhou.smartweb.model.Customer;
 import com.dianping.marszhou.smartweb.service.CustomerService;
-import org.smart4j.helper.BeanHelper;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.smart4j.helper.ClassHelper;
 import org.smart4j.helper.DatabaseHelper;
-import com.dianping.marszhou.smartweb.model.Customer;
+import org.smart4j.util.ClassUtil;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.smart4j.util.ClassUtil;
 
 /**
  * Created by marszhou on 15/12/18.
@@ -25,7 +23,7 @@ public class CustomerServiceTest {
     static {
         ClassUtil.loadClass(DatabaseHelper.class.getName(), true);
         Set<Class<?>> set = ClassHelper.getServiceClassSet();
-        if (!set.isEmpty() && set.size() ==1) {
+        if (!set.isEmpty() && set.size() == 1) {
             try {
                 customerService = (CustomerService) Class.forName(CustomerService.class.getName()).newInstance();
             } catch (InstantiationException e) {

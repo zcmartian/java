@@ -2,12 +2,6 @@
  * Created by mars on 2017/1/24.
  */
 public class TestOuter {
-    protected class InnerOne {
-        public void writeLine() {
-            System.out.println("Hello");
-        }
-    }
-
     public static void main(String args[]) {
         TestOuter outer = new TestOuter();
         TestOuter.InnerOne innerOne = outer.new InnerOne();
@@ -16,5 +10,11 @@ public class TestOuter {
         innerOne2.writeLine();
         System.out.println(innerOne);
         System.out.println(innerOne2);
+    }
+
+    protected class InnerOne {
+        public void writeLine() {
+            System.out.println("Hello");
+        }
     }
 }

@@ -2,7 +2,8 @@ package coffeebar;
 
 public abstract class Drink {
     public String description = "";
-    private float price = 0f;;
+    private float price = 0f;
+    ;
 
     public String getDescription() {
         return description + "-" + this.getPrice();

@@ -1,6 +1,5 @@
 package com.dianping.marszhou.webapp1.controller;
 
-import com.dianping.marszhou.webapp1.helper.DatabaseHelper;
 import com.dianping.marszhou.webapp1.model.Customer;
 import com.dianping.marszhou.webapp1.service.CustomerService;
 
@@ -16,8 +15,9 @@ import java.util.List;
  * Created by marszhou on 15/12/18.
  */
 @WebServlet("/customer")
-public class CustomerServlet extends HttpServlet{
+public class CustomerServlet extends HttpServlet {
     private CustomerService customerService;
+
     @Override
     public void init() throws ServletException {
         customerService = CustomerService.getInstance();

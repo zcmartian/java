@@ -8,7 +8,6 @@ import org.smart4j.util.CollectionUtil;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -17,6 +16,7 @@ import java.util.Set;
  */
 public final class ControllerHelper {
     private static final Map<Request, Handler> ACTION_MAP = new HashMap<Request, Handler>();
+
     static {
         Set<Class<?>> controllerSet = ClassHelper.getControllerClassSet();
         if (CollectionUtil.isNotEmpty(controllerSet)) {

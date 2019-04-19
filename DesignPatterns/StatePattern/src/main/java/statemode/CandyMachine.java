@@ -19,63 +19,63 @@ public class CandyMachine {
 
     public void insertCoin() {
         switch (state) {
-        case SoldOutState:
-            System.out.println("you can't insert coin,the machine sold out!");
-            break;
-        case OnReadyState:
-            state = HasCoin;
-            System.out.println("you have inserted a coin,next,please turn crank!");
-            break;
-        case HasCoin:
-            System.out.println("you can't insert another coin!");
+            case SoldOutState:
+                System.out.println("you can't insert coin,the machine sold out!");
+                break;
+            case OnReadyState:
+                state = HasCoin;
+                System.out.println("you have inserted a coin,next,please turn crank!");
+                break;
+            case HasCoin:
+                System.out.println("you can't insert another coin!");
 
-            break;
-        case SoldState:
-            System.out.println("please wait!we are giving you a candy!");
+                break;
+            case SoldState:
+                System.out.println("please wait!we are giving you a candy!");
 
-            break;
+                break;
         }
 
     }
 
     public void returnCoin() {
         switch (state) {
-        case SoldOutState:
-            System.out.println("you can't return,you haven't inserted a coin yet!");
-            break;
-        case OnReadyState:
-            System.out.println("you haven't inserted a coin yet!");
-            break;
-        case HasCoin:
+            case SoldOutState:
+                System.out.println("you can't return,you haven't inserted a coin yet!");
+                break;
+            case OnReadyState:
+                System.out.println("you haven't inserted a coin yet!");
+                break;
+            case HasCoin:
 
-            System.out.println("coin return!");
-            state = OnReadyState;
+                System.out.println("coin return!");
+                state = OnReadyState;
 
-            break;
-        case SoldState:
-            System.out.println("sorry,you already have turned the crank!");
+                break;
+            case SoldState:
+                System.out.println("sorry,you already have turned the crank!");
 
-            break;
+                break;
         }
 
     }
 
     public void turnCrank() {
         switch (state) {
-        case SoldOutState:
-            System.out.println("you turned,but there are no candies!");
-            break;
-        case OnReadyState:
-            System.out.println("you turned,but you haven't inserted a coin!");
-            break;
-        case HasCoin:
-            System.out.println("crank turn...!");
-            state = SoldState;
-            dispense();
-            break;
-        case SoldState:
-            System.out.println("we are giving you a candy,turning another get nothing,!");
-            break;
+            case SoldOutState:
+                System.out.println("you turned,but there are no candies!");
+                break;
+            case OnReadyState:
+                System.out.println("you turned,but you haven't inserted a coin!");
+                break;
+            case HasCoin:
+                System.out.println("crank turn...!");
+                state = SoldState;
+                dispense();
+                break;
+            case SoldState:
+                System.out.println("we are giving you a candy,turning another get nothing,!");
+                break;
         }
 
     }
@@ -95,20 +95,20 @@ public class CandyMachine {
     public void printstate() {
 
         switch (state) {
-        case SoldOutState:
-            System.out.println("***SoldOutState***");
-            break;
-        case OnReadyState:
-            System.out.println("***OnReadyState***");
-            break;
-        case HasCoin:
+            case SoldOutState:
+                System.out.println("***SoldOutState***");
+                break;
+            case OnReadyState:
+                System.out.println("***OnReadyState***");
+                break;
+            case HasCoin:
 
-            System.out.println("***HasCoin***");
+                System.out.println("***HasCoin***");
 
-            break;
-        case SoldState:
-            System.out.println("***SoldState***");
-            break;
+                break;
+            case SoldState:
+                System.out.println("***SoldState***");
+                break;
         }
 
     }

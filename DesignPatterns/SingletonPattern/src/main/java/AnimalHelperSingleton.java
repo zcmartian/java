@@ -54,7 +54,8 @@ interface Animal {
         MAMMAL,
         AMPHIBIAN,
         BIRD,
-        ARTHROPOD,;
+        ARTHROPOD,
+        ;
     }
 }
 

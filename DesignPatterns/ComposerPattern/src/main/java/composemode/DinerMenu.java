@@ -42,13 +42,13 @@ public class DinerMenu extends MenuComponent {
         return new ComposeIterator(new DinerIterator());
     }
 
-@Override
+    @Override
     public void print() {
         // TODO Auto-generated method stub
         System.out.println("****This is DinerMenu****");
     }
 
-        class DinerIterator implements Iterator {
+    class DinerIterator implements Iterator {
         private int position;
 
         public DinerIterator() {
@@ -78,5 +78,7 @@ public class DinerMenu extends MenuComponent {
             // TODO Auto-generated method stub
 
         }
-    };
+    }
+
+    ;
 }

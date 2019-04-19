@@ -8,6 +8,22 @@ public class CachedData {
     volatile boolean cacheValid;
     ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
 
+    public static void main(String... args) throws InterruptedException {
+        CachedData cachedData = new CachedData();
+        MyThread thread1 = new MyThread(cachedData);
+        MyThread thread2 = new MyThread(cachedData);
+        MyThread thread3 = new MyThread(cachedData);
+        MyThread thread4 = new MyThread(cachedData);
+        thread1.start();
+        thread2.start();
+        thread3.start();
+        thread4.start();
+        thread1.join();
+        thread2.join();
+        thread3.join();
+        thread4.join();
+    }
+
     void processCachedData() {
         rwl.readLock().lock();//@1
         while (!cacheValid) {
@@ -34,22 +50,6 @@ public class CachedData {
 
     private void use(int data) {
         System.out.println(Thread.currentThread() + " " + data);
-    }
-
-    public static void main(String... args) throws InterruptedException {
-        CachedData cachedData = new CachedData();
-        MyThread thread1 = new MyThread(cachedData);
-        MyThread thread2 = new MyThread(cachedData);
-        MyThread thread3 = new MyThread(cachedData);
-        MyThread thread4 = new MyThread(cachedData);
-        thread1.start();
-        thread2.start();
-        thread3.start();
-        thread4.start();
-        thread1.join();
-        thread2.join();
-        thread3.join();
-        thread4.join();
     }
 }
 

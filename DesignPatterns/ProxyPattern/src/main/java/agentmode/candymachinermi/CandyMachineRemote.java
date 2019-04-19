@@ -1,9 +1,9 @@
 package agentmode.candymachinermi;
 
+import agentmode.candymachine.State;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-
-import agentmode.candymachine.State;
 
 public interface CandyMachineRemote extends Remote {
     public String getLocation() throws RemoteException;

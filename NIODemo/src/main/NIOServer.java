@@ -1,6 +1,7 @@
 /**
  * Created by marszhou on 16/1/8.
  */
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -31,8 +32,7 @@ public class NIOServer {
     /**
      * 获得一个ServerSocket通道，并对该通道做一些初始化的工作
      *
-     * @param port
-     *            绑定的端口号
+     * @param port 绑定的端口号
      * @throws IOException
      */
     public void initServer(int port) throws IOException {

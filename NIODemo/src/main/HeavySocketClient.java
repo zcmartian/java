@@ -1,5 +1,3 @@
-import com.sun.xml.internal.bind.v2.model.annotation.RuntimeAnnotationReader;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,11 +12,21 @@ import java.util.concurrent.locks.LockSupport;
  * Created by marszhou on 16/1/7.
  */
 public class HeavySocketClient {
+    private static final int sleep_time = 1000 * 1000 * 1000;
     private static ExecutorService tp = Executors.newCachedThreadPool();
-    private static final int sleep_time = 1000*1000*1000;
+
     public static class EchoClient implements Runnable {
 
-        @Override public void run() {
+        public static void main(String[] args) {
+            EchoClient ec = new EchoClient();
+            for (int i = 0; i < 10; ++i) {
+                tp.execute(ec);
+            }
+            tp.shutdown();
+        }
+
+        @Override
+        public void run() {
             Socket client = null;
             PrintWriter writer = null;
             BufferedReader reader = null;
@@ -60,14 +68,6 @@ public class HeavySocketClient {
                         e.printStackTrace();
                     }
             }
-        }
-
-        public static void main(String[] args) {
-            EchoClient ec = new EchoClient();
-            for (int i=0;i<10;++i) {
-                tp.execute(ec);
-            }
-            tp.shutdown();
         }
     }
 }

@@ -46,7 +46,7 @@ public class CustomerController {
     }
 
     @Action("get:/customer_edit")
-    public  View edit(Param param) {
+    public View edit(Param param) {
         long id = param.getLong("id");
         Customer customer = customerService.getCustomer(id);
         return new View("customer_edit.jsp").addModel("customer", customer);

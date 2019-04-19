@@ -12,7 +12,7 @@ public class LogFilter implements Filter {
     }
 
     public void doFilter(ServletRequest request, ServletResponse response,
-            FilterChain chain) throws IOException, ServletException {
+                         FilterChain chain) throws IOException, ServletException {
         String ipAddress = request.getRemoteAddr();
         System.out.println("IP " + ipAddress + ", Time "
                 + new Date().toString());

@@ -1,7 +1,7 @@
 /**
  * Created by marszhou on 16/1/7.
  */
-public class Future implements Data {
+public class MyFuture implements Data {
     protected RealData realData;
     protected boolean isReady;
 

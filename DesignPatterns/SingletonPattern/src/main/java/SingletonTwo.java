@@ -4,10 +4,7 @@
 public class SingletonTwo {
     private volatile static SingletonTwo instance = null;
 
-    private SingletonTwo() {}
-
-    public String info() {
-        return this.toString();
+    private SingletonTwo() {
     }
 
     public static SingletonTwo getInstance() {
@@ -19,5 +16,9 @@ public class SingletonTwo {
             }
         }
         return instance;
+    }
+
+    public String info() {
+        return this.toString();
     }
 }

@@ -1,17 +1,6 @@
 import java.util.concurrent.*;
 
 public class ThreadPoolTest implements Runnable {
-    public void run() {
-        synchronized (this) {
-            try {
-                System.out.println(Thread.currentThread().getName());
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     public static void main(String[] args) {
         //BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
         BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(4);
@@ -35,5 +24,16 @@ public class ThreadPoolTest implements Runnable {
         }
         //System.out.println(executor.toString());
         executor.shutdown();
+    }
+
+    public void run() {
+        synchronized (this) {
+            try {
+                System.out.println(Thread.currentThread().getName());
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

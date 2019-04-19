@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
  * Created by marszhou on 15/12/18.
  */
 @WebServlet("/customer_create")
-public class CustomerCreateServlet extends HttpServlet{
+public class CustomerCreateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         //TODO

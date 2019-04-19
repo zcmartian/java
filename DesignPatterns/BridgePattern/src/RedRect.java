@@ -1,7 +1,7 @@
 /**
  * Created by mars on 16/11/22.
  */
-public class RedRect implements DrawAPI{
+public class RedRect implements DrawAPI {
     @Override
     public void drawCircle(int radius, int x, int y) {
         throw new UnsupportedOperationException();

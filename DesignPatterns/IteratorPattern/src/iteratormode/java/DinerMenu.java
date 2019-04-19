@@ -1,8 +1,8 @@
 package iteratormode.java;
 
-import java.util.Iterator;
-
 import iteratormode.MenuItem;
+
+import java.util.Iterator;
 
 public class DinerMenu {
     private final static int Max_Items = 5;

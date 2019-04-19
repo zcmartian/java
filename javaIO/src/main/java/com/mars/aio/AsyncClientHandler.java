@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * Created by mars on 2017/2/12.
  */
-public class AsyncClientHandler implements CompletionHandler<Void, AsyncClientHandler>, Runnable{
+public class AsyncClientHandler implements CompletionHandler<Void, AsyncClientHandler>, Runnable {
 
     private AsynchronousSocketChannel client;
     private String host;

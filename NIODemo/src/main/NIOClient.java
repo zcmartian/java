@@ -1,4 +1,3 @@
-
 /**
  * Created by marszhou on 16/1/8.
  */
@@ -19,9 +18,21 @@ public class NIOClient {
     private Selector selector;
 
     /**
+     * 启动客户端测试
+     *
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
+        NIOClient client = new NIOClient();
+        client.initClient("localhost", 8000);
+        client.listen();
+    }
+
+    /**
      * 获得一个Socket通道，并对该通道做一些初始化的工作
-     * @param ip 连接的服务器的ip
-     * @param port  连接的服务器的端口号
+     *
+     * @param ip   连接的服务器的ip
+     * @param port 连接的服务器的端口号
      * @throws IOException
      */
     public void initClient(String ip, int port) throws IOException {
@@ -41,6 +52,7 @@ public class NIOClient {
 
     /**
      * 采用轮询的方式监听selector上是否有需要处理的事件，如果有，则进行处理
+     *
      * @throws IOException
      */
     @SuppressWarnings("unchecked")
@@ -84,6 +96,7 @@ public class NIOClient {
 
     /**
      * 处理读取服务端发来的信息 的事件
+     *
      * @param key
      * @throws IOException
      */
@@ -99,16 +112,6 @@ public class NIOClient {
         ByteBuffer outBuffer = ByteBuffer.wrap(msg.getBytes());
         channel.write(outBuffer);// 将消息回送给客户端
         channel.close();
-    }
-
-    /**
-     * 启动客户端测试
-     * @throws IOException
-     */
-    public static void main(String[] args) throws IOException {
-        NIOClient client = new NIOClient();
-        client.initClient("localhost", 8000);
-        client.listen();
     }
 
 }

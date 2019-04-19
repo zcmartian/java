@@ -1,6 +1,5 @@
 package org.smart4j.helper;
 
-import org.smart4j.util.PropsUtil;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -12,11 +11,8 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Objects;
-import java.util.Properties;
 
 /**
  * Created by marszhou on 15/12/18.
@@ -25,7 +21,7 @@ public class DatabaseHelper {
     private static final Logger LOGGER = LoggerFactory
             .getLogger(DatabaseHelper.class);
     private static final ThreadLocal<Connection> CONNECTION_HOLDER;
-    private static final QueryRunner QUERY_RUNNER ;
+    private static final QueryRunner QUERY_RUNNER;
     private static final BasicDataSource DATA_SOURCE;
     private static final ThreadLocal<Connection> CONNECTION_THREAD_LOCAL = new ThreadLocal<Connection>();
 
@@ -43,7 +39,7 @@ public class DatabaseHelper {
             /*Connection conn, */String sql, Object... params) {
         List<T> entityList;
         try {
-            Connection conn=getConnection();
+            Connection conn = getConnection();
             entityList = QUERY_RUNNER.query(conn, sql,
                     new BeanListHandler<T>(entityClass), params);
         } catch (SQLException e) {

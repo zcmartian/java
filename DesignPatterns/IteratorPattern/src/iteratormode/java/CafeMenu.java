@@ -1,9 +1,9 @@
 package iteratormode.java;
 
+import iteratormode.MenuItem;
+
 import java.util.Hashtable;
 import java.util.Iterator;
-
-import iteratormode.MenuItem;
 
 public class CafeMenu {
     private Hashtable<String, MenuItem> menuItems = new Hashtable<String, MenuItem>();

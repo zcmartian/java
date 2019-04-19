@@ -15,8 +15,9 @@ import java.util.List;
  * Created by marszhou on 15/12/18.
  */
 @WebServlet("/customer_delete")
-public class CustomerDeleteServlet extends HttpServlet{
+public class CustomerDeleteServlet extends HttpServlet {
     private CustomerService customerService;
+
     @Override
     public void init() throws ServletException {
         customerService = CustomerService.getInstance();

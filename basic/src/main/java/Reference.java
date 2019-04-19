@@ -8,6 +8,19 @@ public class Reference {
         this.value = value;
     }
 
+    public static void main(String... args) {
+        Reference reference = new Reference(100);
+
+        System.out.println(reference);
+        change(reference);
+        System.out.println(reference);
+    }
+
+    private static void change(Reference ref) {
+//        ref.setValue(200);
+        ref = new Reference(200);
+    }
+
     public int getValue() {
         return value;
     }
@@ -21,18 +34,5 @@ public class Reference {
         return "Reference{" +
                 "value=" + value +
                 '}';
-    }
-
-    public static void main(String... args) {
-        Reference reference = new Reference(100);
-
-        System.out.println(reference);
-        change(reference);
-        System.out.println(reference);
-    }
-
-    private static void change(Reference ref) {
-//        ref.setValue(200);
-        ref = new Reference(200);
     }
 }
