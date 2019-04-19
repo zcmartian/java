@@ -10,7 +10,12 @@ public class Solution {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(9);
 
-        System.out.println(new Solution().getMinimumDifference(root));
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+//        head.next.next = new ListNode(1);
+//        head.next.next.next = new ListNode(2);
+//        head.next.next.next.next = new ListNode(1);
+        System.out.println(new Solution().isPalindrome(head));
     }
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
@@ -195,8 +200,6 @@ public class Solution {
         return left;
     }
 
-
-
     public List<Integer> findAnagrams(String s, String p) {
         int left = 0;
         int right = 0;
@@ -248,6 +251,38 @@ public class Solution {
         helper(curr.left, lb, curr.val);
         helper(curr.right, curr.val, rb);
     }
+
+    public boolean isPalindrome(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        if (fast != null) {
+            slow = slow.next;
+        }
+        slow = reverse(slow);
+        fast = head;
+        while (slow != null) {
+            if (slow.val != fast.val)
+                return false;
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return true;
+    }
+
+    private ListNode reverse(ListNode head) {//翻转链表返回新的头结点
+        ListNode pre = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
+        }
+        return pre;
+    }
 }
 
 class TreeNode {
@@ -260,22 +295,11 @@ class TreeNode {
     }
 }
 
-class MedianFinder {
-    private Queue<Long> small = new PriorityQueue(), large = new PriorityQueue();
+class ListNode {
+    int val;
+    ListNode next;
 
-    public void addNum(int num) {
-        large.add((long) num);
-        small.add(-large.poll());
-        if (large.size() < small.size())
-            large.add(-small.poll());
-    }
-
-    public MedianFinder() {
-    }
-
-    public double findMedian() {
-        return large.size() > small.size()
-                ? large.peek()
-                : (large.peek() - small.peek()) / 2.0;
+    ListNode(int x) {
+        val = x;
     }
 }
