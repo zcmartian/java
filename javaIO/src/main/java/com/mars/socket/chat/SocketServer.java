@@ -1,4 +1,4 @@
-package com.mars.socket.group;
+package com.mars.socket.chat;
 
 import java.io.BufferedReader;
 import java.io.IOException;
