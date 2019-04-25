@@ -1,4 +1,5 @@
 package com.mars.socket;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -10,7 +11,7 @@ public class SocketServer {
         try {
             /** 创建ServerSocket*/
             // 创建一个ServerSocket在端口2013监听客户请求
-            ServerSocket serverSocket =new ServerSocket(2013);
+            ServerSocket serverSocket = new ServerSocket(2013);
             while (true) {
                 // 侦听并接受到此Socket的连接,请求到来则产生一个Socket对象，并继续执行
                 Socket socket = serverSocket.accept();
@@ -18,14 +19,14 @@ public class SocketServer {
                 /** 获取客户端传来的信息 */
                 // 由Socket对象得到输入流，并构造相应的BufferedReader对象
                 BufferedReader bufferedReader =
-                    new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                        new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 // 获取从客户端读入的字符串
                 String result = bufferedReader.readLine();
                 System.out.println("Client say : " + result);
 
                 /** 发送服务端准备传输的 */
                 // 由Socket对象得到输出流，并构造PrintWriter对象
-                PrintWriter printWriter =new PrintWriter(socket.getOutputStream());
+                PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
                 printWriter.print("hello Client, I am Server!");
                 printWriter.flush();
 
@@ -34,9 +35,9 @@ public class SocketServer {
                 bufferedReader.close();
                 socket.close();
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Exception:" + e);
-        }finally{
+        } finally {
             //serverSocket.close();
         }
     }
