@@ -5,13 +5,12 @@ import java.util.List;
 
 public class ThreadCommunication {
     static List<Integer> list = new ArrayList<>();
-    boolean flag = false;
 
     public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i <= 1000; i++) {
-            new Thread(new Producer(i), "Éú²úÕßÏß³Ì").start();
+            new Thread(new Producer(i), "ç”Ÿäº§è€…çº¿ç¨‹").start();
             Thread.sleep(1);
-            new Thread(new Consumer(), "Ïû·ÑÕßÏß³Ì").start();
+            new Thread(new Consumer(), "æ¶ˆè´¹è€…çº¿ç¨‹").start();
         }
     }
 
@@ -26,7 +25,7 @@ public class ThreadCommunication {
         public void run() {
             synchronized (list) {
                 list.add(i);
-                System.out.println("Éú²úÕßÉú²úÁË£º" + i);
+                System.out.println("ç”Ÿäº§è€…ç”Ÿäº§äº†ï¼š" + i);
                 list.notify();
             }
         }
@@ -39,14 +38,14 @@ public class ThreadCommunication {
             synchronized (list) {
                 while (list.size() < 1) {
                     try {
-                        System.out.println("Ïû·ÑÕßµÈ´ý¿ªÊ¼¡£¡£¡£");
+                        System.out.println("æ¶ˆè´¹è€…ç­‰å¾…å¼€å§‹ã€‚ã€‚ã€‚");
                         list.wait();
-                        System.out.println("Ïû·ÑÕßµÈ´ý½áÊø¡£¡£¡£");
+                        System.out.println("æ¶ˆè´¹è€…ç­‰å¾…ç»“æŸã€‚ã€‚ã€‚");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                System.out.println("Ïû·ÑÕßÏû·ÑÁË£º" + list.remove(0));
+                System.out.println("æ¶ˆè´¹è€…æ¶ˆè´¹äº†ï¼š" + list.remove(0));
                 ;
             }
         }
