@@ -1,8 +1,5 @@
 package com.roocon.AQS;
 
-import com.roocon.chongru.MyLock;
-import org.springframework.aop.support.AopUtils;
-
 import java.util.concurrent.locks.Lock;
 
 /**
@@ -15,15 +12,14 @@ public class TestMyLock2 {
 
     private Lock lock = new MyLock2();
 
-    public int getNext(){
+    public int getNext() {
         lock.lock();
         try {
             Thread.sleep(300);
             return value++;
         } catch (InterruptedException e) {
             throw new RuntimeException();
-        }
-         finally {
+        } finally {
             lock.unlock();
         }
 
@@ -36,16 +32,16 @@ public class TestMyLock2 {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (true){
-                    System.out.println(Thread.currentThread().getName()+" "+test.getNext());
+                while (true) {
+                    System.out.println(Thread.currentThread().getName() + " " + test.getNext());
                 }
             }
         }).start();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (true){
-                    System.out.println(Thread.currentThread().getName()+" "+test.getNext());
+                while (true) {
+                    System.out.println(Thread.currentThread().getName() + " " + test.getNext());
                 }
             }
         }).start();
@@ -53,8 +49,8 @@ public class TestMyLock2 {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (true){
-                    System.out.println(Thread.currentThread().getName()+" "+test.getNext());
+                while (true) {
+                    System.out.println(Thread.currentThread().getName() + " " + test.getNext());
                 }
             }
         }).start();
