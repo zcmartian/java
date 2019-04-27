@@ -64,12 +64,12 @@ class MyData {
     /**
      * ++操作不是原子性
      * 字节码指令为3步
-     *
+     * <p>
      * getfield
      * iconst_1
      * iadd
      * putfield
-     *
+     * <p>
      * cpu调度不能保证这3步连续进行
      */
     public void add() {

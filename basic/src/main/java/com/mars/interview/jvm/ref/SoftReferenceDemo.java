@@ -13,7 +13,7 @@ public class SoftReferenceDemo {
         System.gc();
         //-Xms5m -Xmx5m -XX:+PrintGCDetails
         try {
-            byte[] bytes = new byte[30*1024*1024];
+            byte[] bytes = new byte[30 * 1024 * 1024];
         } catch (Throwable e) {
             e.printStackTrace();
         } finally {

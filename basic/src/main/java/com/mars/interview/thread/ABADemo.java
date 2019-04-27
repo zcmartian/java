@@ -14,7 +14,7 @@ public class ABADemo {
     private static CyclicBarrier cyclicBarrier = new CyclicBarrier(1, new Runnable() {
         @Override
         public void run() {
-            System.out.println(atomicReference.compareAndSet(100, 2019)+"\t"+
+            System.out.println(atomicReference.compareAndSet(100, 2019) + "\t" +
                     atomicReference.get());
         }
     });
@@ -37,13 +37,13 @@ public class ABADemo {
         //ABA问题的解决
         int stamp = atomicStampedReference.getStamp();
         new Thread(() -> {
-            System.out.println(currentThread().getName()+"\t第1次版本号"+atomicStampedReference.getStamp());
+            System.out.println(currentThread().getName() + "\t第1次版本号" + atomicStampedReference.getStamp());
             atomicStampedReference.compareAndSet(100, 101, atomicStampedReference.getStamp(),
-                    atomicStampedReference.getStamp()+1);
-            System.out.println(currentThread().getName()+"\t第2次版本号"+atomicStampedReference.getStamp());
+                    atomicStampedReference.getStamp() + 1);
+            System.out.println(currentThread().getName() + "\t第2次版本号" + atomicStampedReference.getStamp());
             atomicStampedReference.compareAndSet(101, 100, atomicStampedReference.getStamp(),
-                    atomicStampedReference.getStamp()+1);
-            System.out.println(currentThread().getName()+"\t第3次版本号"+atomicStampedReference.getStamp());
+                    atomicStampedReference.getStamp() + 1);
+            System.out.println(currentThread().getName() + "\t第3次版本号" + atomicStampedReference.getStamp());
             countDownLatch.countDown();
         }, "T2").start();
         try {
@@ -51,7 +51,7 @@ public class ABADemo {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        boolean result = atomicStampedReference.compareAndSet(100, 2019, stamp, stamp+1);
+        boolean result = atomicStampedReference.compareAndSet(100, 2019, stamp, stamp + 1);
         System.out.println(atomicStampedReference.getStamp());
         System.out.println(result);
     }

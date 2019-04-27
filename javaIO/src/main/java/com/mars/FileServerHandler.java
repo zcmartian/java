@@ -13,8 +13,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 
 /**
- * @author Administrator
- * @version 1.0
+ *  * @version 1.0
  * @date 2014年3月9日
  */
 public class FileServerHandler extends SimpleChannelInboundHandler<String> {

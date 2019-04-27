@@ -76,6 +76,7 @@ public final class PersonProbuf {
                         new com.google.protobuf.Descriptors.FileDescriptor[]{
                         }, assigner);
     }
+
     private PersonProbuf() {
     }
 
@@ -87,6 +88,7 @@ public final class PersonProbuf {
     getDescriptor() {
         return descriptor;
     }
+
     public interface PersonOrBuilder
             extends com.google.protobuf.MessageOrBuilder {
 
@@ -252,6 +254,7 @@ public final class PersonProbuf {
         private Person(boolean noInit) {
             this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
+
         private Person(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -865,9 +868,11 @@ public final class PersonProbuf {
                 super(builder);
                 this.unknownFields = builder.getUnknownFields();
             }
+
             private PhoneNumber(boolean noInit) {
                 this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
             }
+
             private PhoneNumber(
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1442,6 +1447,7 @@ public final class PersonProbuf {
             private int number_;
             private byte memoizedIsInitialized = -1;
             private int memoizedSerializedSize = -1;
+
             // Use CountryInfo.newBuilder() to construct.
             private CountryInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
                 super(builder);

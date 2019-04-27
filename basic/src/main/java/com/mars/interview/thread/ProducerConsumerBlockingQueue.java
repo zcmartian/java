@@ -2,7 +2,6 @@ package com.mars.interview.thread;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.lang.Thread.currentThread;
@@ -12,7 +11,7 @@ public class ProducerConsumerBlockingQueue {
     public static void main(String[] args) {
         Shared shared = new Shared(new ArrayBlockingQueue<>(3));
         new Thread(() -> {
-            System.out.println(currentThread().getName()+"\t 生产线程启动\n\n");
+            System.out.println(currentThread().getName() + "\t 生产线程启动\n\n");
             try {
                 shared.produce();
             } catch (InterruptedException e) {
@@ -20,14 +19,18 @@ public class ProducerConsumerBlockingQueue {
             }
         }, "Prod").start();
         new Thread(() -> {
-            System.out.println(currentThread().getName()+"\t 消费线程启动\n\n");
+            System.out.println(currentThread().getName() + "\t 消费线程启动\n\n");
             try {
                 shared.consume();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }, "Consum").start();
-        try { SECONDS.sleep(5);} catch (InterruptedException e) { e.printStackTrace();}
+        try {
+            SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         shared.stop();
     }
 }
@@ -56,9 +59,13 @@ class Shared {
             } else {
                 System.out.println(currentThread().getName() + "\t 生产" + data + "失败");
             }
-            try { SECONDS.sleep(1);} catch (InterruptedException e) { e.printStackTrace();}
+            try {
+                SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-        System.out.println(currentThread().getName()+"\t 老板叫停,生产结束");
+        System.out.println(currentThread().getName() + "\t 老板叫停,生产结束");
     }
 
     public void consume() throws InterruptedException {

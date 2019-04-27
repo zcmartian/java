@@ -4,8 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 
 /**
- * @author qsk
- */
+ *  */
 public class Person implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean {
 
     private String name;

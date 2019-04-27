@@ -10,8 +10,7 @@ import java.awt.*;
  * cannot be instantiated more then once, specifically when
  * using reflection.
  *
- * @author keaplogik
- */
+ *  */
 public enum AnimalHelperSingleton {
 
     INSTANCE;

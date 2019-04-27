@@ -18,7 +18,7 @@ import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 
 /**
- * @author lilinfeng
+ *  lilinfeng
  * @version 1.0
  * @date 2014年2月14日
  */
