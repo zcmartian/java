@@ -5,7 +5,7 @@ public class Demo {
 
     public synchronized void a() {
         System.out.println("a");
-//		b();
+//        b();
 
         try {
             Thread.sleep(1000);

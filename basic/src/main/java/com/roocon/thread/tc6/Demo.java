@@ -10,7 +10,7 @@ public class Demo {
     }
 
     public Demo() { // 1
-//		b = 20; // 2
+//        b = 20; // 2
         a = 10; // 3
     } // 4
 

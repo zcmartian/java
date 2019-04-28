@@ -20,7 +20,7 @@ public class Sequence {
      * @return
      */
     public static synchronized int getPrevious() {
-//		return value --;
+//        return value --;
         return 0;
     }
 
@@ -43,9 +43,9 @@ public class Sequence {
     public static void main(String[] args) {
 
         Sequence s = new Sequence();
-//		while(true) {
-//			System.out.println(s.getNext());
-//		}
+//        while(true) {
+//            System.out.println(s.getNext());
+//        }
 
         new Thread(new Runnable() {
 

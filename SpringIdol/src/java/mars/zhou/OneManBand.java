@@ -3,7 +3,7 @@ package mars.zhou;
 import java.util.Map;
 
 public class OneManBand implements Performer {
-    //	private Collection<Instrument> instruments;
+    //    private Collection<Instrument> instruments;
     private Map<String, Instrument> instruments;
 
     public OneManBand() {
@@ -20,9 +20,9 @@ public class OneManBand implements Performer {
     @Override
     public void perform() throws PerformanceException {
         // TODO Auto-generated method stub
-//		for (Instrument instrument : instruments) {
-//			instrument.play();
-//		}
+//        for (Instrument instrument : instruments) {
+//            instrument.play();
+//        }
 
         for (String key : instruments.keySet()) {
             System.out.println("key" + " : ");

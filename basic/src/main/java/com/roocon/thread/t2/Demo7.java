@@ -16,7 +16,7 @@ public class Demo7 {
 
 
     public int add(List<Integer> values) {
-//		values.parallelStream().forEach(System.out :: println);
+//        values.parallelStream().forEach(System.out :: println);
         return values.parallelStream().mapToInt(i -> i * 2).sum();
     }
 

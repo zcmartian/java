@@ -8,12 +8,12 @@ public class Main {
         Demo d = new Demo();
         d.put("key1", "value1");
 
-//		new Thread(new Runnable() {
-//			@Override
-//			public void run() {
-//				d.put("key1", "value1");
-//			}
-//		}).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                d.put("key1", "value1");
+//            }
+//        }).start();
 
         new Thread(new Runnable() {
             @Override
@@ -50,12 +50,12 @@ public class Main {
             }
         }).start();
 
-//		new Thread(new Runnable() {
-//			@Override
-//			public void run() {
-//				d.put("key3", "value3");
-//			}
-//		}).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                d.put("key3", "value3");
+//            }
+//        }).start();
 
 
     }

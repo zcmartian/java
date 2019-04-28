@@ -94,7 +94,7 @@
         </property>
     </bean>
 
-    <!-- 	<bean class="mars.zhou.JudgeAspect" factory-method="aspectOf">
+    <!--     <bean class="mars.zhou.JudgeAspect" factory-method="aspectOf">
             <property name="criticismEngine" ref="criticismEngine" />
         </bean> -->
 

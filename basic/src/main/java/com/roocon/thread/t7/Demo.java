@@ -36,18 +36,18 @@ public class Demo {
 
         Demo demo = new Demo();
 
-		/*
-		author:cyd
-		374
-		404
-		372
-		371
-		371    volatile���ܱ�֤ԭ�Ӳ�����
-		365
-		369
-		367
-		366
-		 */
+        /*
+        author:cyd
+        374
+        404
+        372
+        371
+        371    volatile���ܱ�֤ԭ�Ӳ�����
+        365
+        369
+        367
+        366
+         */
         for (int i = 0; i < 1000; i++) {
             new Thread(new Runnable() {
                 @Override

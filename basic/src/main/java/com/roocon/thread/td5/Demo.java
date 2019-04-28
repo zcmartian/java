@@ -10,12 +10,12 @@ public class Demo {
 
 
         // 10���߳����������������
-//		ThreadPoolExecutor pool = new ThreadPoolExecutor(10, 10, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
+//        ThreadPoolExecutor pool = new ThreadPoolExecutor(10, 10, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
         ExecutorService pool = Executors.newFixedThreadPool(10);
-//		ExecutorService pool = Executors.newCachedThreadPool();
-//		ExecutorService pool = Executors.newSingleThreadExecutor();
-//		ScheduledExecutorService pool = Executors.newScheduledThreadPool(10);
-//		ExecutorService pool = Executors.newWorkStealingPool();
+//        ExecutorService pool = Executors.newCachedThreadPool();
+//        ExecutorService pool = Executors.newSingleThreadExecutor();
+//        ScheduledExecutorService pool = Executors.newScheduledThreadPool(10);
+//        ExecutorService pool = Executors.newWorkStealingPool();
 
         while (true) {
 
@@ -28,27 +28,27 @@ public class Demo {
             });
 
 
-//			pool.schedule(new Runnable() {
-//				
-//				@Override
-//				public void run() {
-//					System.out.println(Thread.currentThread().getName());
-//				}
-//			}, 5, TimeUnit.SECONDS);
+//            pool.schedule(new Runnable() {
+//
+//                @Override
+//                public void run() {
+//                    System.out.println(Thread.currentThread().getName());
+//                }
+//            }, 5, TimeUnit.SECONDS);
 
 
-//			pool.execute(new Runnable() {
-//				
-//				@Override
-//				public void run() {
-//					System.out.println(Thread.currentThread().getName());
-//					try {
-//						Thread.sleep(100);
-//					} catch (InterruptedException e) {
-//						e.printStackTrace();
-//					}
-//				}
-//			});
+//            pool.execute(new Runnable() {
+//
+//                @Override
+//                public void run() {
+//                    System.out.println(Thread.currentThread().getName());
+//                    try {
+//                        Thread.sleep(100);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
         }
 
     }

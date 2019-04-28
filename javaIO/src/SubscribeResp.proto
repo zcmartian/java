@@ -2,7 +2,7 @@ package netty;
 option java_outer_classname = "SubscribeRespProto";
 option optimize_for = LITE_RUNTIME;
 message com.mars.SubscribeResp{
-	required int32 subReqID = 1;
-	required int32 respCode = 2;
-	required string desc = 3;
+    required int32 subReqID = 1;
+    required int32 respCode = 2;
+    required string desc = 3;
 }

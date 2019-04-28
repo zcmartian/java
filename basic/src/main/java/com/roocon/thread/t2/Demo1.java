@@ -27,7 +27,7 @@ public class Demo1 extends Thread {
         d1.start();
         d2.start();
 
-//		d1.stop();
+//        d1.stop();
         d1.interrupt();
     }
 
