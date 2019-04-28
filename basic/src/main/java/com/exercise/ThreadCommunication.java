@@ -3,6 +3,9 @@ package com.exercise;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 用synchronized关键字实现线程同步方法
+ */
 public class ThreadCommunication {
     static List<Integer> list = new ArrayList<>();
 
@@ -46,7 +49,6 @@ public class ThreadCommunication {
                     }
                 }
                 System.out.println("消费者消费了：" + list.remove(0));
-                ;
             }
         }
     }
