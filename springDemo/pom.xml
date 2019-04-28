@@ -10,8 +10,7 @@
     <url>http://maven.apache.org</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>3.2.5.RELEASE</spring.version>
-        <iauth_app_id>987151735</iauth_app_id>
+        <spring.version>[4.3.17,)</spring.version>
     </properties>
     <dependencies>
         <dependency>
