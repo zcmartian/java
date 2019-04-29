@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.1.6.RELEASE</version>
+            <version>4.3.17.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jms</artifactId>
-            <version>4.1.6.RELEASE</version>
+            <version>4.3.17.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
