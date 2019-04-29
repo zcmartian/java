@@ -3,10 +3,7 @@ package com.atguigu.config;
 import com.atguigu.bean.Car;
 import com.atguigu.bean.Color;
 import com.atguigu.dao.BookDao;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.*;
 
 /**
  * 自动装配;
@@ -52,9 +49,12 @@ import org.springframework.context.annotation.Primary;
  *
  */
 @Configuration
-@ComponentScan({"com.atguigu.service","com.atguigu.dao",
-        "com.atguigu.controller","com.atguigu.bean"})
-public class MainConifgOfAutowired {
+@ComponentScan(value = {"com.atguigu.service","com.atguigu.dao",
+        "com.atguigu.controller","com.atguigu.bean"}
+//        ,includeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {Car.class})}
+        )
+@Import(MainConfigOfLifeCycle.class)//2种方法引入Car的定义
+public class MainConfigOfAutowired {
 
     @Primary
     @Bean("bookDao2")
