@@ -5,7 +5,7 @@
     <groupId>com.dianping.marszhou</groupId>
     <artifactId>marszhou-smart-web</artifactId>
     <packaging>war</packaging>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>marszhou-smart-web Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
