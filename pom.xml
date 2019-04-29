@@ -20,6 +20,7 @@
         <module>basic</module>
         <module>servlet-demo</module>
         <module>smart-framework</module>
+        <module>spring-annotation</module>
         <module>springAopDemo</module>
         <module>SpringIdol</module>
         <module>SpringJmsSample</module>
