@@ -9,12 +9,12 @@ public class Person {
     //2、可以写SpEL； #{}
     //3、可以写${}；取出配置文件【properties】中的值（在运行环境变量里面的值）
 
-    @Value("张三")
+//    @Value("张三")
     private String name;
-    @Value("#{20-2}")
+//    @Value("#{20-2}")
     private Integer age;
 
-    @Value("${person.nickName}")
+//    @Value("${person.nickName}")
     private String nickName;
 
 

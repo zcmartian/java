@@ -9,7 +9,7 @@ public class UserService {
 
     @EventListener(classes = {ApplicationEvent.class})
     public void listen(ApplicationEvent event) {
-        System.out.println("UserService�������������¼���" + event);
+        System.out.println("UserService收到ApplicationEvent事件" + event);
     }
 
 }

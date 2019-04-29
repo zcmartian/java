@@ -10,8 +10,10 @@ public class MainTest {
 
     @SuppressWarnings("resource")
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Person bean = (Person) applicationContext.getBean("person");
+        ApplicationContext applicationContext = null;
+        Person bean = null;
+        applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        bean = (Person) applicationContext.getBean("person");
         System.out.println(bean);
 
         applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
@@ -23,6 +25,9 @@ public class MainTest {
             System.out.println(name);
         }
 
+        String[] definitionNames = applicationContext.getBeanDefinitionNames();
+        for (String name : definitionNames) {
+            System.out.println(name);
+        }
     }
-
 }

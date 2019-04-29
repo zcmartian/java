@@ -30,7 +30,7 @@ public class LinuxCondition implements Condition {
 
         //可以判断容器中的bean注册情况，也可以给容器中注册bean
         boolean definition = registry.containsBeanDefinition("person");
-        if(property.contains("linux")){
+        if(property.contains("Linux")){
             return true;
         }
 

@@ -5,7 +5,7 @@ import com.atguigu.config.MainConfigOfAOP;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class IOCTest_AOP {
+public class IOCTestAOP {
 
     @Test
     public void test01() {

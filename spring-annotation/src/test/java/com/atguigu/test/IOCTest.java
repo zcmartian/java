@@ -2,7 +2,6 @@ package com.atguigu.test;
 
 import com.atguigu.bean.Blue;
 import com.atguigu.bean.Person;
-import com.atguigu.config.MainConfig;
 import com.atguigu.config.MainConfig2;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,7 +11,6 @@ import java.util.Map;
 
 public class IOCTest {
     AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
-
 
     @Test
     public void testImport() {
@@ -38,7 +36,7 @@ public class IOCTest {
     }
 
     @Test
-    public void test03() {
+    public void testConditions() {
         String[] namesForType = applicationContext.getBeanNamesForType(Person.class);
         ConfigurableEnvironment environment = applicationContext.getEnvironment();
         //动态获取环境变量的值；Windows 10
@@ -54,23 +52,22 @@ public class IOCTest {
     }
 
     @Test
-    public void test02() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+    public void testProtoTypeLazyInit() {
         String[] definitionNames = applicationContext.getBeanDefinitionNames();
         for (String name : definitionNames) {
             System.out.println(name);
         }
 
         System.out.println("ioc容器创建完成....");
-        Object bean = applicationContext.getBean("person");
-        Object bean2 = applicationContext.getBean("person");
+        String beanName = "person";
+        Object bean = applicationContext.getBean(beanName);
+        Object bean2 = applicationContext.getBean(beanName);
         System.out.println(bean == bean2);
     }
 
     @SuppressWarnings("resource")
     @Test
     public void test01() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         String[] definitionNames = applicationContext.getBeanDefinitionNames();
         for (String name : definitionNames) {
             System.out.println(name);

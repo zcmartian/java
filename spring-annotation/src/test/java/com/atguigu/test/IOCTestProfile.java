@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import javax.sql.DataSource;
 
-public class IOCTest_Profile {
+public class IOCTestProfile {
 
     //1、使用命令行动态参数: 在虚拟机参数位置加载 -Dspring.profiles.active=test
     //2、代码的方式激活某种环境；

@@ -8,7 +8,7 @@ import com.atguigu.service.BookService;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class IOCTest_Autowired {
+public class IOCTestAutowired {
 
     @Test
     public void test01() {

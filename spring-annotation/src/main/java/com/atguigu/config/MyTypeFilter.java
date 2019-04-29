@@ -26,10 +26,11 @@ public class MyTypeFilter implements TypeFilter {
         Resource resource = metadataReader.getResource();
 
         String className = classMetadata.getClassName();
-        System.out.println("--->"+className);
         if(className.contains("er")){
+            System.out.println("===>"+className);
             return true;
         }
+        System.out.println("xxx--->"+className);
         return false;
     }
 

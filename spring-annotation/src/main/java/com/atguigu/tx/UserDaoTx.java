@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public class UserDao {
+public class UserDaoTx {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

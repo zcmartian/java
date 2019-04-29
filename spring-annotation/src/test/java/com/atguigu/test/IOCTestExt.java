@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class IOCTest_Ext {
+public class IOCTestExt {
 
     @Test
     public void test01() {

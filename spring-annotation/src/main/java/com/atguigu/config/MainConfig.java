@@ -1,21 +1,27 @@
 package com.atguigu.config;
 
 import com.atguigu.bean.Person;
-import com.atguigu.service.BookService;
+import com.atguigu.tx.TxConfig;
+import com.atguigu.tx.UserDaoTx;
+import com.atguigu.tx.UserServiceTx;
 import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.stereotype.Controller;
 
 //配置类==配置文件
 @Configuration  //告诉Spring这是一个配置类
-
 @ComponentScans(
         value = {
-                @ComponentScan(value = "com.atguigu", includeFilters = {
-                        @Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
-                        @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class}),
-                        @Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class})
-                }, useDefaultFilters = false)
+                @ComponentScan(
+                        value = {"com.atguigu"}
+                        ,includeFilters = {
+                                @Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
+                                @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {Person.class}),
+                                @Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class})
+                        }
+                        ,excludeFilters = {@Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {UserDaoTx.class, UserServiceTx.class, TxConfig.class})}
+                        ,useDefaultFilters = false
+                )
         }
 )
 //@ComponentScan  value:指定要扫描的包

@@ -12,7 +12,7 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.*;
 
 //类中组件统一设置。满足当前条件，这个类中配置的所有bean注册才能生效；
-@Conditional({WindowsCondition.class})
+@Conditional({LinuxCondition.class})
 @Configuration
 @Import({Color.class,Red.class,MyImportSelector.class,MyImportBeanDefinitionRegistrar.class})
 //@Import导入组件，id默认是组件的全类名
@@ -23,7 +23,7 @@ public class MainConfig2 {
      * ConfigurableBeanFactory#SCOPE_PROTOTYPE
      * @see ConfigurableBeanFactory#SCOPE_SINGLETON
      * @see org.springframework.web.context.WebApplicationContext#SCOPE_REQUEST  request
-     * @see org.springframework.web.context.WebApplicationContext#SCOPE_SESSION     sesssion
+     * @see org.springframework.web.context.WebApplicationContext#SCOPE_SESSION  sesssion
      * @return\
      * @Scope:调整作用域
      * prototype：多实例的：ioc容器启动并不会去调用方法创建对象放在容器中。
@@ -39,7 +39,7 @@ public class MainConfig2 {
      *
      */
 //    @Scope("prototype")
-    @Lazy
+//    @Lazy //单实例下直接初始化,除非Lazy
     @Bean("person")
     public Person person(){
         System.out.println("给容器中添加Person....");
@@ -53,14 +53,17 @@ public class MainConfig2 {
      * 如果是linux系统，给容器中注册("linus")
      */
 
+    @Conditional(WindowsCondition.class)
     @Bean("bill")
     public Person person01(){
+        System.out.println("给容器中添加bill....");
         return new Person("Bill Gates",62);
     }
 
     @Conditional(LinuxCondition.class)
     @Bean("linus")
     public Person person02(){
+        System.out.println("给容器中添加linus....");
         return new Person("linus", 48);
     }
 

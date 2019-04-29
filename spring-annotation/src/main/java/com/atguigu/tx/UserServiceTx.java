@@ -6,10 +6,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-public class UserService {
+public class UserServiceTx {
 
     @Autowired
-    private UserDao userDao;
+    private UserDaoTx userDao;
 
     @Transactional
     public void insertUser() {
