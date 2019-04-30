@@ -21,6 +21,8 @@
         <module>servlet-demo</module>
         <module>smart-framework</module>
         <module>spring-annotation</module>
+        <module>springmvc-annotation</module>
+        <module>servlet3.0</module>
         <module>springAopDemo</module>
         <module>SpringIdol</module>
         <module>SpringJmsSample</module>
