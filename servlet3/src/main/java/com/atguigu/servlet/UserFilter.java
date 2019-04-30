@@ -4,11 +4,8 @@ import javax.servlet.*;
 import java.io.IOException;
 
 public class UserFilter implements Filter {
-
     @Override
     public void destroy() {
-        // TODO Auto-generated method stub
-
     }
 
     @Override
@@ -18,13 +15,9 @@ public class UserFilter implements Filter {
         System.out.println("UserFilter...doFilter...");
         //放行
         arg2.doFilter(arg0, arg1);
-
     }
 
     @Override
     public void init(FilterConfig arg0) throws ServletException {
-        // TODO Auto-generated method stub
-
     }
-
 }

@@ -26,7 +26,6 @@ public class MyServletContainerInitializer implements ServletContainerInitialize
      */
     @Override
     public void onStartup(Set<Class<?>> arg0, ServletContext sc) throws ServletException {
-        // TODO Auto-generated method stub
         System.out.println("感兴趣的类型：");
         for (Class<?> claz : arg0) {
             System.out.println(claz);
@@ -37,7 +36,6 @@ public class MyServletContainerInitializer implements ServletContainerInitialize
         //配置servlet的映射信息
         servlet.addMapping("/user");
 
-
         //注册Listener
         sc.addListener(UserListener.class);
 
@@ -45,7 +43,5 @@ public class MyServletContainerInitializer implements ServletContainerInitialize
         FilterRegistration.Dynamic filter = sc.addFilter("userFilter", UserFilter.class);
         //配置Filter的映射信息
         filter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
-
     }
-
 }
