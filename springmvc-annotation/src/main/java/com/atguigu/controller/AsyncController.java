@@ -59,7 +59,11 @@ public class AsyncController {
      * <p>
      * 异步的拦截器:
      * 1）、原生API的AsyncListener
-     * 2）、SpringMVC：实现AsyncHandlerInterceptor；
+     * 2）、SpringMVC：实现AsyncHandlerInterceptor
+     *      继承HandlerInterceptor的接口，额外提供了afterConcurrentHandlingStarted方法，该方法是用来处理异步请求
+     *      当Controller中有异步请求方法的时候会触发该方法。
+     *      异步请求先支持preHandle、然后执行afterConcurrentHandlingStarted
+     *      异步线程完成之后执行preHandle、postHandle、afterCompletion
      *
      * @return
      */
