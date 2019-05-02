@@ -1,9 +1,11 @@
 package com.atguigu.config;
 
 import com.atguigu.bean.Car;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 
 /**
  * bean的生命周期：
@@ -50,12 +52,12 @@ import org.springframework.context.annotation.Configuration;
  * Spring底层对 BeanPostProcessor 的使用；
  * bean赋值，注入其他组件，@Autowired，生命周期注解功能，@Async,xxx BeanPostProcessor;
  */
-@ComponentScan("com.atguigu.bean")
+@ComponentScan(value = "com.atguigu.bean", includeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BeanPostProcessor.class})})
 @Configuration
 public class MainConfigOfLifeCycle {
 
     //@Scope("prototype")
-    @Bean(initMethod = "init", destroyMethod = "destr")
+    @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
     public Car car() {
         return new Car();
     }

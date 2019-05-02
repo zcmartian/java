@@ -16,22 +16,22 @@ public class Car implements InitializingBean, DisposableBean, ApplicationContext
         System.out.println("car ...constructor...");
     }
 
-    public void init() {
-        System.out.println("car ...init...");
+    public void initMethod() {
+        System.out.println("car ...initMethod...");
     }
 
-    public void destr() {
-        System.out.println("car ...destr...");
-    }
-
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("car ...destroy...");
+    public void destroyMethod() {
+        System.out.println("car ...destroyMethod...");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("car ...afterPropertiesSet...");
+        System.out.println("car ...InitializingBean.afterPropertiesSet...");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("car ...DisposableBean.destroy...");
     }
 
     //对象创建并赋值之后调用
@@ -49,5 +49,6 @@ public class Car implements InitializingBean, DisposableBean, ApplicationContext
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
+        System.out.println("car ...setApplicationContext...");
     }
 }
