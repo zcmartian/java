@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * Created by marszhou on 16/1/3.
  */
-public class ReadWriteLock {
+public class ReadWriteLockDemo {
     private static Lock lock = new ReentrantLock();
     private static ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     private static Lock readLock = readWriteLock.readLock();
@@ -14,13 +14,13 @@ public class ReadWriteLock {
     private int value;
 
     public static void main(String[] args) {
-        final ReadWriteLock demo = new ReadWriteLock();
+        final ReadWriteLockDemo demo = new ReadWriteLockDemo();
         Runnable readRunnable = new Runnable() {
             @Override
             public void run() {
                 try {
-//                    demo.handleRead(readLock);
-                    demo.handleRead(lock);
+                    demo.handleRead(readLock);//读锁并发读
+//                    demo.handleRead(lock);//独占锁,读写都要加锁
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -31,8 +31,8 @@ public class ReadWriteLock {
             @Override
             public void run() {
                 try {
-//                    demo.handleWrite(writeLock, new Random().nextInt());
-                    demo.handleWrite(lock, new Random().nextInt());
+                    demo.handleWrite(writeLock, new Random().nextInt());//写锁独占写
+//                    demo.handleWrite(lock, new Random().nextInt());//独占锁,读写都要加锁
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

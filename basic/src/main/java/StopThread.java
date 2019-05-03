@@ -7,11 +7,11 @@ import java.util.logging.Logger;
 public class StopThread {
     public static void main(String... args) throws InterruptedException {
         while (true) {
-            Thread.sleep(10);
             System.out.println(System.nanoTime() + " Test loop begin.");
             StopThread stopThread = new StopThread();
             Runner r = stopThread.new Runner();
             r.start();
+            Thread.sleep(10);
             r.exit(true);
             r.join();
             System.out.println(System.nanoTime() + " Test loop end.");
@@ -29,6 +29,7 @@ public class StopThread {
         public void run() {
             while (!bExit) {
                 try {
+                    System.out.println("Thread is running.");
                     Thread.sleep(10);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(StopThread.class.getName()).log(Level.SEVERE, null, ex);
