@@ -104,13 +104,15 @@ public class NIOServer {
         // 服务器可读取消息:得到事件发生的Socket通道
         SocketChannel channel = (SocketChannel) key.channel();
         // 创建读取的缓冲区
-        ByteBuffer buffer = ByteBuffer.allocate(10);
+        ByteBuffer buffer = ByteBuffer.allocate(100);
         channel.read(buffer);
         byte[] data = buffer.array();
         String msg = new String(data).trim();
         System.out.println("服务端收到信息：" + msg);
         ByteBuffer outBuffer = ByteBuffer.wrap(msg.getBytes());
         channel.write(outBuffer);// 将消息回送给客户端
+        channel.close();
+        key.selector().close();
     }
 
 }
