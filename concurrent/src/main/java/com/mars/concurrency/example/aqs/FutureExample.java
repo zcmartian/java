@@ -17,6 +17,7 @@ public class FutureExample {
         Thread.sleep(1000);
         String result = future.get();
         log.info("result：{}", result);
+        executorService.shutdown();
     }
 
     static class MyCallable implements Callable<String> {

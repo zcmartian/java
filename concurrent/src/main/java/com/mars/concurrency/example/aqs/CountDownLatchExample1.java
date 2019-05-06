@@ -35,8 +35,8 @@ public class CountDownLatchExample1 {
     }
 
     private static void test(int threadNum) throws Exception {
-        Thread.sleep(100);
-        log.info("{}", threadNum);
+        Thread.sleep(100);//如果这里不sleep,根本用不到200个线程
+        log.info("{} in thread {}", threadNum, Thread.currentThread().getName());
         Thread.sleep(100);
     }
 }
