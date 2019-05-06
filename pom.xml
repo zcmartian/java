@@ -30,7 +30,7 @@
         <module>webapp-1</module>
         <module>webDemo</module>
         <module>data-structure</module>
-        <module>concurrent-demos</module>
+        <module>concurrent</module>
     </modules>
     <build>
         <plugins>
