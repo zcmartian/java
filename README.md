@@ -1,1 +1,1 @@
-This is my java projects folder for exercise .
+My Java demos and exercises
