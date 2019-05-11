@@ -1,4 +1,4 @@
-package com.mars;
+package com.mars.interview;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
