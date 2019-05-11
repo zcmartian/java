@@ -10,20 +10,19 @@
     <version>1.0-snapshot</version>
     <packaging>pom</packaging>
     <modules>
-        <module>CacheTest</module>
+        <module>basic</module>
+        <module>concurrent</module>
+        <module>data-structure</module>
         <module>DesignPatterns</module>
         <module>javaIO</module>
         <module>marszhou-httpServlet</module>
         <module>marszhou-smart-web</module>
         <module>NIODemo</module>
         <module>rpc</module>
-        <module>basic</module>
+        <module>servlet3</module>
         <module>smart-framework</module>
         <module>spring-annotation</module>
         <module>springmvc-annotation</module>
-        <module>servlet3</module>
-        <module>data-structure</module>
-        <module>concurrent</module>
     </modules>
     <build>
         <plugins>
