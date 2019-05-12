@@ -1,12 +1,6 @@
 package com.mars.concurrency.third.chapter10;
 
 import java.util.Collection;
-
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/22 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public interface Lock {
 
     void lock() throws InterruptedException;

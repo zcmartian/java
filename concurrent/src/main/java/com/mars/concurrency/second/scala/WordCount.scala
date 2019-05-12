@@ -1,7 +1,6 @@
 package com.mars.concurrency.second.scala
 
-import org.apache.spark.SparkConf
-import org.apache.spark.SparkContext
+import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * 实现wordcount：

@@ -1,7 +1,5 @@
 package com.mars.concurrency.second.scala
 
-import java.util.Date
-
 /**
   * Created by root on 2017/11/10.
   * 在scala语法中，每一行语句后面不需要加分号，如果一行中有多条语句，语句与语句之间必须有分号

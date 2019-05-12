@@ -1,10 +1,6 @@
 package com.mars.concurrency.first.chapter11;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/24 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+
 public class ThreadException {
     private final static int A = 10;
     private final static int B = 0;

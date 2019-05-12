@@ -1,12 +1,6 @@
 package com.mars.concurrency.third.chapter9;
 
 import java.util.stream.Stream;
-
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/20 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class DifferenceOfWaitAndSleep {
 
     private final static Object LOCK = new Object();

@@ -1,31 +1,15 @@
 package com.mars.concurrency.first.chapter10;
-
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/22 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class SynchronizedProblem {
 
     public static void main(String[] args) throws InterruptedException {
 
-        new Thread() {
-            @Override
-            public void run() {
-                SynchronizedProblem.run();
-            }
-        }.start();
+        new Thread(() -> run()).start();
 
         Thread.sleep(1000);
 
-        Thread t2 = new Thread() {
-            @Override
-            public void run() {
-//                /sdfsdfsd
-                SynchronizedProblem.run();
-                //sdfsdfsd
-            }
-        };
+        Thread t2 = new Thread(() -> {
+            run();
+        });
         t2.start();
         Thread.sleep(2000);
         // t2 是打断的，但是实际情况是中断不了的

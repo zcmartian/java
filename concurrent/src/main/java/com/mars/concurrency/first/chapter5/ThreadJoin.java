@@ -3,11 +3,6 @@ package com.mars.concurrency.first.chapter5;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/17 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class ThreadJoin {
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(() -> {

@@ -1,11 +1,6 @@
 package com.mars.concurrency.first.chapter3;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/16 QQ:532500648
- * QQ交流群:286081824
- * 线程启动之前只能是一个Thread 实例
- ***************************************/
+
 public class CreateThread {
     public static void main(String[] args) {
         Thread t1 = new Thread();

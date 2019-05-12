@@ -1,10 +1,5 @@
 package com.mars.concurrency.first.chapter7;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/19 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class SychronizedStatic {
     // 静态代码块加的锁 是class 锁，用 class 做为一个Monitor
     // 初始化静态代码块最先获得锁 ，同时 静态方法签名的 synchronized 也是class锁

@@ -2,11 +2,9 @@ package com.mars.concurrency.first.chapter4;
 
 import java.util.Optional;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/17 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * 优先级不一定按照定义的执行顺序
+ */
 public class ThreadSimpleAPI2 {
 
     public static void main(String[] args) {

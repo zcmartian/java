@@ -16,7 +16,7 @@ public class TryConcurrency {
 
         t.start();
 
-        new Thread("WRITE-Thread"){
+        new Thread("WRITE-Thread") {
             @Override
             public void run() {
                 println(Thread.currentThread().getName());

@@ -5,13 +5,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * <B>概要说明：</B><BR>
- *
- * @author ssk www.8win.com Inc.All rights reserved
- * @version v1.0
- * @date 2018年12月26日 上午 10:46
- */
 public class SimpleThreadPool1 extends Thread {
 
     public final static DiscardPolicy defaultDiscardPolicy = () -> {

@@ -1,17 +1,12 @@
 package com.mars.concurrency.first.chapter5;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/17 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class ThreadJoin3 {
 
     public static void main(String[] args) throws InterruptedException {
         long startTimestamp = System.currentTimeMillis();
-        Thread t1 = new Thread(new CaptureRunnable("M1", 10000L));
-        Thread t2 = new Thread(new CaptureRunnable("M2", 30000L));
-        Thread t3 = new Thread(new CaptureRunnable("M3", 15000L));
+        Thread t1 = new Thread(new CaptureRunnable("M1", 1000L));
+        Thread t2 = new Thread(new CaptureRunnable("M2", 3000L));
+        Thread t3 = new Thread(new CaptureRunnable("M3", 1500L));
 
         t1.start();
         t2.start();
