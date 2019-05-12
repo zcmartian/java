@@ -1,10 +1,5 @@
 package com.mars.concurrency.second.concurrent.chapter3;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/3/18 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class VolatileTest {
 
     private final static int MAX_LIMIT = 50;

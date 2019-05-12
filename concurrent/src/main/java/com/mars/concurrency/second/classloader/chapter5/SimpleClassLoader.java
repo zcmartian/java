@@ -5,11 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/4/2 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+
 public class SimpleClassLoader extends ClassLoader {
 
     private final static String DEFAULT_DIR = "G:\\Teaching\\app\\revert";

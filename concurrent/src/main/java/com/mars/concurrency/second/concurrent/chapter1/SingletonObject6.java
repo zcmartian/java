@@ -1,10 +1,8 @@
 package com.mars.concurrency.second.concurrent.chapter1;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/3/12 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+import com.mars.concurrency.annoations.ThreadSafe;
+
+@ThreadSafe
 public class SingletonObject6 {
 
     private SingletonObject6() {

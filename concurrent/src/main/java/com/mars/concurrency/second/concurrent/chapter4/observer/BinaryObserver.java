@@ -1,10 +1,6 @@
 package com.mars.concurrency.second.concurrent.chapter4.observer;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/3/18 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+
 public class BinaryObserver extends Observer {
 
     public BinaryObserver(Subject subject) {

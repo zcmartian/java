@@ -1,10 +1,5 @@
 package com.mars.concurrency.second.classloader.chapter1;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/4/1 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class Singleton {
 
     public static int x = 0;

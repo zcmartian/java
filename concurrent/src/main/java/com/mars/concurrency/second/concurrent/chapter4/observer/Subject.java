@@ -3,11 +3,7 @@ package com.mars.concurrency.second.concurrent.chapter4.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/3/18 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+
 public class Subject {
 
     private List<Observer> observers = new ArrayList<>();

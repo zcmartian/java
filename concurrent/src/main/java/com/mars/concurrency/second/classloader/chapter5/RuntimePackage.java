@@ -1,10 +1,6 @@
 package com.mars.concurrency.second.classloader.chapter5;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/4/4 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+
 public class RuntimePackage {
     //RuntimePackage
     //com.mars.concurrent.classloader.chapter5

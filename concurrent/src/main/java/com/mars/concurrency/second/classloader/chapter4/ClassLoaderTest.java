@@ -2,11 +2,6 @@ package com.mars.concurrency.second.classloader.chapter4;
 
 import java.lang.reflect.Method;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/4/4 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class ClassLoaderTest {
     public static void main(String[] args) throws Exception {
 

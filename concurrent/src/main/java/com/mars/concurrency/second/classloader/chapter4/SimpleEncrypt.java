@@ -2,11 +2,7 @@ package com.mars.concurrency.second.classloader.chapter4;
 
 import java.io.UnsupportedEncodingException;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/4/4 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+
 public class SimpleEncrypt {
 
     private static final String plain = "Hello ClassLoader";

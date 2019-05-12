@@ -5,14 +5,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/4/2 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class MyClassLoader extends ClassLoader {
 
-    private final static String DEFAULT_DIR = "D:\\person-work\\concurrency-work\\concurrency-demo\\target\\classes\\com\\mars\\concurrency\\classloader";
+    private final static String DEFAULT_DIR = "/home/mars/source/my-repos/javaDemos/concurrent/target/classes/com/mars/concurrency/classloader";
 
     private String dir = DEFAULT_DIR;
 
