@@ -1,12 +1,6 @@
 package com.mars.concurrency.second.concurrent.chapter8;
 
 import java.util.function.Consumer;
-
-/***************************************
- * @author:Alex Wang
- * @Date:2017/3/22 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
 public class FutureService {
 
     public <T> Future<T> submit(final FutureTask<T> task) {
