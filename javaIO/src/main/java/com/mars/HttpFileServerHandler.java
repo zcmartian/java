@@ -103,7 +103,7 @@ public class HttpFileServerHandler extends SimpleChannelInboundHandler<FullHttpR
                 || uri.endsWith(".") || INSECURE_URI.matcher(uri).matches()) {
             return null;
         }
-        return System.getProperty("user.dir") + File.separator + uri;
+        return System.getProperty("user.dir") + uri;
     }
 
     @Override

@@ -16,7 +16,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
  * Created by marszhou on 16/8/24.
  */
 public class HttpFileServer {
-    private static final String DEFAULT_URL = "/src/com/mars/";
+    private static final String DEFAULT_URL = "/javaIO/src/main/java/com/mars/";
 
     public static void main(String[] args) throws Exception {
         int port = 8080;
