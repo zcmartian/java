@@ -179,7 +179,7 @@ public class AVLTree<K extends Comparable<K>, V> implements Map<K, V> {
         if (node.right == null) {
             return node;
         }
-        return minimum(node.right);
+        return maximum(node.right);
     }
 
 //    //删除以node为根的树中的最小值,返回新的树的根

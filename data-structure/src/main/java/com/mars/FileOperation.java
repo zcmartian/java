@@ -23,7 +23,7 @@ public class FileOperation {
         Scanner scanner;
 
         try {
-            File file = new File(System.getProperty("user.dir") + File.separator + filename);
+            File file = new File(System.getProperty("user.dir") + File.separator + "data-structure" + File.separator + filename);
             if (file.exists()) {
                 FileInputStream fis = new FileInputStream(file);
                 scanner = new Scanner(new BufferedInputStream(fis), "UTF-8");

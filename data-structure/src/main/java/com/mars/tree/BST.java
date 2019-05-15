@@ -80,9 +80,9 @@ public class BST<E extends Comparable<E>> {
             return;
         }
 
-        preOrder(node.left);
+        inOrder(node.left);
         System.out.println(node.e);
-        preOrder(node.right);
+        inOrder(node.right);
     }
 
     public void postOrder() {
@@ -94,8 +94,8 @@ public class BST<E extends Comparable<E>> {
             return;
         }
 
-        preOrder(node.left);
-        preOrder(node.right);
+        postOrder(node.left);
+        postOrder(node.right);
         System.out.println(node.e);
     }
 

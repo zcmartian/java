@@ -116,7 +116,7 @@ public class Array<E> {
         size--;
         data[size] = null;
 
-        if (size == data.length / 4 && data.length / 2 != 0) {
+        if (size == data.length / 4 && data.length / 2 != 0) {//当length是1的时候就不要再缩容了
             resize(data.length / 2);
         }
         return e;

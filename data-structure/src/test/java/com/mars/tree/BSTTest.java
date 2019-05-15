@@ -74,8 +74,8 @@ public class BSTTest {
                 "------null\n" +
                 "------null\n" +
                 "\n" +
-                "3\n" +
                 "2\n" +
+                "3\n" +
                 "4\n" +
                 "5\n" +
                 "6\n" +
@@ -99,11 +99,11 @@ public class BSTTest {
                 "------null\n" +
                 "------null\n" +
                 "\n" +
-                "3\n" +
                 "2\n" +
                 "4\n" +
-                "6\n" +
+                "3\n" +
                 "8\n" +
+                "6\n" +
                 "5\n", log.getLog());
     }
 
