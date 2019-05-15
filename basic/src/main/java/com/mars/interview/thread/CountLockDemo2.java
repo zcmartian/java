@@ -14,7 +14,7 @@ public class CountLockDemo2 {
     }
 
     static class Wrapper {
-        private Integer count;
+        private volatile int count;
 
         public Wrapper(Integer count) {
             this.count = count;
@@ -30,7 +30,7 @@ public class CountLockDemo2 {
     }
 
     static class PrintOdd implements Runnable {
-        private volatile Wrapper wrapper;
+        private Wrapper wrapper;
         private ReentrantLock lock;
         private Condition condition;
         private int[] values = {1,2,3};
@@ -63,7 +63,7 @@ public class CountLockDemo2 {
     }
 
     static class PrintEven implements Runnable {
-        private volatile Wrapper wrapper;
+        private Wrapper wrapper;
         private ReentrantLock lock;
         private Condition condition;
         private char[] values = {'a', 'b', 'c'};
