@@ -1,3 +1,5 @@
+package sort;
+
 public class ShellSort {
     public static void shellSort(int[] arr) {
         for(int gap = arr.length;gap>0;gap/=2) {

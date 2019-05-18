@@ -1,3 +1,5 @@
+package sort;
+
 public class QuickSort {
     public static void quickSort(int arr[]){
         if(arr == null || arr.length <= 1)

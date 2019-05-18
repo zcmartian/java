@@ -1,3 +1,5 @@
+package sort;
+
 public class HeapSort {
     public static void siftDown(int[] arr,int i,int size) { //从A[i] 开始往下调整
         int L = 2*i+1; //左孩子的下标

@@ -1,3 +1,5 @@
+package sort;
+
 public class CountSort {
     public static void countSort(int[] arr,int RANGE) { /**数组中最大的元素不能超过 RANGE*/
         int[] count = new int[RANGE + 1];
