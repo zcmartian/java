@@ -15,11 +15,15 @@ public class EnhancerDemo {
 
         EnhancerDemo demo = (EnhancerDemo) enhancer.create();
         demo.test();
+        demo.test2();
 //        System.out.println(demo);
     }
 
     public void test() {
         System.out.println("EnhancerDemo test()");
+    }
+    public void test2() {
+        System.out.println("EnhancerDemo test2()");
     }
 
     private static class MethodInterceptorImpl implements MethodInterceptor {
