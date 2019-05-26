@@ -2,59 +2,58 @@ import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
-//        TreeNode root = new TreeNode(5);
-//        root.left = new TreeNode(2);
-//        root.right = new TreeNode(7);
-//        root.left.left = new TreeNode(1);
-//        root.left.right = new TreeNode(4);
-//        root.right.left = new TreeNode(6);
-//        root.right.right = new TreeNode(9);
-//
-//        ListNode head = new ListNode(1);
-//        head.next = new ListNode(2);
-////        head.next.next = new ListNode(1);
-////        head.next.next.next = new ListNode(2);
-////        head.next.next.next.next = new ListNode(1);
+        TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(7);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(4);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(9);
+
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+//        head.next.next = new ListNode(1);
+//        head.next.next.next = new ListNode(2);
+//        head.next.next.next.next = new ListNode(1);
 //        System.out.println(new Solution().isPalindrome(head));
-
-        ListNode l1 = new ListNode(1);
-        l1.next = new ListNode(4);
-        l1.next.next = new ListNode(5);
-        ListNode l2 = new ListNode(1);
-        l2.next = new ListNode(3);
-        l2.next.next = new ListNode(4);
-        ListNode l3 = new ListNode(2);
-        l3.next = new ListNode(6);
-        ListNode[] lists = {l1, l2, l3};
-        mergeKLists(lists);
+        new Solution().isMatch("adceb", "*a*b");
     }
 
-    public static ListNode mergeKLists(ListNode[] lists){
-        return partition(lists,0,lists.length-1);
-    }
-
-    public static ListNode partition(ListNode[] lists, int s, int e){
-        if(s==e)  return lists[s];
-        if(s<e){
-            int q=(s+e)/2;
-            ListNode l1= partition(lists,s,q);
-            ListNode l2= partition(lists,q+1,e);
-            return merge(l1,l2);
-        }else
-            return null;
-    }
-
-    //This function is from Merge Two Sorted Lists.
-    public static ListNode merge(ListNode l1,ListNode l2){
-        if(l1==null) return l2;
-        if(l2==null) return l1;
-        if(l1.val<l2.val){
-            l1.next=merge(l1.next,l2);
-            return l1;
-        }else{
-            l2.next=merge(l1,l2.next);
-            return l2;
+    public boolean isMatch(String s, String p) {
+        boolean[][] match = new boolean[s.length() + 1][p.length() + 1];
+        match[s.length()][p.length()] = true;
+        for (int i = p.length() - 1; i >= 0; i--) {
+            if (p.charAt(i) != '*')
+                break;
+            else
+                match[s.length()][i] = true;
         }
+        for (int i = s.length() - 1; i >= 0; i--) {
+            for (int j = p.length() - 1; j >= 0; j--) {
+                if (s.charAt(i) == p.charAt(j) || p.charAt(j) == '?')
+                    match[i][j] = match[i + 1][j + 1];
+                else if (p.charAt(j) == '*')
+                    match[i][j] = match[i + 1][j] || match[i][j + 1];
+                else
+                    match[i][j] = false;
+            }
+        }
+        return match[0][0];
+    }
+
+    public boolean wordPattern(String pattern, String str) {
+        String[] words = str.split(" ");
+        if (words.length != pattern.length())
+            return false;
+        Map index = new HashMap();
+        for (Integer i = 0; i < words.length; ++i) {
+            // put返回map对应key的旧值,所以如果两个key相同的put返回同一个索引,若等号两边索引不等则模式匹配失败
+            Integer a = (Integer) index.put(pattern.charAt(i), i);
+            Integer b = (Integer) index.put(words[i], i);
+            if (a != b)
+                return false;
+        }
+        return true;
     }
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
