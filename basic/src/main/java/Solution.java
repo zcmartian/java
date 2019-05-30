@@ -10,13 +10,28 @@ public class Solution {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(9);
 
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-//        head.next.next = new ListNode(1);
-//        head.next.next.next = new ListNode(2);
-//        head.next.next.next.next = new ListNode(1);
+//
+//        ListNode head = new ListNode(1);
+//        head.next = new ListNode(2);
+////        head.next.next = new ListNode(1);
+////        head.next.next.next = new ListNode(2);
+////        head.next.next.next.next = new ListNode(1);
 //        System.out.println(new Solution().isPalindrome(head));
-        new Solution().isMatch("adceb", "*a*b");
+
+//        ListNode l1 = new ListNode(1);
+//        l1.next = new ListNode(4);
+//        l1.next.next = new ListNode(5);
+//        ListNode l2 = new ListNode(1);
+//        l2.next = new ListNode(3);
+//        l2.next.next = new ListNode(4);
+//        ListNode l3 = new ListNode(2);
+//        l3.next = new ListNode(6);
+//        ListNode[] lists = {l1, l2, l3};
+//        mergeKLists(lists);
+
+//        new Solution().flatten(root);
+        new Solution().flatten2(root);
+        System.out.println(root);
     }
 
     public boolean isMatch(String s, String p) {
@@ -309,6 +324,24 @@ public class Solution {
             fast = fast.next;
         }
         return true;
+    }
+
+    private TreeNode prev = null;
+    public void flatten(TreeNode root) {
+        if(root == null) return;
+        flatten(root.right);
+        flatten(root.left);
+        root.right = prev;
+        root.left = null;
+        prev = root;
+    }
+    public void flatten2(TreeNode root) {
+        if(root == null) return;
+        flatten2(root.left);
+        flatten2(root.right);
+        root.left = prev;
+        root.right = null;
+        prev = root;
     }
 
     private ListNode reverse(ListNode head) {//翻转链表返回新的头结点
