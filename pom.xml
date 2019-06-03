@@ -17,6 +17,7 @@
         <module>javaIO</module>
         <module>marszhou-httpServlet</module>
         <module>marszhou-smart-web</module>
+        <module>netty-demos</module>
         <module>nettybook2</module>
         <module>NIODemo</module>
         <module>rpc</module>
