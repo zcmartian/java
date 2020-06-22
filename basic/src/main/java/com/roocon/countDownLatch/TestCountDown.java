@@ -1,7 +1,5 @@
 package com.roocon.countDownLatch;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;

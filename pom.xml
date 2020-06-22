@@ -6,7 +6,7 @@
 
     <!-- 基本设置 The Basics -->
     <groupId>com.mars</groupId>
-    <artifactId>javaDemos</artifactId>
+    <artifactId>java-practies</artifactId>
     <version>1.0-snapshot</version>
     <packaging>pom</packaging>
     <modules>
