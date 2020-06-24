@@ -3,6 +3,8 @@ package java8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Stream;
 
 public class ReduceFunction {
     public static void main(String[] args) {
@@ -15,6 +17,15 @@ public class ReduceFunction {
         System.out.println(result);
 
         reduceThreeArgs(words);
+
+        Stream.iterate(new int[] { 0, 1 }, a -> {
+            int next = a[0] + a[1];
+            a[0] = a[1];
+            a[1] = next;
+            return a;
+        }).limit(10).map(a -> a[0]).forEach(System.out::println);
+
+        Stream.generate(UUID::randomUUID).limit(5).forEach(System.out::println);
     }
 
     public static void reduceThreeArgs(List<String> words) {
