@@ -1,1 +1,1 @@
-My Java demos and exercises
+My Java exercises
