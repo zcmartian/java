@@ -15,16 +15,8 @@
         <module>data-structure</module>
         <module>DesignPatterns</module>
         <module>javaIO</module>
-        <module>marszhou-httpServlet</module>
-        <module>marszhou-smart-web</module>
         <module>netty-demos</module>
-        <module>nettybook2</module>
         <module>NIODemo</module>
-        <module>rpc</module>
-        <module>servlet3</module>
-        <module>smart-framework</module>
-        <module>spring-annotation</module>
-        <module>springmvc-annotation</module>
     </modules>
     <build>
         <plugins>
