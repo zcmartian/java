@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mars</groupId>
+    <artifactId>DesignPatterns</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <env>qa</env>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.2</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>AdapterPattern</module>
+        <module>BridgePattern</module>
+        <module>BuilderPattern</module>
+        <module>ChainOfResponsibilityPattern</module>
+        <module>CommandPattern</module>
+        <module>CriteriaPattern</module>
+        <module>DecoratorPattern</module>
+        <module>FactoryPatternDemo</module>
+        <module>FlyWeightPattern</module>
+        <module>IteratorPattern</module>
+        <module>MacroCommandPattern</module>
+        <module>Momento</module>
+        <module>Prototype</module>
+        <module>SimpleFactory</module>
+        <module>TemplateMethodPattern</module>
+        <module>ComposerPattern</module>
+        <module>SingletonPattern</module>
+        <module>ObserverPattern</module>
+        <module>StatePattern</module>
+        <module>ProxyPattern</module>
+        <module>FacadePattern</module>
+        <module>VisitorPattern</module>
+        <module>MediatorPattern</module>
+        <module>InterpreterPattern</module>
+        <module>StrategyPattern</module>
+        <module>AbstractFactoryPattern</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
