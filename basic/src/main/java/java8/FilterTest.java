@@ -28,9 +28,12 @@ public class FilterTest {
                 .filter(person -> person.getEmail().matches(".*post\\.com"))
                 .collect(Collectors.toList());
 
-        result.stream().forEach(item -> item.setEmail("modified"));
+        result.forEach(item -> item.setEmail("modified"));
 
+        System.out.println("filter result:");
         result.forEach(p -> System.out.println(p.getEmail()));
+
+        System.out.println("original list:");
         persons.forEach(p -> System.out.println(p.getEmail()));
     }
 }
