@@ -2506,7 +2506,7 @@ cousins, their time passed till they entered Meryton. The attention of
 the younger ones was then no longer to be gained by him. Their eyes were
 immediately wandering up in the street in quest of the officers, and
 nothing less than a very smart bonnet indeed, or a really new muslin in
-a shop window, could recall them.
+a shop window, could essos.common.recall them.
 
 But the attention of every lady was soon caught by a young man, whom
 they had never seen before, of most gentlemanlike appearance, walking
@@ -2777,7 +2777,7 @@ of an age to hold it, and that it was given to another man; and no
 less certain is it, that I cannot accuse myself of having really done
 anything to deserve to lose it. I have a warm, unguarded temper, and
 I may have spoken my opinion _of_ him, and _to_ him, too freely. I can
-recall nothing worse. But the fact is, that we are very different sort
+essos.common.recall nothing worse. But the fact is, that we are very different sort
 of men, and that he hates me.”
 
 “This is quite shocking! He deserves to be publicly disgraced.”
